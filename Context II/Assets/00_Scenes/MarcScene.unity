@@ -319,6 +319,10 @@ MonoBehaviour:
   isChecking: 1
   tileSelector: {fileID: 3487778096386583906}
   selectorOffset: 0.4
+  tiles:
+  - {fileID: 6955439242766450256, guid: f2774b41006a69c4690bd639d002c223, type: 3}
+  selectableColor: {r: 0, g: 1, b: 0, a: 0.64705884}
+  unSelectableColor: {r: 1, g: 0, b: 0, a: 0.64705884}
 --- !u!1 &1381134994
 GameObject:
   m_ObjectHideFlags: 0

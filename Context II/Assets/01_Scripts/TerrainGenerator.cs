@@ -24,10 +24,13 @@ public class TerrainGenerator : MonoBehaviour {
         Dictionary<GameObject, TileType> tiles = new Dictionary<GameObject, TileType>();
 
         Vector3 tilePos;
+        Vector3 hexPos;
 
         for(int x = -size/2; x <= size/2; x++) {
                 
             tilePos = new Vector3(x * hexWidth, 0, 0);
+            hexPos = new Vector3(x, 0, -x);
+            Debug.Log(hexPos);
 
             GameObject objectToInstantiate;
             TileType type;

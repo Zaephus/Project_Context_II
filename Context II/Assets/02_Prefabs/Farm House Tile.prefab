@@ -94,6 +94,7 @@ GameObject:
   - component: {fileID: 2057586184944207754}
   - component: {fileID: 428850308887670405}
   - component: {fileID: 2265214437530290551}
+  - component: {fileID: -664099000170120846}
   m_Layer: 0
   m_Name: Farm House Tile
   m_TagString: Untagged
@@ -168,6 +169,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &-664099000170120846
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6955439242766450256}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -177740012491934518, guid: 05548f544a3fd5046938bf371aafbdee, type: 3}
 --- !u!1 &8429870563554874065
 GameObject:
   m_ObjectHideFlags: 0

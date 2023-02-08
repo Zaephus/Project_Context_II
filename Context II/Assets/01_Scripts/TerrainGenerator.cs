@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class TerrainGenerator : MonoBehaviour {
 
-    private float hexWidth;
-    private float hexHeight;
-
     [SerializeField]
     private GameObject baseTile;
     [SerializeField]
@@ -15,19 +12,16 @@ public class TerrainGenerator : MonoBehaviour {
     [SerializeField]
     private int size;
 
-    [SerializeField, HideInInspector]
-    private List<GameObject> tiles = new List<GameObject>();
+    public Dictionary<GameObject, TileType> Generate() {
 
-    public void Generate() {
+        float hexWidth = Mathf.Sqrt(3);
+        float hexHeight = 2.0f;
 
         if(size % 2 == 0) {
-            size ++;
+            size++;
         }
 
-        hexWidth = Mathf.Sqrt(3);
-        hexHeight = 2.0f;
-
-        ClearTiles();
+        Dictionary<GameObject, TileType> tiles = new Dictionary<GameObject, TileType>();
 
         Vector3 tilePos;
 
@@ -36,17 +30,20 @@ public class TerrainGenerator : MonoBehaviour {
             tilePos = new Vector3(x * hexWidth, 0, 0);
 
             GameObject objectToInstantiate;
+            TileType type;
 
             if(x * hexWidth == 0) {
                 objectToInstantiate = farmHouseTile;
+                type = TileType.HouseTile;
                 tilePos.y += 0.4f;
             }
             else {
                 objectToInstantiate = baseTile;
+                type = TileType.BaseTile;
             }
             
             GameObject tile = Instantiate(objectToInstantiate, tilePos, Quaternion.identity, transform);
-            tiles.Add(tile);
+            tiles.Add(tile, type);
 
         }
 
@@ -72,7 +69,7 @@ public class TerrainGenerator : MonoBehaviour {
                 tilePos = new Vector3((x - xOffset) * hexWidth, 0, y * 0.75f * hexHeight);
 
                 GameObject tile = Instantiate(baseTile, tilePos, Quaternion.identity, transform);
-                tiles.Add(tile);
+                tiles.Add(tile, TileType.BaseTile);
 
             }
 
@@ -96,21 +93,13 @@ public class TerrainGenerator : MonoBehaviour {
                 tilePos = new Vector3((x - xOffset) * hexWidth, 0, y * 0.75f * hexHeight);
 
                 GameObject tile = Instantiate(baseTile, tilePos, Quaternion.identity, transform);
-                tiles.Add(tile);
+                tiles.Add(tile, TileType.BaseTile);
 
             }
 
         }
 
-    }
-
-    public void ClearTiles() {
-
-        for(int i = tiles.Count - 1; i >= 0; i--) {
-            DestroyImmediate(tiles[i]);
-        }
-
-        tiles.Clear();
+        return tiles;
 
     }
     

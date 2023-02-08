@@ -276,7 +276,7 @@ MonoBehaviour:
     type: 3}
   farmHouseTile: {fileID: 6955439242766450256, guid: 1d9c6bc8f93aa7d47a9b954dd910ec01,
     type: 3}
-  size: 4
+  size: 15
 --- !u!4 &770359605
 Transform:
   m_ObjectHideFlags: 0
@@ -316,6 +316,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb21692fceb25344d8ba5678a5cd2802, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isChecking: 1
   tileSelector: {fileID: 3487778096386583906}
   selectorOffset: 0.4
 --- !u!1 &1381134994
@@ -454,17 +455,17 @@ PrefabInstance:
     - target: {fileID: 1973563781125415155, guid: 73749a15c0d91ca4f9a18fe38b4d4271,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.61
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1973563781125415155, guid: 73749a15c0d91ca4f9a18fe38b4d4271,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.77
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 1973563781125415155, guid: 73749a15c0d91ca4f9a18fe38b4d4271,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -7.69
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1973563781125415155, guid: 73749a15c0d91ca4f9a18fe38b4d4271,
         type: 3}

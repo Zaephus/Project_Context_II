@@ -23,15 +23,20 @@ public class GameManager : MonoBehaviour {
         }
     }
     #endregion
+    
+    public Dictionary<GameObject, TileType> tiles = new Dictionary<GameObject, TileType>();
 
     private TerrainGenerator terrainGenerator;
     private PlacementManager placementManager;
+
 
     private void Start() {
         terrainGenerator = GetComponent<TerrainGenerator>();
         placementManager = GetComponent<PlacementManager>();
 
-        placementManager.Initialize(terrainGenerator.Generate());
+        tiles = terrainGenerator.Generate();
+
+        placementManager.Initialize();
     }
 
     private void Update() {

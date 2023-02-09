@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public enum TileType {
-    BaseTile = 0,
-    FarmTile = 1,
-    HouseTile = 2,
-    EnergyTile = 3
+    None = 0,
+    BaseTile = 1,
+    FarmTile = 2,
+    HouseTile = 3,
+    EnergyTile = 4
 }
 
 public class GameManager : MonoBehaviour {
@@ -28,7 +29,8 @@ public class GameManager : MonoBehaviour {
 
     private TerrainGenerator terrainGenerator;
     private PlacementManager placementManager;
-
+    [SerializeField]
+    private InventoryManager inventoryManager;
 
     private void Start() {
         terrainGenerator = GetComponent<TerrainGenerator>();
@@ -40,6 +42,7 @@ public class GameManager : MonoBehaviour {
     }
 
     private void Update() {
+        inventoryManager.OnUpdate();
         placementManager.OnUpdate();
     }
 

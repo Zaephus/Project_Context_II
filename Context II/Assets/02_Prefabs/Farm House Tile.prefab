@@ -196,8 +196,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1145ddaa3271e0146ba9f484420e20ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hexPosition: {x: 0, y: 0}
-  tileType: 0
+  hexPosition: {x: 0, y: 0, z: 0}
+  tileType: 3
 --- !u!1 &8429870563554874065
 GameObject:
   m_ObjectHideFlags: 0

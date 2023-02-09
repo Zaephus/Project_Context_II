@@ -4,8 +4,21 @@ using UnityEngine;
 
 public class PlacementManager : MonoBehaviour {
 
-    [HideInInspector]
-    public bool isChecking = true;
+    private bool IsChecking {
+        get {
+            return isChecking;
+        }
+        set {
+            isChecking = value;
+            if(value) {
+                StartCoroutine(CheckForTile());
+            }
+            else {
+                tileSelector.GetComponent<MeshRenderer>().enabled = false;
+            }
+        }
+    }
+    private bool isChecking;
 
     [SerializeField]
     private GameObject tileSelector;
@@ -32,7 +45,6 @@ public class PlacementManager : MonoBehaviour {
     private HexTile hoveredTile;
 
     public void Initialize() {
-        StartCoroutine(CheckForTile());
         InventoryManager.SelectedTypeChanged += ChangeSelection;
     }
 
@@ -72,11 +84,17 @@ public class PlacementManager : MonoBehaviour {
         selectedType = _type;
 
         switch(_type) {
+            case TileType.None:
+                selectedObject = null;
+                IsChecking = false;
+                break;
             case TileType.FarmTile:
                 selectedObject = farmTile;
+                IsChecking = true;
                 break;
             case TileType.EnergyTile:
                 selectedObject = energyTile;
+                IsChecking = true;
                 break;
         }
     }

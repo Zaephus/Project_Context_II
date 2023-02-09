@@ -2,38 +2,37 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MenuButtons : MonoBehaviour
-{
+public class MenuButtons : MonoBehaviour {
     public GameObject optionsMenu;
-    Vector3 optionsStartPos = new Vector3(-125, 0, 0);
-    Vector3 optionsEndPos = new Vector3(-725, 0, 0);
+    Vector2 optionsStartPos = new Vector2(-725, 0);
+    Vector2 optionsEndPos = new Vector2(-125, 0);
     float perc;
     float lerpTime = 0.02f;
     float currentLerpTime = 0f;
     public bool optionsActive = false;
 
-    void FixedUpdate()
-    {
-        
+    void Start() {
     }
+    void FixedUpdate() {
 
+    }
+    IEnumerator LerpPosition(Vector2 startPosition, Vector2 targetPosition, float duration) {
+        float time = 0;
+        while (time < duration) {
+            optionsMenu.transform.localPosition = Vector2.Lerp(startPosition, targetPosition, time / duration);
+            time += Time.deltaTime;
+            yield return null;
+        }
+        optionsMenu.transform.localPosition = targetPosition;
+    }
     public void OptionsToggle() {
+
         if (!optionsActive) {
-            currentLerpTime += Time.deltaTime;
-            if (currentLerpTime > lerpTime) {
-                currentLerpTime = lerpTime;
-            }
-            perc = currentLerpTime / lerpTime;
-            optionsMenu.transform.localPosition = Vector3.Lerp(optionsStartPos, optionsEndPos, perc);
+            StartCoroutine(LerpPosition(optionsStartPos, optionsEndPos, 0.7f));
             optionsActive = true;
         }
         else {
-            currentLerpTime += Time.deltaTime;
-            if (currentLerpTime > lerpTime) {
-                currentLerpTime = lerpTime;
-            }
-            perc = currentLerpTime / lerpTime;
-            optionsMenu.transform.localPosition = Vector3.Lerp(optionsEndPos, optionsStartPos, perc);
+            StartCoroutine(LerpPosition(optionsEndPos, optionsStartPos, 0.7f));
             optionsActive = false;
         }
     }

@@ -14,6 +14,9 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI tilesText;
 
+    private void Start() {
+        Cursor.visible = false;
+    }
     void Update()
     {
         turnText.text = "" + currentTurn;

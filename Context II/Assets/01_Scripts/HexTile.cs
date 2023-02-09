@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class HexTile : MonoBehaviour {
 
-    public Vector3 hexPosition;
+    public Vector3Int hexPosition;
+    public TileType tileType;
 
 }

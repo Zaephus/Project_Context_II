@@ -176,8 +176,8 @@ Camera:
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
-  orthographic: 0
-  orthographic size: 10
+  orthographic: 1
+  orthographic size: 8
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -276,7 +276,7 @@ MonoBehaviour:
     type: 3}
   farmHouseTile: {fileID: 6955439242766450256, guid: 1d9c6bc8f93aa7d47a9b954dd910ec01,
     type: 3}
-  size: 15
+  size: 11
 --- !u!4 &770359605
 Transform:
   m_ObjectHideFlags: 0
@@ -451,6 +451,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1766021219041357326, guid: 73749a15c0d91ca4f9a18fe38b4d4271,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1973563781125415155, guid: 73749a15c0d91ca4f9a18fe38b4d4271,
         type: 3}
       propertyPath: m_RootOrder

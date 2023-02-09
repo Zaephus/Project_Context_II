@@ -21,7 +21,7 @@ public class PlacementManager : MonoBehaviour {
     [SerializeField]
     private Color unSelectableColor;
 
-    private GameObject hoveredObject;
+    private HexTile hoveredTile;
 
     public void Initialize() {
         StartCoroutine(CheckForTile());
@@ -29,22 +29,28 @@ public class PlacementManager : MonoBehaviour {
 
     public void OnUpdate() {
 
-        if(hoveredObject != null) {
-            if(GameManager.Instance.tiles[hoveredObject] == TileType.BaseTile) {
+        if(hoveredTile != null) {
+            if(CheckPossiblePlacement()) {
 
                 tileSelector.GetComponent<MeshRenderer>().material.color = selectableColor;
 
                 if(Input.GetMouseButtonDown(0)) {
-                    GameManager.Instance.tiles.Remove(hoveredObject);
-                    Vector3 pos = hoveredObject.transform.position;
-                    pos.y += 0.4f;
 
-                    Destroy(hoveredObject);
-                    hoveredObject = null;
+                    GameManager.Instance.tiles.Remove(hoveredTile.hexPosition);
+                    Vector3 tilePos = hoveredTile.transform.position;
+                    Vector3Int hexPos = hoveredTile.hexPosition;
+                    tilePos.y += 0.4f;
 
-                    GameObject tile = Instantiate(tiles[0], pos, Quaternion.identity, GameManager.Instance.transform);
-                    GameManager.Instance.tiles.Add(tile, TileType.FarmTile);
+                    Destroy(hoveredTile.gameObject);
+                    hoveredTile = null;
+
+                    HexTile tile = Instantiate(tiles[0], tilePos, Quaternion.identity, GameManager.Instance.transform).GetComponent<HexTile>();
+                    tile.hexPosition = hexPos;
+                    tile.tileType = TileType.FarmTile;
+                    GameManager.Instance.tiles.Add(hexPos, tile);
+
                 }
+
             }
             else {
                 tileSelector.GetComponent<MeshRenderer>().material.color = unSelectableColor;
@@ -63,16 +69,70 @@ public class PlacementManager : MonoBehaviour {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
             if(Physics.Raycast(ray, out hit)) {
-                hoveredObject = hit.collider.gameObject;
+                hoveredTile = hit.collider.GetComponent<HexTile>();
                 tileSelector.GetComponent<MeshRenderer>().enabled = true;
-                tileSelector.transform.position = new Vector3(hoveredObject.transform.position.x, tileSelector.transform.position.y, hoveredObject.transform.position.z);
+                tileSelector.transform.position = new Vector3(hoveredTile.transform.position.x, tileSelector.transform.position.y, hoveredTile.transform.position.z);
             }
             else {
-                hoveredObject = null;
+                hoveredTile = null;
                 tileSelector.GetComponent<MeshRenderer>().enabled = false;
             }
             yield return new WaitForSeconds(0.05f);
         }
+
+    }
+
+    private bool CheckPossiblePlacement() {
+
+        if(hoveredTile.tileType == TileType.BaseTile) {
+
+            HexTile checkTile;
+
+            if(GameManager.Instance.tiles.ContainsKey(new Vector3Int(hoveredTile.hexPosition.x + 1, hoveredTile.hexPosition.y - 1, hoveredTile.hexPosition.z))) {
+                checkTile = GameManager.Instance.tiles[new Vector3Int(hoveredTile.hexPosition.x + 1, hoveredTile.hexPosition.y - 1, hoveredTile.hexPosition.z)];
+                if(checkTile.tileType == TileType.FarmTile || checkTile.tileType == TileType.HouseTile) {
+                    return true;
+                }
+            }
+
+            if(GameManager.Instance.tiles.ContainsKey(new Vector3Int(hoveredTile.hexPosition.x + 1, hoveredTile.hexPosition.y, hoveredTile.hexPosition.z - 1))) {
+                checkTile = GameManager.Instance.tiles[new Vector3Int(hoveredTile.hexPosition.x + 1, hoveredTile.hexPosition.y, hoveredTile.hexPosition.z - 1)];
+                if(checkTile.tileType == TileType.FarmTile || checkTile.tileType == TileType.HouseTile) {
+                    return true;
+                }
+            }
+
+            if(GameManager.Instance.tiles.ContainsKey(new Vector3Int(hoveredTile.hexPosition.x, hoveredTile.hexPosition.y + 1, hoveredTile.hexPosition.z - 1))) {
+                checkTile = GameManager.Instance.tiles[new Vector3Int(hoveredTile.hexPosition.x, hoveredTile.hexPosition.y + 1, hoveredTile.hexPosition.z - 1)];
+                if(checkTile.tileType == TileType.FarmTile || checkTile.tileType == TileType.HouseTile) {
+                    return true;
+                }
+            }
+
+            if(GameManager.Instance.tiles.ContainsKey(new Vector3Int(hoveredTile.hexPosition.x - 1, hoveredTile.hexPosition.y + 1, hoveredTile.hexPosition.z))) {
+                checkTile = GameManager.Instance.tiles[new Vector3Int(hoveredTile.hexPosition.x - 1, hoveredTile.hexPosition.y + 1, hoveredTile.hexPosition.z)];
+                if(checkTile.tileType == TileType.FarmTile || checkTile.tileType == TileType.HouseTile) {
+                    return true;
+                }
+            }
+
+            if(GameManager.Instance.tiles.ContainsKey(new Vector3Int(hoveredTile.hexPosition.x - 1, hoveredTile.hexPosition.y, hoveredTile.hexPosition.z + 1))) {
+                checkTile = GameManager.Instance.tiles[new Vector3Int(hoveredTile.hexPosition.x - 1, hoveredTile.hexPosition.y, hoveredTile.hexPosition.z + 1)];
+                if(checkTile.tileType == TileType.FarmTile || checkTile.tileType == TileType.HouseTile) {
+                    return true;
+                }
+            }
+
+            if(GameManager.Instance.tiles.ContainsKey(new Vector3Int(hoveredTile.hexPosition.x, hoveredTile.hexPosition.y - 1, hoveredTile.hexPosition.z + 1))) {
+                checkTile = GameManager.Instance.tiles[new Vector3Int(hoveredTile.hexPosition.x, hoveredTile.hexPosition.y - 1, hoveredTile.hexPosition.z + 1)];
+                if(checkTile.tileType == TileType.FarmTile || checkTile.tileType == TileType.HouseTile) {
+                    return true;
+                }
+            }
+
+        }
+
+        return false;
 
     }
 

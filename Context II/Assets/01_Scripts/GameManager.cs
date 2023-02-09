@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour {
     }
     #endregion
     
-    public Dictionary<GameObject, TileType> tiles = new Dictionary<GameObject, TileType>();
+    public Dictionary<Vector3Int, HexTile> tiles = new Dictionary<Vector3Int, HexTile>();
 
     private TerrainGenerator terrainGenerator;
     private PlacementManager placementManager;

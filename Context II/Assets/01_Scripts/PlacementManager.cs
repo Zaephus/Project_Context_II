@@ -13,23 +13,32 @@ public class PlacementManager : MonoBehaviour {
     [SerializeField]
     private float selectorOffset;
 
+    #region Tiles
+    [Header("Tiles")]
     [SerializeField]
-    private GameObject[] tiles;
+    private GameObject farmTile;
+    [SerializeField]
+    private GameObject energyTile;
+    #endregion
 
     [SerializeField]
     private Color selectableColor;
     [SerializeField]
     private Color unSelectableColor;
 
+    private GameObject selectedObject;
+    private TileType selectedType;
+
     private HexTile hoveredTile;
 
     public void Initialize() {
         StartCoroutine(CheckForTile());
+        InventoryManager.SelectedTypeChanged += ChangeSelection;
     }
 
     public void OnUpdate() {
 
-        if(hoveredTile != null) {
+        if(hoveredTile != null && selectedType != TileType.None) {
             if(CheckPossiblePlacement()) {
 
                 tileSelector.GetComponent<MeshRenderer>().material.color = selectableColor;
@@ -44,9 +53,9 @@ public class PlacementManager : MonoBehaviour {
                     Destroy(hoveredTile.gameObject);
                     hoveredTile = null;
 
-                    HexTile tile = Instantiate(tiles[0], tilePos, Quaternion.identity, GameManager.Instance.transform).GetComponent<HexTile>();
+                    HexTile tile = Instantiate(selectedObject, tilePos, Quaternion.identity, GameManager.Instance.transform).GetComponent<HexTile>();
                     tile.hexPosition = hexPos;
-                    tile.tileType = TileType.FarmTile;
+                    tile.tileType = selectedType;
                     GameManager.Instance.tiles.Add(hexPos, tile);
 
                 }
@@ -57,6 +66,19 @@ public class PlacementManager : MonoBehaviour {
             }
         }
 
+    }
+
+    private void ChangeSelection(TileType _type) {
+        selectedType = _type;
+
+        switch(_type) {
+            case TileType.FarmTile:
+                selectedObject = farmTile;
+                break;
+            case TileType.EnergyTile:
+                selectedObject = energyTile;
+                break;
+        }
     }
 
     private IEnumerator CheckForTile() {

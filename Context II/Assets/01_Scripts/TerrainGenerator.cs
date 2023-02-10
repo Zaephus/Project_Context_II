@@ -5,11 +5,6 @@ using UnityEngine;
 public class TerrainGenerator : MonoBehaviour {
 
     [SerializeField]
-    private GameObject baseTile;
-    [SerializeField]
-    private GameObject farmHouseTile;
-
-    [SerializeField]
     private int size;
 
     public Dictionary<Vector3Int, HexTile> Generate() {
@@ -66,12 +61,12 @@ public class TerrainGenerator : MonoBehaviour {
                 hexPos = new Vector3Int(q, r, s);
 
                 if(tilePos == Vector3.zero) {
-                    objectToInstantiate = farmHouseTile;
+                    objectToInstantiate = GameManager.Instance.GetTileByType(TileType.HouseTile);
                     type = TileType.HouseTile;
                     tilePos.y += 0.4f;
                 }
                 else {
-                    objectToInstantiate = baseTile;
+                    objectToInstantiate = GameManager.Instance.GetTileByType(TileType.BaseTile);
                     type = TileType.BaseTile;
                 }
 

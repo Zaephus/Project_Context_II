@@ -36,7 +36,13 @@ public class GameManager : MonoBehaviour {
     private InventoryManager inventoryManager;
 
     [SerializeField]
-    private GameObject[] tileObjects;
+    private GameObject[] emptyTilePrefabs;
+    [SerializeField]
+    private GameObject[] farmTilePrefabs;
+    [SerializeField]
+    private GameObject farmHouseTilePrefab;
+    [SerializeField]
+    private GameObject[] energyTilePrefabs;
 
     private void Start() {
         terrainGenerator = GetComponent<TerrainGenerator>();
@@ -55,10 +61,20 @@ public class GameManager : MonoBehaviour {
     }
     
     public GameObject GetTileByType(TileType _type) {
-        if(_type == TileType.None) {
-            return null;
+        switch(_type) {
+            case TileType.None:
+                return null;
+            case TileType.BaseTile:
+                return emptyTilePrefabs[Random.Range(0, emptyTilePrefabs.Length)];
+            case TileType.FarmTile:
+                return farmTilePrefabs[Random.Range(0, farmTilePrefabs.Length)];
+            case TileType.HouseTile:
+                return farmHouseTilePrefab;
+            case TileType.EnergyTile:
+                return energyTilePrefabs[Random.Range(0, energyTilePrefabs.Length)];
+            default:
+                return null;
         }
-        return tileObjects[(int)_type - 1];
     }
 
     public TileType GetRandomTileType() {

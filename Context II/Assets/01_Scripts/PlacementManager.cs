@@ -29,14 +29,6 @@ public class PlacementManager : MonoBehaviour {
     [SerializeField]
     private float selectorOffset;
 
-    #region Tiles
-    [Header("Tiles")]
-    [SerializeField]
-    private GameObject farmTile;
-    [SerializeField]
-    private GameObject energyTile;
-    #endregion
-
     [SerializeField]
     private Color selectableColor;
     [SerializeField]
@@ -107,7 +99,7 @@ public class PlacementManager : MonoBehaviour {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
             if(Physics.Raycast(ray, out hit)) {
-                hoveredTile = hit.collider.GetComponent<HexTile>();
+                hoveredTile = hit.collider.GetComponentInParent<HexTile>();
                 tileSelector.GetComponent<MeshRenderer>().enabled = true;
                 tileSelector.transform.position = new Vector3(hoveredTile.transform.position.x, tileSelector.transform.position.y, hoveredTile.transform.position.z);
             }

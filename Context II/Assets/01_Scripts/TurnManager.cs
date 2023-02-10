@@ -6,7 +6,7 @@ using TMPro;
 public class TurnManager : MonoBehaviour {
 
     [SerializeField]
-    private Canvas playerControls;
+    private GameObject playerControls;
 
     [SerializeField]
     private TMP_Text turnText;
@@ -16,7 +16,7 @@ public class TurnManager : MonoBehaviour {
             return turnCounter;
         }
         set {
-            turnText.text = "Text " + value;
+            turnText.text = "Turn " + value;
             turnCounter = value;
         }
     }
@@ -38,16 +38,16 @@ public class TurnManager : MonoBehaviour {
             switch(value) {
 
                 case TurnState.PlayerTurn:
-                    playerControls.enabled = true;
+                    playerControls.gameObject.SetActive(true);
                     break;
 
                 case TurnState.EnergyTurn:
-                    playerControls.enabled = false;
+                    playerControls.gameObject.SetActive(false);
                     StartCoroutine(EnergyTurn());
                     break;
 
                 case TurnState.Waiting:
-                    playerControls.enabled = false;
+                    playerControls.gameObject.SetActive(false);
                     inventoryManager.FillSlots(
                         GameManager.Instance.GetRandomTileType(),
                         GameManager.Instance.GetRandomTileType(),

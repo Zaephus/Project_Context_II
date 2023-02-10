@@ -1,8 +1,11 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlacementManager : MonoBehaviour {
+
+    public static Action TilePlaced;
 
     private bool IsChecking {
         get {
@@ -69,6 +72,9 @@ public class PlacementManager : MonoBehaviour {
                     tile.hexPosition = hexPos;
                     tile.tileType = selectedType;
                     GameManager.Instance.tiles.Add(hexPos, tile);
+
+                    TilePlaced?.Invoke();
+                    ChangeSelection(TileType.None);
 
                 }
 

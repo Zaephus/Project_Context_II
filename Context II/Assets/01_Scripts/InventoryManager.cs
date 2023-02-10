@@ -14,6 +14,7 @@ public class InventoryManager : MonoBehaviour {
         set {
             selectedType = value;
             SelectedTypeChanged?.Invoke(value);
+            PlacementManager.TilePlaced += EmptySlot;
         }
     }
     [SerializeField]
@@ -37,6 +38,8 @@ public class InventoryManager : MonoBehaviour {
     private bool isRotatingTwo;
     private bool isRotatingThree;
 
+    private int selectedSlot;
+
     public void OnUpdate() {
 
         if(Input.GetMouseButtonDown(1)) {
@@ -44,6 +47,7 @@ public class InventoryManager : MonoBehaviour {
             isRotatingOne = false;
             isRotatingTwo = false;
             isRotatingThree = false;
+            selectedSlot = 0;
         }
 
         RotateTiles();
@@ -76,26 +80,73 @@ public class InventoryManager : MonoBehaviour {
     }
 
     public void SelectSlot(int _index) {
+        selectedSlot = _index;
         switch(_index) {
             case 1:
-                SelectedType = tileOne.tileType;
-                isRotatingOne = true;
-                isRotatingTwo = false;
-                isRotatingThree = false;
+                if(tileOne != null) {
+                    SelectedType = tileOne.tileType;
+                    isRotatingOne = true;
+                    isRotatingTwo = false;
+                    isRotatingThree = false;
+                }
                 break;
 
             case 2:
-                SelectedType = tileTwo.tileType;
-                isRotatingOne = false;
-                isRotatingTwo = true;
-                isRotatingThree = false;
+                if(tileTwo != null) {
+                    SelectedType = tileTwo.tileType;
+                    isRotatingOne = false;
+                    isRotatingTwo = true;
+                    isRotatingThree = false;
+                }
                 break;
 
             case 3:
-                SelectedType = tileThree.tileType;
+                if(tileThree != null) {
+                    SelectedType = tileThree.tileType;
+                    isRotatingOne = false;
+                    isRotatingTwo = false;
+                    isRotatingThree = true;
+                }
+                break;
+        }
+    }
+
+    private void EmptySlot() {
+
+        PlacementManager.TilePlaced -= EmptySlot;
+
+        switch(selectedSlot) {
+            case 1:
+                if(tileOne != null) {
+                    Destroy(tileOne.gameObject);
+                }
+                SelectedType = TileType.None;
                 isRotatingOne = false;
                 isRotatingTwo = false;
-                isRotatingThree = true;
+                isRotatingThree = false;
+                selectedSlot = 0;
+                break;
+
+            case 2:
+                if(tileTwo != null) {
+                    Destroy(tileTwo.gameObject);
+                }
+                SelectedType = TileType.None;
+                isRotatingOne = false;
+                isRotatingTwo = false;
+                isRotatingThree = false;
+                selectedSlot = 0;
+                break;
+
+            case 3:
+                if(tileThree != null) {
+                    Destroy(tileThree.gameObject);
+                }
+                SelectedType = TileType.None;
+                isRotatingOne = false;
+                isRotatingTwo = false;
+                isRotatingThree = false;
+                selectedSlot = 0;
                 break;
         }
     }

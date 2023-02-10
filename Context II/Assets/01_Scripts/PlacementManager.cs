@@ -82,20 +82,12 @@ public class PlacementManager : MonoBehaviour {
 
     private void ChangeSelection(TileType _type) {
         selectedType = _type;
-
-        switch(_type) {
-            case TileType.None:
-                selectedObject = null;
-                IsChecking = false;
-                break;
-            case TileType.FarmTile:
-                selectedObject = farmTile;
-                IsChecking = true;
-                break;
-            case TileType.EnergyTile:
-                selectedObject = energyTile;
-                IsChecking = true;
-                break;
+        selectedObject = GameManager.Instance.GetTileByType(_type);
+        if(selectedObject == null) {
+            IsChecking = false;
+        }
+        else {
+            IsChecking = true;
         }
     }
 

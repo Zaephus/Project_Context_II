@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8917126057260521272}
   - component: {fileID: 1203465451285841191}
   - component: {fileID: 6143648330993435770}
-  - component: {fileID: 8349739801043868536}
+  - component: {fileID: -7568382939645415064}
   m_Layer: 0
   m_Name: Forest Tile 1.1
   m_TagString: Untagged
@@ -85,7 +85,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &8349739801043868536
+--- !u!114 &-7568382939645415064
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -94,11 +94,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 6815075590711297208}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1145ddaa3271e0146ba9f484420e20ea, type: 3}
+  m_Script: {fileID: 11500000, guid: 23bbf72afd3ca21439e20975ebe67620, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   hexPosition: {x: 0, y: 0, z: 0}
-  tileType: 1
+  tileRotation: 0
+  tileHeight: 0
+  tileType: 0
+  powerApproval: 0
+  citizenApproval: 0
 --- !u!1001 &8017112087352829018
 PrefabInstance:
   m_ObjectHideFlags: 0

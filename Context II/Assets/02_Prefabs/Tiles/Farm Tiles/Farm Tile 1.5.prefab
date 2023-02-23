@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1054750790224641511}
   - component: {fileID: 4110908861201379906}
   - component: {fileID: 2227054882756036232}
-  - component: {fileID: 3487195655435217259}
+  - component: {fileID: 4946425677074486784}
   m_Layer: 0
   m_Name: Farm Tile 1.5
   m_TagString: Untagged
@@ -85,7 +85,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &3487195655435217259
+--- !u!114 &4946425677074486784
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -94,11 +94,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 425848472631420765}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1145ddaa3271e0146ba9f484420e20ea, type: 3}
+  m_Script: {fileID: 11500000, guid: 23bbf72afd3ca21439e20975ebe67620, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   hexPosition: {x: 0, y: 0, z: 0}
-  tileType: 2
+  tileRotation: 0
+  tileHeight: 0
+  tileType: 0
+  powerApproval: 0
+  citizenApproval: 0
 --- !u!1001 &4961014531458423545
 PrefabInstance:
   m_ObjectHideFlags: 0

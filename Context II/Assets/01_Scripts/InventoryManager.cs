@@ -66,9 +66,9 @@ public class InventoryManager : MonoBehaviour {
             Destroy(tileThree.gameObject);
         }
 
-        GameObject one = GameManager.Instance.GetTileByType(_slotOne);
-        GameObject two = GameManager.Instance.GetTileByType(_slotTwo);
-        GameObject three = GameManager.Instance.GetTileByType(_slotThree);
+        GameObject one = TileDatabase.Instance.GetTileByType(_slotOne);
+        GameObject two = TileDatabase.Instance.GetTileByType(_slotTwo);
+        GameObject three = TileDatabase.Instance.GetTileByType(_slotThree);
 
         tileOne = Instantiate(one, slotOne.position, one.transform.rotation, slotOne).GetComponent<HexTile>();
         tileOne.tileType = _slotOne;

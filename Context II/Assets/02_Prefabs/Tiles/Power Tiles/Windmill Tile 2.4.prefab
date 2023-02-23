@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 108524612188561531}
   - component: {fileID: 3904151497284120542}
   - component: {fileID: 1282015525114551060}
-  - component: {fileID: -827745457298087083}
+  - component: {fileID: 2129222196154464168}
   m_Layer: 0
   m_Name: Windmill Tile 2.4
   m_TagString: Untagged
@@ -86,7 +86,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &-827745457298087083
+--- !u!114 &2129222196154464168
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -95,11 +95,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 777537393653889729}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1145ddaa3271e0146ba9f484420e20ea, type: 3}
+  m_Script: {fileID: 11500000, guid: 23bbf72afd3ca21439e20975ebe67620, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   hexPosition: {x: 0, y: 0, z: 0}
-  tileType: 4
+  tileRotation: 0
+  tileHeight: 0
+  tileType: 0
+  powerApproval: 0
+  citizenApproval: 0
 --- !u!1001 &6505580005934138049
 PrefabInstance:
   m_ObjectHideFlags: 0

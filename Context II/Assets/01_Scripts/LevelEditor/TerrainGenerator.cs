@@ -4,19 +4,13 @@ using UnityEngine;
 
 public class TerrainGenerator : MonoBehaviour {
 
-    [SerializeField]
-    private int size;
-
-    public Dictionary<Vector3Int, HexTile> Generate() {
+    public List<Tile> Generate(int _size) { return Generate(_size, null); }
+    public List<Tile> Generate(int _size, List<Tile> _existingTiles) {
 
         float hexWidth = Mathf.Sqrt(3);
         float hexHeight = 2.0f;
 
-        if(size % 2 == 0) {
-            size++;
-        }
-
-        Dictionary<Vector3Int, HexTile> tiles = new Dictionary<Vector3Int, HexTile>();
+        List<Tile> tiles = new List<Tile>();
 
         Vector3 tilePos;
         Vector3Int hexPos;
@@ -33,15 +27,23 @@ public class TerrainGenerator : MonoBehaviour {
         int r;
         int s;
 
-        for(int x = -size/2; x <= size/2; x++) {
+        // int previousSize;
+
+        // if(_existingTiles != null) {
+        //     for(int i = 0; i < _existingTiles.Count; i++) {
+        //         if(_existingTiles[i].hexPosition.y)
+        //     }
+        // }
+
+        for(int x = -_size/2; x <= _size/2; x++) {
 
             if(x >= 0) {
-                yMin = x - size/2;
-                yMax = size/2;
+                yMin = x - _size/2;
+                yMax = _size/2;
             }
             else {
-                yMin = -size/2;
-                yMax = size/2 + x;
+                yMin = -_size/2;
+                yMax = _size/2 + x;
             }
 
             for(int y = yMin; y <= yMax; y++) {
@@ -60,21 +62,16 @@ public class TerrainGenerator : MonoBehaviour {
                 tilePos = new Vector3((x - xOffset) * hexWidth, 0, y * 0.75f * hexHeight);
                 hexPos = new Vector3Int(q, r, s);
 
-                if(tilePos == Vector3.zero) {
-                    objectToInstantiate = GameManager.Instance.GetTileByType(TileType.HouseTile);
-                    type = TileType.HouseTile;
-                    tilePos.y += 0.4f;
-                }
-                else {
-                    objectToInstantiate = GameManager.Instance.GetTileByType(TileType.BaseTile);
-                    type = TileType.BaseTile;
-                }
+                objectToInstantiate = TileDatabase.Instance.GetTileByType(TileType.BaseTile);
+                type = TileType.BaseTile;
 
-                HexTile tile = Instantiate(objectToInstantiate, tilePos, objectToInstantiate.transform.rotation, transform).GetComponent<HexTile>();
+                Tile tile = Instantiate(objectToInstantiate, tilePos, objectToInstantiate.transform.rotation, transform).GetComponent<Tile>();
 
                 tile.hexPosition = hexPos;
+                tile.tileRotation = TileRotation.Zero;
+                tile.tileHeight = TileHeight.Zero;
                 tile.tileType = type;
-                tiles.Add(hexPos, tile);
+                tiles.Add(tile);
 
             }
 

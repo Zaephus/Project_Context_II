@@ -80,7 +80,7 @@ public class PlacementManager : MonoBehaviour {
 
     private void ChangeSelection(TileType _type) {
         selectedType = _type;
-        selectedObject = GameManager.Instance.GetTileByType(_type);
+        selectedObject = TileDatabase.Instance.GetTileByType(_type);
         if(selectedObject == null) {
             IsChecking = false;
         }

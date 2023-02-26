@@ -114,7 +114,7 @@ public class PlacementManager : MonoBehaviour {
 
     private bool CheckPossiblePlacement() {
 
-        if(hoveredTile.tileType == TileType.BaseTile) {
+        if(hoveredTile.tileType == TileType.EmptyTile) {
 
             HexTile checkTile;
 

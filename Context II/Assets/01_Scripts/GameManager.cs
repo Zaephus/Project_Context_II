@@ -1,17 +1,6 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Random = UnityEngine.Random;
-
-public enum TileType {
-    None = 0,
-    BaseTile = 1,
-    FarmTile = 2,
-    HouseTile = 3,
-    EnergyTile = 4
-}
-
 public class GameManager : MonoBehaviour {
 
     #region Singleton

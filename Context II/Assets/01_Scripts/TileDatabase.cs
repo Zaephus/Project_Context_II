@@ -5,7 +5,8 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Tile Database")]
 public class TileDatabase : SingletonScriptableObject<TileDatabase> {
 
-    public GameObject[] baseTilePrefabs;
+    public GameObject baseTilePrefab;
+    public GameObject[] emptyTilePrefabs;
     public GameObject[] farmTilePrefabs;
     public GameObject farmHouseTilePrefab;
     public GameObject[] energyTilePrefabs;
@@ -15,7 +16,9 @@ public class TileDatabase : SingletonScriptableObject<TileDatabase> {
             case TileType.None:
                 return null;
             case TileType.BaseTile:
-                return baseTilePrefabs[Random.Range(0, baseTilePrefabs.Length)];
+                return baseTilePrefab;
+            case TileType.EmptyTile:
+                return emptyTilePrefabs[Random.Range(0, emptyTilePrefabs.Length)];
             case TileType.FarmTile:
                 return farmTilePrefabs[Random.Range(0, farmTilePrefabs.Length)];
             case TileType.HouseTile:
@@ -29,7 +32,7 @@ public class TileDatabase : SingletonScriptableObject<TileDatabase> {
 
     public TileType GetRandomTileType() {
         int typesLength = System.Enum.GetValues(typeof(TileType)).Length;
-        int randomIndex = Random.Range(1, typesLength);
+        int randomIndex = Random.Range((int)TileType.EmptyTile, typesLength);
         return (TileType)randomIndex;
     }
 

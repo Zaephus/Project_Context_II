@@ -16,7 +16,7 @@ public class TerrainGenerator : MonoBehaviour {
         Vector3 tilePos;
         Vector3Int hexPos;
 
-        GameObject objectToInstantiate = TileDatabase.Instance.GetTileByType(TileType.BaseTile);
+        GameObject objectToInstantiate;
         TileType type = TileType.BaseTile;
 
         int previousSize = 0;
@@ -70,7 +70,7 @@ public class TerrainGenerator : MonoBehaviour {
 
                     tilePos = new Vector3((x - xOffset) * hexWidth, 0, y * 0.75f * hexHeight);
 
-                    objectToInstantiate = TileDatabase.Instance.GetTileByType(TileType.BaseTile);;
+                    objectToInstantiate = TileDatabase.Instance.GetTileByType(type);
 
                     Tile tile = Instantiate(objectToInstantiate, tilePos, objectToInstantiate.transform.rotation, transform).GetComponent<Tile>();
 

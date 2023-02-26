@@ -17,21 +17,13 @@ public class LevelEditor : MonoBehaviour {
     private TerrainGenerator terrainGenerator;
 
     private List<Tile> tiles = new List<Tile>();
+    private List<TileData> tileDatas = new List<TileData>();
 
     private void Start() {
 
         terrainGenerator = GetComponent<TerrainGenerator>();
         SizeValueChanged();
 
-    }
-
-    private void Update() {
-        if(Input.GetKeyDown(KeyCode.D)) {
-            slider.value ++;
-        }
-        if(Input.GetKeyDown(KeyCode.A)) {
-            slider.value --;
-        }
     }
 
     public void SizeValueChanged() {
@@ -45,6 +37,19 @@ public class LevelEditor : MonoBehaviour {
         
         tiles = terrainGenerator.Generate(size, tiles);
 
+        tileDatas.Clear();
+        foreach(Tile t in tiles) {
+            tileDatas.Add(new TileData(t.hexPosition, t.tileRotation, t.tileHeight, t.tileType, t.powerApproval, t.citizenApproval));
+        }
+
+    }
+
+    public void SaveLevel() {
+        EditorDataManager.SaveLevel(tileDatas.ToArray());
+    }
+
+    public void LoadLevel() {
+        Debug.Log(EditorDataManager.LoadLevel().Length);
     }
 
 }

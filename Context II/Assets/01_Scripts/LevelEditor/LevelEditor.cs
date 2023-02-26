@@ -5,6 +5,8 @@ using UnityEngine.UI;
 using TMPro;
 
 public class LevelEditor : MonoBehaviour {
+    
+    public List<Tile> tiles = new List<Tile>();
 
     private int size = 5;
 
@@ -16,16 +18,24 @@ public class LevelEditor : MonoBehaviour {
 
     private EditorLevelLoader editorLevelLoader;
     private TerrainGenerator terrainGenerator;
+    private EditorPlacementManager editorPlacementManager;
 
-    private List<Tile> tiles = new List<Tile>();
     private List<TileData> tileDatas = new List<TileData>();
 
     private void Start() {
 
         editorLevelLoader = GetComponent<EditorLevelLoader>();
         terrainGenerator = GetComponent<TerrainGenerator>();
+
+        editorPlacementManager = GetComponent<EditorPlacementManager>();
+        editorPlacementManager.Initialize(this);
+
         SizeValueChanged();
 
+    }
+
+    private void Update() {
+        editorPlacementManager.OnUpdate();
     }
 
     public void SizeValueChanged() {
@@ -39,15 +49,17 @@ public class LevelEditor : MonoBehaviour {
         
         tiles = terrainGenerator.Generate(size, tiles);
 
+    }
+
+    public void SaveLevel() {
+
         tileDatas.Clear();
         foreach(Tile t in tiles) {
             tileDatas.Add(new TileData(t.transform.position, t.hexPosition, t.tileRotation, t.tileHeight, t.tileType, t.powerApproval, t.citizenApproval));
         }
 
-    }
-
-    public void SaveLevel() {
         EditorDataManager.SaveLevel(tileDatas.ToArray());
+        
     }
 
     public void LoadLevel() {

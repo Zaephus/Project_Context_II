@@ -21,7 +21,7 @@ public class TerrainGenerator : MonoBehaviour {
 
         int previousSize = 0;
         if(_existingTiles != null && _existingTiles.Count > 0) {
-            previousSize = GetHexDistanceInt(Vector3.zero, _existingTiles[0].hexPosition) * 2 + 1;
+            previousSize = Hex.GetHexDistanceInt(Vector3.zero, _existingTiles[0].hexPosition) * 2 + 1;
         }
 
         int yMin;
@@ -114,7 +114,7 @@ public class TerrainGenerator : MonoBehaviour {
 
                     Tile currentTile = _existingTiles.Find(tile => tile.hexPosition == hexPos);
 
-                    if(GetHexDistanceInt(Vector3.zero, hexPos) * 2 + 1 <= _size) {
+                    if(Hex.GetHexDistanceInt(Vector3.zero, hexPos) * 2 + 1 <= _size) {
                         tiles.Add(currentTile);
                     }
                     else {
@@ -129,11 +129,6 @@ public class TerrainGenerator : MonoBehaviour {
         
         return tiles;
 
-    }
-
-    private int GetHexDistanceInt(Vector3 _posOne, Vector3 _posTwo) {
-        Vector3 diff = _posOne - _posTwo;
-        return (int)Mathf.Max(Mathf.Abs(diff.x), Mathf.Abs(diff.y), Mathf.Abs(diff.z));
     }
     
 }

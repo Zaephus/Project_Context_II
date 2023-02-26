@@ -7,6 +7,7 @@ using SFB;
 public static class EditorDataManager {
 
     private static ExtensionFilter[] extensionFilters = new [] {
+        new ExtensionFilter("Binary & XML", "bin", "xml"),
         new ExtensionFilter("Binary", "bin"),
         new ExtensionFilter("XML", "xml")
     };
@@ -19,6 +20,10 @@ public static class EditorDataManager {
     public static void SaveLevel(TileData[] _tileDatas) {
 
         string path = StandaloneFileBrowser.SaveFilePanel("Save File", "", "Level", extensionFilters);
+        
+        if(path == "") {
+            return;
+        }
 
         if(File.Exists(path)) {
             fileStream = new FileStream(path, FileMode.Open);

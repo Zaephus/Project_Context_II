@@ -14,6 +14,7 @@ public class LevelEditor : MonoBehaviour {
     [SerializeField]
     private TMP_Text sizeValueText;
 
+    private EditorLevelLoader editorLevelLoader;
     private TerrainGenerator terrainGenerator;
 
     private List<Tile> tiles = new List<Tile>();
@@ -21,6 +22,7 @@ public class LevelEditor : MonoBehaviour {
 
     private void Start() {
 
+        editorLevelLoader = GetComponent<EditorLevelLoader>();
         terrainGenerator = GetComponent<TerrainGenerator>();
         SizeValueChanged();
 
@@ -39,7 +41,7 @@ public class LevelEditor : MonoBehaviour {
 
         tileDatas.Clear();
         foreach(Tile t in tiles) {
-            tileDatas.Add(new TileData(t.hexPosition, t.tileRotation, t.tileHeight, t.tileType, t.powerApproval, t.citizenApproval));
+            tileDatas.Add(new TileData(t.transform.position, t.hexPosition, t.tileRotation, t.tileHeight, t.tileType, t.powerApproval, t.citizenApproval));
         }
 
     }
@@ -49,7 +51,26 @@ public class LevelEditor : MonoBehaviour {
     }
 
     public void LoadLevel() {
-        Debug.Log(EditorDataManager.LoadLevel().Length);
+
+        TileData[] newTileDatas = EditorDataManager.LoadLevel();
+        if(newTileDatas == null) {
+            return;
+        }
+
+        tileDatas.Clear();
+        tileDatas.AddRange(newTileDatas);
+
+        for(int i = tiles.Count-1; i >= 0; i--) {
+            Destroy(tiles[i].gameObject);
+        }
+        tiles.Clear();
+
+        tiles = editorLevelLoader.Generate(tileDatas.ToArray());
+
+        size = Hex.GetHexDistanceInt(Vector3.zero, tiles[0].hexPosition) * 2 + 1;
+        sizeValueText.text = size.ToString();
+        slider.SetValueWithoutNotify(size);
+
     }
 
 }

@@ -30,8 +30,8 @@ public class EditorLevelLoader : MonoBehaviour {
             tile.tileRotation = _tileDatas[i].tileRotation;
             tile.tileHeight = _tileDatas[i].tileHeight;
             tile.tileType = _tileDatas[i].tileType;
-            tile.powerApproval = _tileDatas[i].powerApproval;
-            tile.citizenApproval = _tileDatas[i].citizenApproval;
+            tile.PowerApproval = _tileDatas[i].powerApproval;
+            tile.CitizenApproval = _tileDatas[i].citizenApproval;
 
             tiles.Add(tile);
 

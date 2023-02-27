@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour {
     }
     #endregion
     
-    public Dictionary<Vector3Int, HexTile> tiles = new Dictionary<Vector3Int, HexTile>();
+    public Dictionary<Vector3Int, Tile> tiles = new Dictionary<Vector3Int, Tile>();
     private PlacementManager placementManager;
     private TurnManager turnManager;
     [SerializeField]

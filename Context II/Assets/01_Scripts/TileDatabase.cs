@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Tile Database")]
+[CreateAssetMenu(fileName = "Tile Database", menuName = "Scriptable Objects/Tile Database")]
 public class TileDatabase : SingletonScriptableObject<TileDatabase> {
 
     public GameObject baseTilePrefab;

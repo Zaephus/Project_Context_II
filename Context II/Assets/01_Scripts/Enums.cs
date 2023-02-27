@@ -31,3 +31,10 @@ public enum TileHeight {
     One_ThreeQuarter = 7,
     Two = 8
 }
+
+[System.Serializable]
+public enum ApprovalType {
+    None = 0,
+    Power = 1,
+    Citizen = 2
+}

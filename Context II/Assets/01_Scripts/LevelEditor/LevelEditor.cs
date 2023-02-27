@@ -55,11 +55,11 @@ public class LevelEditor : MonoBehaviour {
 
         tileDatas.Clear();
         foreach(Tile t in tiles) {
-            tileDatas.Add(new TileData(t.transform.position, t.hexPosition, t.tileRotation, t.tileHeight, t.tileType, t.powerApproval, t.citizenApproval));
+            tileDatas.Add(new TileData(t.transform.position, t.hexPosition, t.tileRotation, t.tileHeight, t.tileType, t.PowerApproval, t.CitizenApproval));
         }
 
         EditorDataManager.SaveLevel(tileDatas.ToArray());
-        
+
     }
 
     public void LoadLevel() {

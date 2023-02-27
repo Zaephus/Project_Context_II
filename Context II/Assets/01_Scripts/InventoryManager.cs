@@ -30,9 +30,9 @@ public class InventoryManager : MonoBehaviour {
     [SerializeField]
     private Transform slotThree;
 
-    private HexTile tileOne;
-    private HexTile tileTwo;
-    private HexTile tileThree;
+    private Tile tileOne;
+    private Tile tileTwo;
+    private Tile tileThree;
 
     private bool isRotatingOne;
     private bool isRotatingTwo;
@@ -70,11 +70,11 @@ public class InventoryManager : MonoBehaviour {
         GameObject two = TileDatabase.Instance.GetTileByType(_slotTwo);
         GameObject three = TileDatabase.Instance.GetTileByType(_slotThree);
 
-        tileOne = Instantiate(one, slotOne.position, one.transform.rotation, slotOne).GetComponent<HexTile>();
+        tileOne = Instantiate(one, slotOne.position, one.transform.rotation, slotOne).GetComponent<Tile>();
         tileOne.tileType = _slotOne;
-        tileTwo = Instantiate(two, slotTwo.position, one.transform.rotation, slotTwo).GetComponent<HexTile>();
+        tileTwo = Instantiate(two, slotTwo.position, one.transform.rotation, slotTwo).GetComponent<Tile>();
         tileTwo.tileType = _slotTwo;
-        tileThree = Instantiate(three, slotThree.position, one.transform.rotation, slotThree).GetComponent<HexTile>();
+        tileThree = Instantiate(three, slotThree.position, one.transform.rotation, slotThree).GetComponent<Tile>();
         tileThree.tileType = _slotThree;
 
     }

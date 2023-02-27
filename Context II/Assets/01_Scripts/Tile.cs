@@ -4,13 +4,61 @@ using UnityEngine;
 
 public class Tile : MonoBehaviour {
 
+    public static System.Action<bool> TogglePowerApprovalVisibility;
+    public static System.Action<bool> ToggleCitizenApprovalVisibility;
+
     public Vector3Int hexPosition;
     public TileRotation tileRotation;
     public TileHeight tileHeight;
     public TileType tileType;
-    [Range(0, 1)]
-    public float powerApproval;
-    [Range(0, 1)]
-    public float citizenApproval;
+
+    [SerializeField]
+    private MeshRenderer powerApprovalRenderer;
+    [SerializeField]
+    private MeshRenderer citizenApprovalRenderer; 
+
+    public int PowerApproval {
+        get {
+            return powerApproval;
+        }
+        set {
+            powerApproval = value;
+            powerApprovalRenderer.material = AppMatDatabase.Instance.GetApprovalMaterial(ApprovalType.Power, value);
+            powerApprovalRenderer.transform.localScale = new Vector3(powerApprovalRenderer.transform.localScale.x, value * 0.1f, powerApprovalRenderer.transform.localScale.z);
+        }
+    }
+    private int powerApproval = 1;
+
+    public int CitizenApproval {
+        get {
+            return citizenApproval;
+        }
+        set {
+            citizenApproval = value;
+            citizenApprovalRenderer.material = AppMatDatabase.Instance.GetApprovalMaterial(ApprovalType.Citizen, value);
+            citizenApprovalRenderer.transform.localScale = new Vector3(citizenApprovalRenderer.transform.localScale.x, value * 0.1f, citizenApprovalRenderer.transform.localScale.z);
+        }
+    }
+    private int citizenApproval = 1;
+
+    private void Awake() {
+        TogglePowerApprovalVisibility += ChangePowerApprovalVisibility;
+        ToggleCitizenApprovalVisibility += ChangeCitizenApprovalVisibility;
+    }
+
+    private void OnDestroy() {
+        TogglePowerApprovalVisibility -= ChangePowerApprovalVisibility;
+        ToggleCitizenApprovalVisibility -= ChangeCitizenApprovalVisibility;
+    }
+
+    private void ChangePowerApprovalVisibility(bool _enabled) {
+        powerApprovalRenderer.enabled = _enabled;
+        PowerApproval = PowerApproval;
+    }
+
+    private void ChangeCitizenApprovalVisibility(bool _enabled) {
+        citizenApprovalRenderer.enabled = _enabled;
+        CitizenApproval = CitizenApproval;
+    }
 
 }

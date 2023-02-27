@@ -102,8 +102,8 @@ MonoBehaviour:
   tileRotation: 0
   tileHeight: 0
   tileType: 0
-  powerApproval: 0
-  citizenApproval: 0
+  powerApprovalRenderer: {fileID: 2374674535773895883}
+  citizenApprovalRenderer: {fileID: 2289247795375735098}
 --- !u!1001 &6505580005934138049
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -173,6 +173,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4dd4dde842191194fbd2c4fa5858ab67, type: 3}
+--- !u!23 &2289247795375735098 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 5011798513208591355, guid: 4dd4dde842191194fbd2c4fa5858ab67,
+    type: 3}
+  m_PrefabInstance: {fileID: 6505580005934138049}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &2374674535773895883 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 8844224576404684298, guid: 4dd4dde842191194fbd2c4fa5858ab67,
+    type: 3}
+  m_PrefabInstance: {fileID: 6505580005934138049}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3549985793007998009 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7713649977699489528, guid: 4dd4dde842191194fbd2c4fa5858ab67,

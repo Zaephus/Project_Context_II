@@ -37,7 +37,7 @@ public class PlacementManager : MonoBehaviour {
     private GameObject selectedObject;
     private TileType selectedType;
 
-    private HexTile hoveredTile;
+    private Tile hoveredTile;
 
     public void Initialize() {
         InventoryManager.SelectedTypeChanged += ChangeSelection;
@@ -60,7 +60,7 @@ public class PlacementManager : MonoBehaviour {
                     Destroy(hoveredTile.gameObject);
                     hoveredTile = null;
 
-                    HexTile tile = Instantiate(selectedObject, tilePos, Quaternion.identity, GameManager.Instance.transform).GetComponent<HexTile>();
+                    Tile tile = Instantiate(selectedObject, tilePos, Quaternion.identity, GameManager.Instance.transform).GetComponent<Tile>();
                     tile.hexPosition = hexPos;
                     tile.tileType = selectedType;
                     GameManager.Instance.tiles.Add(hexPos, tile);
@@ -99,7 +99,7 @@ public class PlacementManager : MonoBehaviour {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
             if(Physics.Raycast(ray, out hit)) {
-                hoveredTile = hit.collider.GetComponentInParent<HexTile>();
+                hoveredTile = hit.collider.GetComponentInParent<Tile>();
                 tileSelector.GetComponent<MeshRenderer>().enabled = true;
                 tileSelector.transform.position = new Vector3(hoveredTile.transform.position.x, tileSelector.transform.position.y, hoveredTile.transform.position.z);
             }
@@ -116,7 +116,7 @@ public class PlacementManager : MonoBehaviour {
 
         if(hoveredTile.tileType == TileType.EmptyTile) {
 
-            HexTile checkTile;
+            Tile checkTile;
 
             if(GameManager.Instance.tiles.ContainsKey(new Vector3Int(hoveredTile.hexPosition.x + 1, hoveredTile.hexPosition.y - 1, hoveredTile.hexPosition.z))) {
                 checkTile = GameManager.Instance.tiles[new Vector3Int(hoveredTile.hexPosition.x + 1, hoveredTile.hexPosition.y - 1, hoveredTile.hexPosition.z)];

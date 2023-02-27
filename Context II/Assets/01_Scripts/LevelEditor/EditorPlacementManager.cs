@@ -12,10 +12,7 @@ public class EditorPlacementManager : MonoBehaviour {
         }
         set {
             isChecking = value;
-            if(value) {
-                StartCoroutine(CheckForTile());
-            }
-            else {
+            if(!value) {
                 tileSelector.SetActive(false);
             }
         }
@@ -54,6 +51,10 @@ public class EditorPlacementManager : MonoBehaviour {
 
         SetTileRotation();
         SetTileHeight();
+
+        if(IsChecking) {
+            CheckForTile();
+        }
 
         if(hoveredTile != null && (selectedTileType != TileType.None || selectedApprovalType != ApprovalType.None)) {
             if(Input.GetMouseButtonDown(0)) {
@@ -211,36 +212,31 @@ public class EditorPlacementManager : MonoBehaviour {
         }
     }
 
-    private IEnumerator CheckForTile() {
-
-        yield return new WaitForSeconds(0.2f);
+    private void CheckForTile() {
 
         RaycastHit hit;
 
-        while(isChecking) {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-            if(Physics.Raycast(ray, out hit)) {
-                hoveredTile = hit.collider.GetComponentInParent<Tile>();
+        if(Physics.Raycast(ray, out hit)) {
+            hoveredTile = hit.collider.GetComponentInParent<Tile>();
 
-                if(hoveredTile == null) {
-                    continue;
-                }
-
-                tileSelector.SetActive(true);
-
-                tileSelector.transform.position = new Vector3(
-                    hoveredTile.transform.position.x,
-                    selectorOffset + Hex.GetTileHeight(tileHeight),
-                    hoveredTile.transform.position.z
-                );
-
+            if(hoveredTile == null) {
+                return;
             }
-            else {
-                hoveredTile = null;
-                tileSelector.SetActive(false);
-            }
-            yield return new WaitForSeconds(0.05f);
+
+            tileSelector.SetActive(true);
+
+            tileSelector.transform.position = new Vector3(
+                hoveredTile.transform.position.x,
+                selectorOffset + Hex.GetTileHeight(tileHeight),
+                hoveredTile.transform.position.z
+            );
+
+        }
+        else {
+            hoveredTile = null;
+            tileSelector.SetActive(false);
         }
 
     }

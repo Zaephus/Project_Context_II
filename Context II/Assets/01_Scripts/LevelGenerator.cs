@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EditorLevelLoader : MonoBehaviour {
+public class LevelGenerator : MonoBehaviour {
 
     public List<Tile> Generate(TileData[] _tileDatas) {
 

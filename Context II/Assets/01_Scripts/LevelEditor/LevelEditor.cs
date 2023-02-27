@@ -16,7 +16,7 @@ public class LevelEditor : MonoBehaviour {
     [SerializeField]
     private TMP_Text sizeValueText;
 
-    private EditorLevelLoader editorLevelLoader;
+    private LevelGenerator levelGenerator;
     private TerrainGenerator terrainGenerator;
     private EditorPlacementManager editorPlacementManager;
 
@@ -24,7 +24,7 @@ public class LevelEditor : MonoBehaviour {
 
     private void Start() {
 
-        editorLevelLoader = GetComponent<EditorLevelLoader>();
+        levelGenerator = GetComponent<LevelGenerator>();
         terrainGenerator = GetComponent<TerrainGenerator>();
 
         editorPlacementManager = GetComponent<EditorPlacementManager>();
@@ -77,7 +77,7 @@ public class LevelEditor : MonoBehaviour {
         }
         tiles.Clear();
 
-        tiles = editorLevelLoader.Generate(tileDatas.ToArray());
+        tiles = levelGenerator.Generate(tileDatas.ToArray());
 
         size = Hex.GetHexDistanceInt(Vector3.zero, tiles[0].hexPosition) * 2 + 1;
         sizeValueText.text = size.ToString();

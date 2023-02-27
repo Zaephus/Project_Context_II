@@ -16,22 +16,25 @@ public class GameManager : MonoBehaviour {
     }
     #endregion
     
-    public Dictionary<Vector3Int, Tile> tiles = new Dictionary<Vector3Int, Tile>();
+    public List<Tile> tiles = new List<Tile>();
     private PlacementManager placementManager;
-    private TurnManager turnManager;
+    
+    private LevelLoader levelLoader;
+    private LevelGenerator levelGenerator;
+
     [SerializeField]
-    private InventoryManager inventoryManager;
+    private TextAsset level;
 
     private void Start() {
         placementManager = GetComponent<PlacementManager>();
-        turnManager = GetComponent<TurnManager>();
 
-        placementManager.Initialize();
-        turnManager.OnStart();
+        levelLoader = GetComponent<LevelLoader>();
+        levelGenerator = GetComponent<LevelGenerator>();
+
+        tiles = levelLoader.Generate(level, levelGenerator);
     }
 
     private void Update() {
-        inventoryManager.OnUpdate();
         placementManager.OnUpdate();
     }
 

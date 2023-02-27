@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8058487289184789931}
   - component: {fileID: 6375589552472664590}
   - component: {fileID: 9195879447721664196}
-  - component: {fileID: 7630167072493300624}
+  - component: {fileID: 7561137249838951900}
   m_Layer: 0
   m_Name: Farm Tile 1.3
   m_TagString: Untagged
@@ -85,7 +85,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &7630167072493300624
+--- !u!114 &7561137249838951900
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -94,11 +94,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 7250425770624712465}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1145ddaa3271e0146ba9f484420e20ea, type: 3}
+  m_Script: {fileID: 11500000, guid: 23bbf72afd3ca21439e20975ebe67620, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   hexPosition: {x: 0, y: 0, z: 0}
-  tileType: 2
+  tileRotation: 0
+  tileHeight: 0
+  tileType: 0
+  powerApprovalRenderer: {fileID: 2336490818503238736}
+  citizenApprovalRenderer: {fileID: 2260069584874281377}
 --- !u!1001 &6543762563563887194
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -168,6 +172,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4dd4dde842191194fbd2c4fa5858ab67, type: 3}
+--- !u!23 &2260069584874281377 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 5011798513208591355, guid: 4dd4dde842191194fbd2c4fa5858ab67,
+    type: 3}
+  m_PrefabInstance: {fileID: 6543762563563887194}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &2336490818503238736 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 8844224576404684298, guid: 4dd4dde842191194fbd2c4fa5858ab67,
+    type: 3}
+  m_PrefabInstance: {fileID: 6543762563563887194}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3592885865669708962 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7713649977699489528, guid: 4dd4dde842191194fbd2c4fa5858ab67,

@@ -49,9 +49,9 @@ public class TurnManager : MonoBehaviour {
                 case TurnState.Waiting:
                     playerControls.gameObject.SetActive(false);
                     inventoryManager.FillSlots(
-                        GameManager.Instance.GetRandomTileType(),
-                        GameManager.Instance.GetRandomTileType(),
-                        GameManager.Instance.GetRandomTileType()
+                        TileDatabase.Instance.GetRandomTileType(),
+                        TileDatabase.Instance.GetRandomTileType(),
+                        TileDatabase.Instance.GetRandomTileType()
                     );
 
                     State = TurnState.PlayerTurn;

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2863149937378933276}
   - component: {fileID: 1158595154427786681}
   - component: {fileID: 4030967331650322803}
-  - component: {fileID: 4367912425942628782}
+  - component: {fileID: 1451331211983655946}
   m_Layer: 0
   m_Name: Windmill Tile 1.6
   m_TagString: Untagged
@@ -86,7 +86,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &4367912425942628782
+--- !u!114 &1451331211983655946
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -95,11 +95,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 3238126745288138918}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1145ddaa3271e0146ba9f484420e20ea, type: 3}
+  m_Script: {fileID: 11500000, guid: 23bbf72afd3ca21439e20975ebe67620, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   hexPosition: {x: 0, y: 0, z: 0}
-  tileType: 4
+  tileRotation: 0
+  tileHeight: 0
+  tileType: 0
+  powerApprovalRenderer: {fileID: 5042542691308117796}
+  citizenApprovalRenderer: {fileID: 8848225856949707477}
 --- !u!1001 &4559413830220308782
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -169,9 +173,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4dd4dde842191194fbd2c4fa5858ab67, type: 3}
+--- !u!23 &5042542691308117796 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 8844224576404684298, guid: 4dd4dde842191194fbd2c4fa5858ab67,
+    type: 3}
+  m_PrefabInstance: {fileID: 4559413830220308782}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6073712617001760726 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7713649977699489528, guid: 4dd4dde842191194fbd2c4fa5858ab67,
+    type: 3}
+  m_PrefabInstance: {fileID: 4559413830220308782}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &8848225856949707477 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 5011798513208591355, guid: 4dd4dde842191194fbd2c4fa5858ab67,
     type: 3}
   m_PrefabInstance: {fileID: 4559413830220308782}
   m_PrefabAsset: {fileID: 0}

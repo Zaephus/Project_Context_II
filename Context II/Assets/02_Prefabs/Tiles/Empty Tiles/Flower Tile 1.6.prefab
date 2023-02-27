@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 938982682463326992}
   - component: {fileID: 4226685781650398389}
   - component: {fileID: 2111276845967583359}
-  - component: {fileID: 4350225702378979966}
+  - component: {fileID: -5010001132841620828}
   m_Layer: 0
   m_Name: Flower Tile 1.6
   m_TagString: Untagged
@@ -86,7 +86,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &4350225702378979966
+--- !u!114 &-5010001132841620828
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -95,11 +95,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 453807390392322474}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1145ddaa3271e0146ba9f484420e20ea, type: 3}
+  m_Script: {fileID: 11500000, guid: 23bbf72afd3ca21439e20975ebe67620, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   hexPosition: {x: 0, y: 0, z: 0}
-  tileType: 1
+  tileRotation: 0
+  tileHeight: 0
+  tileType: 0
+  powerApprovalRenderer: {fileID: 6884718901717191676}
+  citizenApprovalRenderer: {fileID: 6970142893696955917}
 --- !u!1001 &2681770681856964086
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -177,6 +181,18 @@ PrefabInstance:
 --- !u!4 &5637367574046860046 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7713649977699489528, guid: 4dd4dde842191194fbd2c4fa5858ab67,
+    type: 3}
+  m_PrefabInstance: {fileID: 2681770681856964086}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &6884718901717191676 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 8844224576404684298, guid: 4dd4dde842191194fbd2c4fa5858ab67,
+    type: 3}
+  m_PrefabInstance: {fileID: 2681770681856964086}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &6970142893696955917 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 5011798513208591355, guid: 4dd4dde842191194fbd2c4fa5858ab67,
     type: 3}
   m_PrefabInstance: {fileID: 2681770681856964086}
   m_PrefabAsset: {fileID: 0}

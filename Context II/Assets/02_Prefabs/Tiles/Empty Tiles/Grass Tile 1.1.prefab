@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1528608349548739989}
   - component: {fileID: 2493145522291044912}
   - component: {fileID: 395641586665621242}
-  - component: {fileID: -3665725993040053218}
+  - component: {fileID: -5987134094423183178}
   m_Layer: 0
   m_Name: Grass Tile 1.1
   m_TagString: Untagged
@@ -85,7 +85,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &-3665725993040053218
+--- !u!114 &-5987134094423183178
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -94,11 +94,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 2197023920110708527}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1145ddaa3271e0146ba9f484420e20ea, type: 3}
+  m_Script: {fileID: 11500000, guid: 23bbf72afd3ca21439e20975ebe67620, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   hexPosition: {x: 0, y: 0, z: 0}
-  tileType: 1
+  tileRotation: 0
+  tileHeight: 0
+  tileType: 0
+  powerApprovalRenderer: {fileID: 4405044559274880399}
+  citizenApprovalRenderer: {fileID: 148724224865390718}
 --- !u!1001 &5160320144449852293
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -173,9 +177,21 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 8217d56693175a246a1f0482457b758b, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4dd4dde842191194fbd2c4fa5858ab67, type: 3}
+--- !u!23 &148724224865390718 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 5011798513208591355, guid: 4dd4dde842191194fbd2c4fa5858ab67,
+    type: 3}
+  m_PrefabInstance: {fileID: 5160320144449852293}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3211418504926561661 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7713649977699489528, guid: 4dd4dde842191194fbd2c4fa5858ab67,
+    type: 3}
+  m_PrefabInstance: {fileID: 5160320144449852293}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &4405044559274880399 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 8844224576404684298, guid: 4dd4dde842191194fbd2c4fa5858ab67,
     type: 3}
   m_PrefabInstance: {fileID: 5160320144449852293}
   m_PrefabAsset: {fileID: 0}

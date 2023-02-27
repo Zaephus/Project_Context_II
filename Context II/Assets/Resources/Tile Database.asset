@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e79daa1f0b3de14aaf30a643b4ab4e0, type: 3}
+  m_Name: Tile Database
+  m_EditorClassIdentifier: 
+  baseTilePrefab: {fileID: 6937711000058203202, guid: 1ad3b7becc94b544db4e8e17fd7033f4,
+    type: 3}
+  emptyTilePrefabs:
+  - {fileID: 2254830463013113822, guid: adc042b8947f718468e48d754cdf78a0, type: 3}
+  - {fileID: 1994928064297634949, guid: a4c5b0b7f5db5224a8eb62e8405d0e06, type: 3}
+  - {fileID: 7083209246589505592, guid: 2b0d73257b3a1054499243c4aac3ef0e, type: 3}
+  - {fileID: 574581373629941976, guid: 40b626536cb60854c9aec8ff06937ead, type: 3}
+  - {fileID: 318700609794226671, guid: 40e5ede7b153e2947a7019c926fa1db3, type: 3}
+  - {fileID: 453807390392322474, guid: 1d5b15a30e0ad6947ae78ae957f8c39c, type: 3}
+  - {fileID: 9222710470579631037, guid: 2666e50acf20777499f576dada1c2fec, type: 3}
+  - {fileID: 7308616220671167808, guid: 76df75d6acde2ce41a10e28eab2be854, type: 3}
+  - {fileID: 2197023920110708527, guid: 26d0fcd9426d29941b02d87342b6fa8b, type: 3}
+  - {fileID: 6815075590711297208, guid: fc8556d9b33531043a757433ef100c15, type: 3}
+  - {fileID: 1857927615778050178, guid: becbabf3ee1f9eb4a9ce1c16f1d72b84, type: 3}
+  - {fileID: 2884116405681261987, guid: 315f77d55570cdc41b996b974326f818, type: 3}
+  farmTilePrefabs:
+  - {fileID: 1828732167925161537, guid: e31ebc66786c1194dbb31d21e2bee811, type: 3}
+  - {fileID: 7460687771692714437, guid: 76d470ba4a545e14c91cacf89d463fb4, type: 3}
+  - {fileID: 5109580364451301236, guid: 8b32f4e18332e43468cfc736a131e9f5, type: 3}
+  - {fileID: 3814450447056125693, guid: dee205d1aaa4cad4c907cf3108d593ce, type: 3}
+  - {fileID: 7250425770624712465, guid: 63d4b58e879de0648919a284da56082c, type: 3}
+  - {fileID: 1716117662202017685, guid: 6770979c0930ab54a9a2d3be4c610a49, type: 3}
+  - {fileID: 425848472631420765, guid: b9730e0e02a36e746bf4a0346a844de4, type: 3}
+  - {fileID: 831475379274429660, guid: 6c2a92babf762c1489269c3f2ad1d947, type: 3}
+  farmHouseTilePrefab: {fileID: 3272895644437656815, guid: 007ee17e8d8238a4e84a8af903547d54,
+    type: 3}
+  energyTilePrefabs:
+  - {fileID: 4397550724214764081, guid: 18d0e14708850054c850102fc90b9828, type: 3}
+  - {fileID: 747366462342034384, guid: 09f62a76251cacf45a5b551529d445dd, type: 3}
+  - {fileID: 6818046134334009989, guid: d4681a7278670614394a8c8e5533424e, type: 3}
+  - {fileID: 9045557610041775372, guid: 2413868cea9aa8948825f7911ab96068, type: 3}
+  - {fileID: 7186524538230335051, guid: b8c1d43343a5f1049aa2ed36ddfdf592, type: 3}
+  - {fileID: 3238126745288138918, guid: 06c66766701059442b7f1e319f30a560, type: 3}
+  - {fileID: 8353994542066541994, guid: cb61eb3423e5af943b7da945416a8fcd, type: 3}
+  - {fileID: 4851543460174972, guid: 8b4a2539be520c74eb643e09238a1f0c, type: 3}
+  - {fileID: 3663802117462099676, guid: 1deb352d2cdc2ad47baec33998620776, type: 3}
+  - {fileID: 777537393653889729, guid: 1e4ac6f6242aa6c429ce9466e2a56710, type: 3}
+  - {fileID: 6890561777800331449, guid: 13bc29c322bf84c4fbeed38f22198231, type: 3}
+  - {fileID: 1430308236121174829, guid: 6191b9229213fd5408067e3aed24109f, type: 3}

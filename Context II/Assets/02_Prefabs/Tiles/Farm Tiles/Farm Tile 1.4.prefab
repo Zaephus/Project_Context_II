@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2061258054130953519}
   - component: {fileID: 3113347241850200714}
   - component: {fileID: 923277075844732480}
-  - component: {fileID: 876692196850187543}
+  - component: {fileID: -6517549598298692222}
   m_Layer: 0
   m_Name: Farm Tile 1.4
   m_TagString: Untagged
@@ -85,7 +85,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &876692196850187543
+--- !u!114 &-6517549598298692222
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -94,11 +94,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1716117662202017685}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1145ddaa3271e0146ba9f484420e20ea, type: 3}
+  m_Script: {fileID: 11500000, guid: 23bbf72afd3ca21439e20975ebe67620, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   hexPosition: {x: 0, y: 0, z: 0}
-  tileType: 2
+  tileRotation: 0
+  tileHeight: 0
+  tileType: 0
+  powerApprovalRenderer: {fileID: 1473478425332478235}
+  citizenApprovalRenderer: {fileID: 3117436003017854186}
 --- !u!1001 &7984362854432476945
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -171,6 +175,18 @@ PrefabInstance:
 --- !u!4 &414969430779353577 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7713649977699489528, guid: 4dd4dde842191194fbd2c4fa5858ab67,
+    type: 3}
+  m_PrefabInstance: {fileID: 7984362854432476945}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &1473478425332478235 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 8844224576404684298, guid: 4dd4dde842191194fbd2c4fa5858ab67,
+    type: 3}
+  m_PrefabInstance: {fileID: 7984362854432476945}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &3117436003017854186 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 5011798513208591355, guid: 4dd4dde842191194fbd2c4fa5858ab67,
     type: 3}
   m_PrefabInstance: {fileID: 7984362854432476945}
   m_PrefabAsset: {fileID: 0}

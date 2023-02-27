@@ -7,8 +7,8 @@ public class MenuButtons : MonoBehaviour {
     Vector2 optionsStartPos = new Vector2(-725, 0);
     Vector2 optionsEndPos = new Vector2(-125, 0);
     float perc;
-    float lerpTime = 0.02f;
-    float currentLerpTime = 0f;
+    //float lerpTime = 0.02f;
+    //float currentLerpTime = 0f;
     public bool optionsActive = false;
 
     void Start() {

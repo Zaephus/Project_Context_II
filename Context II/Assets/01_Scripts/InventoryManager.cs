@@ -14,7 +14,6 @@ public class InventoryManager : MonoBehaviour {
         set {
             selectedType = value;
             SelectedTypeChanged?.Invoke(value);
-            PlacementManager.TilePlaced += EmptySlot;
         }
     }
     [SerializeField]
@@ -112,8 +111,6 @@ public class InventoryManager : MonoBehaviour {
     }
 
     private void EmptySlot() {
-
-        PlacementManager.TilePlaced -= EmptySlot;
 
         switch(selectedSlot) {
             case 1:

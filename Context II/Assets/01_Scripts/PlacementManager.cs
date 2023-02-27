@@ -52,9 +52,13 @@ public class PlacementManager : MonoBehaviour {
 
         if(IsChecking) {
             selectedType = TileType.EnergyTile;
+            //Tile.TogglePowerApprovalVisibility?.Invoke(true);
+            Tile.ToggleCitizenApprovalVisibility?.Invoke(true);
         }
         else {
             selectedType = TileType.None;
+            //Tile.TogglePowerApprovalVisibility?.Invoke(false);
+            Tile.ToggleCitizenApprovalVisibility?.Invoke(false);
         }
     }
 

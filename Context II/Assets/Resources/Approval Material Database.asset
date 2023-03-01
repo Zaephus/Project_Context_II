@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Approval Material Database
   m_EditorClassIdentifier: 
   powerApprovalMaterials:
+  - {fileID: 2100000, guid: 4c357cc1b9c994244a1057a7881dc244, type: 2}
   - {fileID: 2100000, guid: db259ee1874bc4249a8abce16bf90b76, type: 2}
   - {fileID: 2100000, guid: 84e5084221b36a24dbcac916abb2485f, type: 2}
   - {fileID: 2100000, guid: 4f1a4757e8eac1246b4e2b51b1ac1b45, type: 2}
@@ -24,6 +25,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 7027ac2b8ed31234fa61a71c39c37258, type: 2}
   - {fileID: 2100000, guid: 2c659cf9e11e07349bca2b0ccdb83b10, type: 2}
   citizenApprovalMaterials:
+  - {fileID: 2100000, guid: 7bbf093d573162746bb96db07ae922dc, type: 2}
   - {fileID: 2100000, guid: 537d0fa694f9f2347b3f287685d7694b, type: 2}
   - {fileID: 2100000, guid: 0b4b0a1b4e12d854c88dfc6e90206e4c, type: 2}
   - {fileID: 2100000, guid: f30ba9c6c7c53ca4bb52ccbe25127de8, type: 2}

@@ -27,7 +27,7 @@ public class Tile : MonoBehaviour {
             powerApprovalRenderer.transform.localScale = new Vector3(powerApprovalRenderer.transform.localScale.x, value * 0.1f, powerApprovalRenderer.transform.localScale.z);
         }
     }
-    private float powerApproval = 1;
+    private float powerApproval;
 
     public float CitizenApproval {
         get {
@@ -39,7 +39,7 @@ public class Tile : MonoBehaviour {
             citizenApprovalRenderer.transform.localScale = new Vector3(citizenApprovalRenderer.transform.localScale.x, value * 0.1f, citizenApprovalRenderer.transform.localScale.z);
         }
     }
-    private float citizenApproval = 1;
+    private float citizenApproval;
 
     private void Awake() {
         TogglePowerApprovalVisibility += ChangePowerApprovalVisibility;

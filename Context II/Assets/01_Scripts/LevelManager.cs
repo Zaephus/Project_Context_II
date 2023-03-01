@@ -46,7 +46,7 @@ public class LevelManager : MonoBehaviour {
     }
 
     public void EndLevel() {
-        if(score < approvalThreshold) {
+        if(score > approvalThreshold) {
             LevelFinished?.Invoke(true);
         }
         else {

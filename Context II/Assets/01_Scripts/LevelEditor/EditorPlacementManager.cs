@@ -69,6 +69,11 @@ public class EditorPlacementManager : MonoBehaviour {
 
     }
 
+    public void ToggleSelection() {
+        IsChecking = !IsChecking;
+        hoveredTile = null;
+    }
+
     public void ChangeTileSelection(int _type) {
 
         TileType type = (TileType)_type;

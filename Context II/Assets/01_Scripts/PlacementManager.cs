@@ -1,8 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class PlacementManager : MonoBehaviour {
+
+    public System.Action WindmillTargetReached;
+    public System.Action<float> WindmillPlaced;
 
     private bool IsChecking {
         get {
@@ -33,6 +37,17 @@ public class PlacementManager : MonoBehaviour {
 
     private Tile hoveredTile;
 
+    [SerializeField]
+    private TMP_Text windmillTargetText;
+
+    [SerializeField]
+    private int windmillTarget;
+    private int currentWindmillAmount = 0;
+
+    public void OnStart() {
+        windmillTargetText.text = currentWindmillAmount + "/" + windmillTarget;
+    }
+
     public void OnUpdate() {
 
         if(IsChecking) {
@@ -42,6 +57,7 @@ public class PlacementManager : MonoBehaviour {
         if(hoveredTile != null && selectedType != TileType.None) {
             if(Input.GetMouseButtonDown(0)) {
                 PlaceTile();
+                UpdateWindmillTarget(currentWindmillAmount + 1);
             }
         }
 
@@ -52,10 +68,28 @@ public class PlacementManager : MonoBehaviour {
 
         if(IsChecking) {
             selectedType = TileType.EnergyTile;
+            windmillTargetText.gameObject.SetActive(true);
+            Tile.TogglePowerApprovalVisibility?.Invoke(true);
         }
         else {
             selectedType = TileType.None;
+            windmillTargetText.gameObject.SetActive(false);
+            Tile.TogglePowerApprovalVisibility?.Invoke(false);
         }
+    }
+
+    private void UpdateWindmillTarget(int _amount) {
+        
+        currentWindmillAmount = _amount;
+        windmillTargetText.text = currentWindmillAmount + "/" + windmillTarget;
+
+        if(currentWindmillAmount >= windmillTarget) {
+            WindmillTargetReached?.Invoke();
+            if(IsChecking) {
+                ToggleSelection();
+            }
+        }
+
     }
 
     private void PlaceTile() {
@@ -78,6 +112,10 @@ public class PlacementManager : MonoBehaviour {
         tile.PowerApproval = hoveredTile.PowerApproval;
         tile.CitizenApproval = hoveredTile.CitizenApproval;
 
+        tile.ChangePowerApprovalVisibility(true);
+
+        WindmillPlaced?.Invoke((float)(tile.CitizenApproval / windmillTarget));
+
         Destroy(hoveredTile.gameObject);
         hoveredTile = null;
 
@@ -91,6 +129,7 @@ public class PlacementManager : MonoBehaviour {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
         if(Physics.Raycast(ray, out hit)) {
+
             hoveredTile = hit.collider.GetComponentInParent<Tile>();
 
             if(hoveredTile == null) {

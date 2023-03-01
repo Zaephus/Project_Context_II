@@ -17,7 +17,7 @@ public class Tile : MonoBehaviour {
     [SerializeField]
     private MeshRenderer citizenApprovalRenderer; 
 
-    public int PowerApproval {
+    public float PowerApproval {
         get {
             return powerApproval;
         }
@@ -27,9 +27,9 @@ public class Tile : MonoBehaviour {
             powerApprovalRenderer.transform.localScale = new Vector3(powerApprovalRenderer.transform.localScale.x, value * 0.1f, powerApprovalRenderer.transform.localScale.z);
         }
     }
-    private int powerApproval = 1;
+    private float powerApproval = 1;
 
-    public int CitizenApproval {
+    public float CitizenApproval {
         get {
             return citizenApproval;
         }
@@ -39,7 +39,7 @@ public class Tile : MonoBehaviour {
             citizenApprovalRenderer.transform.localScale = new Vector3(citizenApprovalRenderer.transform.localScale.x, value * 0.1f, citizenApprovalRenderer.transform.localScale.z);
         }
     }
-    private int citizenApproval = 1;
+    private float citizenApproval = 1;
 
     private void Awake() {
         TogglePowerApprovalVisibility += ChangePowerApprovalVisibility;
@@ -51,12 +51,12 @@ public class Tile : MonoBehaviour {
         ToggleCitizenApprovalVisibility -= ChangeCitizenApprovalVisibility;
     }
 
-    private void ChangePowerApprovalVisibility(bool _enabled) {
+    public void ChangePowerApprovalVisibility(bool _enabled) {
         powerApprovalRenderer.enabled = _enabled;
         PowerApproval = PowerApproval;
     }
 
-    private void ChangeCitizenApprovalVisibility(bool _enabled) {
+    public void ChangeCitizenApprovalVisibility(bool _enabled) {
         citizenApprovalRenderer.enabled = _enabled;
         CitizenApproval = CitizenApproval;
     }

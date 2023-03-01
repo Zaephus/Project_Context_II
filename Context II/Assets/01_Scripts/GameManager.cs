@@ -16,26 +16,52 @@ public class GameManager : MonoBehaviour {
     }
     #endregion
     
-    public List<Tile> tiles = new List<Tile>();
-    private PlacementManager placementManager;
+    private enum GameState {
+        MainMenu = 0,
+        StageOne = 1,
+        StageTwo = 2,
+        Ending = 3
+    }
+
+    private GameState State {
+        get {
+            return state;
+        }
+        set {
+            state = value;
+        }
+    }
+    [SerializeField]
+    private GameState state;
     
-    private LevelLoader levelLoader;
-    private LevelGenerator levelGenerator;
+    [HideInInspector]
+    public List<Tile> tiles = new List<Tile>();
 
     [SerializeField]
-    private TextAsset level;
+    private GameObject goodEnding;
+    [SerializeField]
+    private GameObject badEnding;
+
+    [SerializeField]
+    private LevelManager levelManager;
 
     private void Start() {
-        placementManager = GetComponent<PlacementManager>();
-
-        levelLoader = GetComponent<LevelLoader>();
-        levelGenerator = GetComponent<LevelGenerator>();
-
-        tiles = levelLoader.Generate(level, levelGenerator);
+        levelManager.OnStart();
+        levelManager.LevelFinished += EndLevel;
     }
 
     private void Update() {
-        placementManager.OnUpdate();
+        levelManager.OnUpdate();
+    }
+
+    private void EndLevel(bool _ending) {
+        if(_ending) {
+            goodEnding.SetActive(true);
+        }
+        else {
+            badEnding.SetActive(true);
+        }
+        levelManager.LevelFinished -= EndLevel;
     }
 
 }

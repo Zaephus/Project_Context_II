@@ -15,12 +15,12 @@ public class TileData {
     public TileRotation tileRotation;
     public TileHeight tileHeight;
     public TileType tileType;
-    public int powerApproval;
-    public int citizenApproval;
+    public float powerApproval;
+    public float citizenApproval;
 
     public TileData() {}
 
-    public TileData(Vector3 _pos, Vector3Int _hexPos, TileRotation _tileRot, TileHeight _tileHeight, TileType _tileType, int _powerApp, int _citizenApp) {
+    public TileData(Vector3 _pos, Vector3Int _hexPos, TileRotation _tileRot, TileHeight _tileHeight, TileType _tileType, float _powerApp, float _citizenApp) {
 
         x = _pos.x;
         z = _pos.z;

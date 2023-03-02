@@ -14,6 +14,7 @@ public class TileDatabase : SingletonScriptableObject<TileDatabase> {
     public GameObject[] cityTilePrefabs;
     public GameObject[] officeTilePrefabs;
     public GameObject[] farmTilePrefabs;
+    public GameObject[] pastureTilePrefabs;
     public GameObject[] windmillTilePrefabs;
     public GameObject[] clubTilePrefabs;
     public GameObject[] beachHutTilePrefabs;
@@ -49,6 +50,9 @@ public class TileDatabase : SingletonScriptableObject<TileDatabase> {
 
             case TileType.FarmTile:
                 return farmTilePrefabs[Random.Range(0, farmTilePrefabs.Length)];
+
+            case TileType.PastureTile:
+                return pastureTilePrefabs[Random.Range(0, pastureTilePrefabs.Length)];
 
             case TileType.WindmillTile:
                 return windmillTilePrefabs[Random.Range(0, windmillTilePrefabs.Length)];

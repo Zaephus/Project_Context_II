@@ -48,7 +48,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 29275925853336979}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -94,8 +94,8 @@ GameObject:
   - component: {fileID: 8813632068290922447}
   - component: {fileID: 1209811112993404726}
   - component: {fileID: 3976374480856040444}
-  - component: {fileID: 4940792310271415186}
   - component: {fileID: 8769958504933048574}
+  - component: {fileID: 4940792310271415186}
   m_Layer: 0
   m_Name: Water Tile
   m_TagString: Untagged
@@ -170,20 +170,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &4940792310271415186
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5578388665766531130}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 3065556405952602016, guid: d7c759536f290f34cbf402a49c841bdb, type: 3}
 --- !u!114 &8769958504933048574
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -202,6 +188,20 @@ MonoBehaviour:
   tileType: 0
   powerApprovalRenderer: {fileID: 8189084107148901905}
   citizenApprovalRenderer: {fileID: 4505836497517927603}
+--- !u!64 &4940792310271415186
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5578388665766531130}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 3065556405952602016, guid: 11a47235b399f5849ba27636513bd951, type: 3}
 --- !u!1 &7035404865923435954
 GameObject:
   m_ObjectHideFlags: 0

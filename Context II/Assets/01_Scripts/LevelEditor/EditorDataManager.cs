@@ -7,8 +7,6 @@ using SFB;
 public static class EditorDataManager {
 
     private static ExtensionFilter[] extensionFilters = new [] {
-        new ExtensionFilter("Binary & XML", "bin", "xml"),
-        new ExtensionFilter("Binary", "bin"),
         new ExtensionFilter("XML", "xml")
     };
 
@@ -33,10 +31,7 @@ public static class EditorDataManager {
         }
 
         try {
-            if(path.Contains(".bin")) {
-                binaryFormatter.Serialize(fileStream, _tileDatas);
-            }
-            else if(path.Contains(".xml")) {
+            if(path.Contains(".xml")) {
                 xmlSerializer.Serialize(fileStream, _tileDatas);
             }
         }
@@ -63,10 +58,7 @@ public static class EditorDataManager {
         }
 
         try {
-            if(paths[0].Contains(".bin")) {
-                tileDatas = binaryFormatter.Deserialize(fileStream) as TileData[];
-            }
-            else if(paths[0].Contains(".xml")) {
+            if(paths[0].Contains(".xml")) {
                 tileDatas = xmlSerializer.Deserialize(fileStream) as TileData[];
             }
         }

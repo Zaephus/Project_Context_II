@@ -30,14 +30,18 @@ MonoBehaviour:
   - {fileID: 1857927615778050178, guid: becbabf3ee1f9eb4a9ce1c16f1d72b84, type: 3}
   sandTilePrefabs:
   - {fileID: 5329378888843042339, guid: ddd2bf44ef9a7454e8ec5543b3fd1c88, type: 3}
-  siltTilePrefabs: []
+  siltTilePrefabs:
+  - {fileID: 4217819870188682938, guid: d73b23d2c9175d24db2260539c6eeff6, type: 3}
   waterTilePrefabs:
   - {fileID: 5578388665766531130, guid: 748a1254617f1d141be80e0442ae73cf, type: 3}
   cityTilePrefabs:
   - {fileID: 2822418045315365153, guid: c153f88545c13bd49b35df2dc30dc99a, type: 3}
   - {fileID: 7346710700617529530, guid: 57145b941c3e96c4bb887393d9462a8d, type: 3}
   - {fileID: 1833729431762111923, guid: 7381d8dcf67e15340af9bb1308e6aa6e, type: 3}
-  officeTilePrefabs: []
+  officeTilePrefabs:
+  - {fileID: 6877701877447192576, guid: c43cd4dd660fa89479e44235bbb2bb03, type: 3}
+  - {fileID: 6758963280673221404, guid: 79e218816775dda418ba0646dea29c20, type: 3}
+  - {fileID: 2896345809195743570, guid: a5b382d7885c86042b922f7b03aef4b1, type: 3}
   farmTilePrefabs:
   - {fileID: 5109580364451301236, guid: 8b32f4e18332e43468cfc736a131e9f5, type: 3}
   - {fileID: 3814450447056125693, guid: dee205d1aaa4cad4c907cf3108d593ce, type: 3}

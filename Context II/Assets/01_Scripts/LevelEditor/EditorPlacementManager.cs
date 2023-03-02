@@ -19,6 +19,8 @@ public class EditorPlacementManager : MonoBehaviour {
     }
     private bool isChecking;
 
+    private bool isOnUI;
+
     [SerializeField]
     private Slider approvalSlider;
     [SerializeField]
@@ -68,7 +70,7 @@ public class EditorPlacementManager : MonoBehaviour {
         SetTileRotation();
         SetTileHeight();
 
-        if(IsChecking) {
+        if(IsChecking && !isOnUI) {
             CheckForTile();
         }
 
@@ -86,7 +88,7 @@ public class EditorPlacementManager : MonoBehaviour {
     }
 
     public void ToggleSelection() {
-        IsChecking = !IsChecking;
+        isOnUI = !isOnUI;
         hoveredTile = null;
     }
 

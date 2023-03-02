@@ -24,6 +24,14 @@ public class EditorPlacementManager : MonoBehaviour {
     [SerializeField]
     private TMP_Text approvalValueText;
 
+    [SerializeField]
+    private TMP_Dropdown tileDropdown;
+
+    [SerializeField]
+    private Toggle powerApprovalToggle;
+    [SerializeField]
+    private Toggle citizenApprovalToggle;
+
     private int approvalValue = 5;
 
     [SerializeField]
@@ -45,6 +53,14 @@ public class EditorPlacementManager : MonoBehaviour {
 
     public void Initialize(LevelEditor _levelEditor) {
         levelEditor = _levelEditor;
+
+        List<TMP_Dropdown.OptionData> dropdownOptions = new List<TMP_Dropdown.OptionData>();
+
+        for(int i = 0; i < System.Enum.GetNames(typeof(TileType)).Length; i++) {
+            dropdownOptions.Add(new TMP_Dropdown.OptionData(System.Enum.GetNames(typeof(TileType))[i]));
+        }
+
+        tileDropdown.AddOptions(dropdownOptions);
     }
 
     public void OnUpdate() {
@@ -74,21 +90,17 @@ public class EditorPlacementManager : MonoBehaviour {
         hoveredTile = null;
     }
 
-    public void ChangeTileSelection(int _type) {
+    public void ChangeTileSelection() {
 
-        TileType type = (TileType)_type;
-
-        if(selectedTileType == type) {
-            selectedTileType = TileType.None;
-        }
-        else {
-            selectedTileType = type;
-        }
+        selectedTileType = (TileType)tileDropdown.value;
 
         if(selectedTileType == TileType.None) {
             IsChecking = false;
         }
         else {
+            //ChangeApprovalSelection(0);
+            powerApprovalToggle.isOn = false;
+            citizenApprovalToggle.isOn = false;
             IsChecking = true;
         }
 
@@ -125,6 +137,7 @@ public class EditorPlacementManager : MonoBehaviour {
         }
         else {
             IsChecking = true;
+            tileDropdown.value = 0;
         }
         
     }

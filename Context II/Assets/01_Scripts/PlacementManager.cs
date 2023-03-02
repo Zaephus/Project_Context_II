@@ -67,7 +67,7 @@ public class PlacementManager : MonoBehaviour {
         IsChecking = !IsChecking;
 
         if(IsChecking) {
-            selectedType = TileType.EnergyTile;
+            selectedType = TileType.WindmillTile;
             windmillTargetText.gameObject.SetActive(true);
             Tile.TogglePowerApprovalVisibility?.Invoke(true);
         }

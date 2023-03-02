@@ -3,10 +3,19 @@
 public enum TileType {
     None = 0,
     BaseTile = 1,
-    EmptyTile = 2,
-    FarmTile = 3,
-    HouseTile = 4,
-    EnergyTile = 5
+    PlainsTile = 2,
+    ForestTile = 3,
+    SandTile = 4,
+    SiltTile = 5,
+    WaterTile = 6,
+    CityTile = 7,
+    OfficeTile = 8,
+    FarmTile = 9,
+    PastureTile = 10,
+    WindmillTile = 11,
+    ClubTile = 12,
+    BeachHutTile = 13,
+    FarmHouseTile = 14
 }
 
 [System.Serializable]

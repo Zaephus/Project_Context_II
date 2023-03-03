@@ -110,6 +110,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2575338841909057923}
     m_Modifications:
+    - target: {fileID: 5466594885883193109, guid: f5a6de5ca9f756b479bbce206d4d4749,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5867207674875274207, guid: f5a6de5ca9f756b479bbce206d4d4749,
         type: 3}
       propertyPath: m_RootOrder
@@ -169,6 +174,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: sand_tile
+      objectReference: {fileID: 0}
+    - target: {fileID: 8147248285284050754, guid: f5a6de5ca9f756b479bbce206d4d4749,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f5a6de5ca9f756b479bbce206d4d4749, type: 3}

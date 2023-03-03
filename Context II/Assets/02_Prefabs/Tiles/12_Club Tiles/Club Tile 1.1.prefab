@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 93268237164697958}
   - component: {fileID: 200338482391912049}
   m_Layer: 0
-  m_Name: Club Tile
+  m_Name: Club Tile 1.1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

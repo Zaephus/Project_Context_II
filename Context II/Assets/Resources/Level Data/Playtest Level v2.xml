@@ -66,11 +66,11 @@
     <q>-5</q>
     <r>0</r>
     <s>5</s>
-    <tileRotation>FourSixth</tileRotation>
-    <tileHeight>Two</tileHeight>
+    <tileRotation>ThreeSixth</tileRotation>
+    <tileHeight>One_Half</tileHeight>
     <tileType>ForestTile</tileType>
-    <powerApproval>5</powerApproval>
-    <citizenApproval>9</citizenApproval>
+    <powerApproval>0</powerApproval>
+    <citizenApproval>0</citizenApproval>
   </TileData>
   <TileData>
     <x>-2.598076</x>
@@ -162,11 +162,11 @@
     <q>-3</q>
     <r>5</r>
     <s>-2</s>
-    <tileRotation>Zero</tileRotation>
-    <tileHeight>ThreeQuarter</tileHeight>
+    <tileRotation>ThreeSixth</tileRotation>
+    <tileHeight>OneQuarter</tileHeight>
     <tileType>ForestTile</tileType>
-    <powerApproval>5</powerApproval>
-    <citizenApproval>10</citizenApproval>
+    <powerApproval>0</powerApproval>
+    <citizenApproval>0</citizenApproval>
   </TileData>
   <TileData>
     <x>-1.73205078</x>
@@ -258,11 +258,11 @@
     <q>-2</q>
     <r>5</r>
     <s>-3</s>
-    <tileRotation>FiveSixth</tileRotation>
-    <tileHeight>One</tileHeight>
+    <tileRotation>ThreeSixth</tileRotation>
+    <tileHeight>Half</tileHeight>
     <tileType>ForestTile</tileType>
-    <powerApproval>5</powerApproval>
-    <citizenApproval>10</citizenApproval>
+    <powerApproval>0</powerApproval>
+    <citizenApproval>0</citizenApproval>
   </TileData>
   <TileData>
     <x>0</x>
@@ -270,11 +270,11 @@
     <q>-2</q>
     <r>4</r>
     <s>-2</s>
-    <tileRotation>Zero</tileRotation>
-    <tileHeight>One</tileHeight>
+    <tileRotation>ThreeSixth</tileRotation>
+    <tileHeight>Half</tileHeight>
     <tileType>PlainsTile</tileType>
-    <powerApproval>8</powerApproval>
-    <citizenApproval>8</citizenApproval>
+    <powerApproval>0</powerApproval>
+    <citizenApproval>0</citizenApproval>
   </TileData>
   <TileData>
     <x>-0.8660254</x>
@@ -366,11 +366,11 @@
     <q>-1</q>
     <r>5</r>
     <s>-4</s>
-    <tileRotation>Zero</tileRotation>
-    <tileHeight>One_OneQuarter</tileHeight>
+    <tileRotation>ThreeSixth</tileRotation>
+    <tileHeight>Half</tileHeight>
     <tileType>ForestTile</tileType>
-    <powerApproval>5</powerApproval>
-    <citizenApproval>10</citizenApproval>
+    <powerApproval>0</powerApproval>
+    <citizenApproval>0</citizenApproval>
   </TileData>
   <TileData>
     <x>1.73205078</x>
@@ -378,11 +378,11 @@
     <q>-1</q>
     <r>4</r>
     <s>-3</s>
-    <tileRotation>Zero</tileRotation>
-    <tileHeight>One_ThreeQuarter</tileHeight>
+    <tileRotation>ThreeSixth</tileRotation>
+    <tileHeight>ThreeQuarter</tileHeight>
     <tileType>PlainsTile</tileType>
-    <powerApproval>8</powerApproval>
-    <citizenApproval>8</citizenApproval>
+    <powerApproval>0</powerApproval>
+    <citizenApproval>0</citizenApproval>
   </TileData>
   <TileData>
     <x>0.8660254</x>
@@ -486,11 +486,11 @@
     <q>0</q>
     <r>5</r>
     <s>-5</s>
-    <tileRotation>FourSixth</tileRotation>
-    <tileHeight>One</tileHeight>
+    <tileRotation>Zero</tileRotation>
+    <tileHeight>OneQuarter</tileHeight>
     <tileType>ForestTile</tileType>
-    <powerApproval>5</powerApproval>
-    <citizenApproval>10</citizenApproval>
+    <powerApproval>0</powerApproval>
+    <citizenApproval>0</citizenApproval>
   </TileData>
   <TileData>
     <x>3.46410155</x>
@@ -498,11 +498,11 @@
     <q>0</q>
     <r>4</r>
     <s>-4</s>
-    <tileRotation>FiveSixth</tileRotation>
-    <tileHeight>One</tileHeight>
+    <tileRotation>ThreeSixth</tileRotation>
+    <tileHeight>Half</tileHeight>
     <tileType>ForestTile</tileType>
-    <powerApproval>5</powerApproval>
-    <citizenApproval>10</citizenApproval>
+    <powerApproval>0</powerApproval>
+    <citizenApproval>0</citizenApproval>
   </TileData>
   <TileData>
     <x>2.598076</x>
@@ -510,11 +510,11 @@
     <q>0</q>
     <r>3</r>
     <s>-3</s>
-    <tileRotation>Zero</tileRotation>
-    <tileHeight>Zero</tileHeight>
+    <tileRotation>ThreeSixth</tileRotation>
+    <tileHeight>Half</tileHeight>
     <tileType>PlainsTile</tileType>
-    <powerApproval>8</powerApproval>
-    <citizenApproval>10</citizenApproval>
+    <powerApproval>0</powerApproval>
+    <citizenApproval>0</citizenApproval>
   </TileData>
   <TileData>
     <x>1.73205078</x>
@@ -618,11 +618,11 @@
     <q>1</q>
     <r>4</r>
     <s>-5</s>
-    <tileRotation>Zero</tileRotation>
-    <tileHeight>ThreeQuarter</tileHeight>
+    <tileRotation>ThreeSixth</tileRotation>
+    <tileHeight>Half</tileHeight>
     <tileType>ForestTile</tileType>
-    <powerApproval>8</powerApproval>
-    <citizenApproval>10</citizenApproval>
+    <powerApproval>0</powerApproval>
+    <citizenApproval>0</citizenApproval>
   </TileData>
   <TileData>
     <x>4.330127</x>
@@ -630,10 +630,10 @@
     <q>1</q>
     <r>3</r>
     <s>-4</s>
-    <tileRotation>FiveSixth</tileRotation>
-    <tileHeight>One</tileHeight>
+    <tileRotation>ThreeSixth</tileRotation>
+    <tileHeight>ThreeQuarter</tileHeight>
     <tileType>SiltTile</tileType>
-    <powerApproval>8</powerApproval>
+    <powerApproval>0</powerApproval>
     <citizenApproval>0</citizenApproval>
   </TileData>
   <TileData>
@@ -642,10 +642,10 @@
     <q>1</q>
     <r>2</r>
     <s>-3</s>
-    <tileRotation>OneSixth</tileRotation>
-    <tileHeight>Zero</tileHeight>
+    <tileRotation>FourSixth</tileRotation>
+    <tileHeight>OneQuarter</tileHeight>
     <tileType>FarmTile</tileType>
-    <powerApproval>8</powerApproval>
+    <powerApproval>0</powerApproval>
     <citizenApproval>0</citizenApproval>
   </TileData>
   <TileData>
@@ -655,9 +655,9 @@
     <r>1</r>
     <s>-2</s>
     <tileRotation>Zero</tileRotation>
-    <tileHeight>Zero</tileHeight>
+    <tileHeight>OneQuarter</tileHeight>
     <tileType>FarmHouseTile</tileType>
-    <powerApproval>2</powerApproval>
+    <powerApproval>0</powerApproval>
     <citizenApproval>0</citizenApproval>
   </TileData>
   <TileData>
@@ -678,7 +678,7 @@
     <q>1</q>
     <r>-1</r>
     <s>0</s>
-    <tileRotation>FourSixth</tileRotation>
+    <tileRotation>ThreeSixth</tileRotation>
     <tileHeight>Zero</tileHeight>
     <tileType>ClubTile</tileType>
     <powerApproval>0</powerApproval>
@@ -750,10 +750,10 @@
     <q>2</q>
     <r>2</r>
     <s>-4</s>
-    <tileRotation>Zero</tileRotation>
-    <tileHeight>Zero</tileHeight>
+    <tileRotation>ThreeSixth</tileRotation>
+    <tileHeight>OneQuarter</tileHeight>
     <tileType>SiltTile</tileType>
-    <powerApproval>10</powerApproval>
+    <powerApproval>0</powerApproval>
     <citizenApproval>0</citizenApproval>
   </TileData>
   <TileData>
@@ -762,10 +762,10 @@
     <q>2</q>
     <r>1</r>
     <s>-3</s>
-    <tileRotation>Zero</tileRotation>
-    <tileHeight>Zero</tileHeight>
+    <tileRotation>ThreeSixth</tileRotation>
+    <tileHeight>OneQuarter</tileHeight>
     <tileType>FarmTile</tileType>
-    <powerApproval>8</powerApproval>
+    <powerApproval>0</powerApproval>
     <citizenApproval>0</citizenApproval>
   </TileData>
   <TileData>
@@ -846,11 +846,11 @@
     <q>3</q>
     <r>2</r>
     <s>-5</s>
-    <tileRotation>FiveSixth</tileRotation>
+    <tileRotation>ThreeSixth</tileRotation>
     <tileHeight>OneQuarter</tileHeight>
     <tileType>WaterTile</tileType>
-    <powerApproval>8</powerApproval>
-    <citizenApproval>2</citizenApproval>
+    <powerApproval>0</powerApproval>
+    <citizenApproval>0</citizenApproval>
   </TileData>
   <TileData>
     <x>6.06217766</x>
@@ -858,10 +858,10 @@
     <q>3</q>
     <r>1</r>
     <s>-4</s>
-    <tileRotation>FiveSixth</tileRotation>
-    <tileHeight>OneQuarter</tileHeight>
+    <tileRotation>ThreeSixth</tileRotation>
+    <tileHeight>Half</tileHeight>
     <tileType>SiltTile</tileType>
-    <powerApproval>10</powerApproval>
+    <powerApproval>0</powerApproval>
     <citizenApproval>0</citizenApproval>
   </TileData>
   <TileData>
@@ -942,11 +942,11 @@
     <q>4</q>
     <r>1</r>
     <s>-5</s>
-    <tileRotation>Zero</tileRotation>
+    <tileRotation>ThreeSixth</tileRotation>
     <tileHeight>Zero</tileHeight>
     <tileType>WaterTile</tileType>
-    <powerApproval>8</powerApproval>
-    <citizenApproval>2</citizenApproval>
+    <powerApproval>0</powerApproval>
+    <citizenApproval>0</citizenApproval>
   </TileData>
   <TileData>
     <x>6.928203</x>
@@ -954,10 +954,10 @@
     <q>4</q>
     <r>0</r>
     <s>-4</s>
-    <tileRotation>Zero</tileRotation>
-    <tileHeight>Zero</tileHeight>
+    <tileRotation>ThreeSixth</tileRotation>
+    <tileHeight>OneQuarter</tileHeight>
     <tileType>SiltTile</tileType>
-    <powerApproval>10</powerApproval>
+    <powerApproval>0</powerApproval>
     <citizenApproval>0</citizenApproval>
   </TileData>
   <TileData>
@@ -978,11 +978,11 @@
     <q>4</q>
     <r>-2</r>
     <s>-2</s>
-    <tileRotation>Zero</tileRotation>
-    <tileHeight>Zero</tileHeight>
+    <tileRotation>ThreeSixth</tileRotation>
+    <tileHeight>OneQuarter</tileHeight>
     <tileType>SandTile</tileType>
-    <powerApproval>10</powerApproval>
-    <citizenApproval>2</citizenApproval>
+    <powerApproval>0</powerApproval>
+    <citizenApproval>0</citizenApproval>
   </TileData>
   <TileData>
     <x>4.330127</x>
@@ -1026,11 +1026,11 @@
     <q>5</q>
     <r>0</r>
     <s>-5</s>
-    <tileRotation>FiveSixth</tileRotation>
-    <tileHeight>OneQuarter</tileHeight>
+    <tileRotation>ThreeSixth</tileRotation>
+    <tileHeight>Zero</tileHeight>
     <tileType>WaterTile</tileType>
-    <powerApproval>8</powerApproval>
-    <citizenApproval>2</citizenApproval>
+    <powerApproval>0</powerApproval>
+    <citizenApproval>0</citizenApproval>
   </TileData>
   <TileData>
     <x>7.79422855</x>
@@ -1038,11 +1038,11 @@
     <q>5</q>
     <r>-1</r>
     <s>-4</s>
-    <tileRotation>FiveSixth</tileRotation>
-    <tileHeight>Half</tileHeight>
+    <tileRotation>ThreeSixth</tileRotation>
+    <tileHeight>OneQuarter</tileHeight>
     <tileType>WaterTile</tileType>
-    <powerApproval>8</powerApproval>
-    <citizenApproval>2</citizenApproval>
+    <powerApproval>0</powerApproval>
+    <citizenApproval>0</citizenApproval>
   </TileData>
   <TileData>
     <x>6.928203</x>
@@ -1050,11 +1050,11 @@
     <q>5</q>
     <r>-2</r>
     <s>-3</s>
-    <tileRotation>FiveSixth</tileRotation>
-    <tileHeight>ThreeQuarter</tileHeight>
+    <tileRotation>ThreeSixth</tileRotation>
+    <tileHeight>Zero</tileHeight>
     <tileType>WaterTile</tileType>
-    <powerApproval>8</powerApproval>
-    <citizenApproval>2</citizenApproval>
+    <powerApproval>0</powerApproval>
+    <citizenApproval>0</citizenApproval>
   </TileData>
   <TileData>
     <x>6.06217766</x>
@@ -1062,11 +1062,11 @@
     <q>5</q>
     <r>-3</r>
     <s>-2</s>
-    <tileRotation>FiveSixth</tileRotation>
+    <tileRotation>ThreeSixth</tileRotation>
     <tileHeight>Zero</tileHeight>
     <tileType>WaterTile</tileType>
-    <powerApproval>8</powerApproval>
-    <citizenApproval>2</citizenApproval>
+    <powerApproval>0</powerApproval>
+    <citizenApproval>0</citizenApproval>
   </TileData>
   <TileData>
     <x>5.196152</x>
@@ -1074,11 +1074,11 @@
     <q>5</q>
     <r>-4</r>
     <s>-1</s>
-    <tileRotation>FiveSixth</tileRotation>
+    <tileRotation>ThreeSixth</tileRotation>
     <tileHeight>OneQuarter</tileHeight>
     <tileType>WaterTile</tileType>
-    <powerApproval>8</powerApproval>
-    <citizenApproval>2</citizenApproval>
+    <powerApproval>0</powerApproval>
+    <citizenApproval>0</citizenApproval>
   </TileData>
   <TileData>
     <x>4.330127</x>
@@ -1086,10 +1086,10 @@
     <q>5</q>
     <r>-5</r>
     <s>0</s>
-    <tileRotation>FiveSixth</tileRotation>
-    <tileHeight>OneQuarter</tileHeight>
+    <tileRotation>ThreeSixth</tileRotation>
+    <tileHeight>Half</tileHeight>
     <tileType>SandTile</tileType>
-    <powerApproval>10</powerApproval>
-    <citizenApproval>5</citizenApproval>
+    <powerApproval>0</powerApproval>
+    <citizenApproval>0</citizenApproval>
   </TileData>
 </ArrayOfTileData>

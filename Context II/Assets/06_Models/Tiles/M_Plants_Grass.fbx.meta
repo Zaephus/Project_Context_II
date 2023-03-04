@@ -8,7 +8,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Mat_GrassBillboard
-    second: {fileID: 2100000, guid: 3733a65e2c68e874d81c939831ed3a6d, type: 2}
+    second: {fileID: 2100000, guid: c7a70f9a82bc24d4c9358a4a96681a51, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

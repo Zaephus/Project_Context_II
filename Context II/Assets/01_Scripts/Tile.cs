@@ -24,7 +24,7 @@ public class Tile : MonoBehaviour {
         set {
             powerApproval = value;
             powerApprovalRenderer.material = AppMatDatabase.Instance.GetApprovalMaterial(ApprovalType.Power, value);
-            powerApprovalRenderer.transform.localScale = new Vector3(powerApprovalRenderer.transform.localScale.x, 0.1f, powerApprovalRenderer.transform.localScale.z);
+            // powerApprovalRenderer.transform.localScale = new Vector3(powerApprovalRenderer.transform.localScale.x, 0.1f, powerApprovalRenderer.transform.localScale.z);
         }
     }
     private float powerApproval;
@@ -36,7 +36,7 @@ public class Tile : MonoBehaviour {
         set {
             citizenApproval = value;
             citizenApprovalRenderer.material = AppMatDatabase.Instance.GetApprovalMaterial(ApprovalType.Citizen, value);
-            citizenApprovalRenderer.transform.localScale = new Vector3(citizenApprovalRenderer.transform.localScale.x, 0.1f, citizenApprovalRenderer.transform.localScale.z);
+            // citizenApprovalRenderer.transform.localScale = new Vector3(citizenApprovalRenderer.transform.localScale.x, 0.1f, citizenApprovalRenderer.transform.localScale.z);
         }
     }
     private float citizenApproval;

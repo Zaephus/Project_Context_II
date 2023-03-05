@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Dialogue Database
   m_EditorClassIdentifier: 
   dialogueOptions:
+  - {fileID: 11400000, guid: d080c9ca0a395a74681ace78d955d25b, type: 2}
   - {fileID: 11400000, guid: 7a23e6260abec814ca5af7eb008f4b78, type: 2}
   - {fileID: 11400000, guid: fd76c8c0bb6fb524cbabee172ae62509, type: 2}
   - {fileID: 11400000, guid: cbb667eff5388f140be3ab8d06c0b292, type: 2}
   - {fileID: 11400000, guid: fa12e2a926397f044bd5e7907a0335a7, type: 2}
-  - {fileID: 11400000, guid: d080c9ca0a395a74681ace78d955d25b, type: 2}

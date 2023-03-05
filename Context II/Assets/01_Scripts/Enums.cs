@@ -53,5 +53,6 @@ public enum GameState {
     MainMenu = 0,
     StageOne = 1,
     StageTwo = 2,
-    Ending = 3
+    IntermediateEnding = 3,
+    FinalEnding = 4
 }

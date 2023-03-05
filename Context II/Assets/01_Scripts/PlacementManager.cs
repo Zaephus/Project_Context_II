@@ -32,6 +32,14 @@ public class PlacementManager : MonoBehaviour {
     [SerializeField]
     private Color unSelectableColor;
 
+    [SerializeField]
+    private Material tilesMaterial;
+    
+    [SerializeField]
+    private Texture2D coloredTexture;
+    [SerializeField]
+    private Texture2D grayscaleTexture;
+
     private GameObject objectToInstantiate;
     private TileType selectedType;
 
@@ -69,11 +77,13 @@ public class PlacementManager : MonoBehaviour {
         if(IsChecking) {
             selectedType = TileType.WindmillTile;
             windmillTargetText.gameObject.SetActive(true);
+            tilesMaterial.mainTexture = grayscaleTexture;
             Tile.TogglePowerApprovalVisibility?.Invoke(true);
         }
         else {
             selectedType = TileType.None;
             windmillTargetText.gameObject.SetActive(false);
+            tilesMaterial.mainTexture = coloredTexture;
             Tile.TogglePowerApprovalVisibility?.Invoke(false);
         }
     }

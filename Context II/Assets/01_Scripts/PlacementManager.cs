@@ -19,7 +19,7 @@ public class PlacementManager : MonoBehaviour {
             }
         }
     }
-    private bool isChecking = false;
+    private bool isChecking = true;
 
     [SerializeField]
     private GameObject tileSelector;
@@ -39,6 +39,11 @@ public class PlacementManager : MonoBehaviour {
     private Texture2D coloredTexture;
     [SerializeField]
     private Texture2D grayscaleTexture;
+
+    [SerializeField]
+    private GameObject dialogueBubbleContainer;
+    
+    private bool isShowingDialogueOptions = true;
 
     private GameObject objectToInstantiate;
     private TileType selectedType;
@@ -62,44 +67,48 @@ public class PlacementManager : MonoBehaviour {
             CheckForTile();
         }
 
-        if(hoveredTile != null && selectedType != TileType.None) {
+        // if(hoveredTile != null && selectedType != TileType.None) {
+        //     if(Input.GetMouseButtonDown(0)) {
+        //         PlaceTile();
+        //         UpdateWindmillTarget(currentWindmillAmount + 1);
+        //     }
+        // }
+
+        if(hoveredTile != null) {
             if(Input.GetMouseButtonDown(0)) {
-                PlaceTile();
-                UpdateWindmillTarget(currentWindmillAmount + 1);
+                if(isShowingDialogueOptions) {
+
+                }
+                else {
+                    if(CheckPossiblePlacement()) {
+                        PlaceTile();
+                        UpdateWindmillTarget(currentWindmillAmount + 1);
+                    }
+                }
             }
         }
 
     }
 
-    public void ToggleSelection() {
-        IsChecking = !IsChecking;
+    private void OnDisable() {
+        tilesMaterial.mainTexture = coloredTexture;
+    }
 
-        if(IsChecking) {
-            selectedType = TileType.WindmillTile;
-            windmillTargetText.gameObject.SetActive(true);
-            tilesMaterial.mainTexture = grayscaleTexture;
-            Tile.TogglePowerApprovalVisibility?.Invoke(true);
-        }
-        else {
+    public void ToggleSelection() {
+        isShowingDialogueOptions = !isShowingDialogueOptions;
+
+        if(isShowingDialogueOptions) {
             selectedType = TileType.None;
             windmillTargetText.gameObject.SetActive(false);
             tilesMaterial.mainTexture = coloredTexture;
             Tile.TogglePowerApprovalVisibility?.Invoke(false);
         }
-    }
-
-    private void UpdateWindmillTarget(int _amount) {
-        
-        currentWindmillAmount = _amount;
-        windmillTargetText.text = currentWindmillAmount + "/" + windmillTarget;
-
-        if(currentWindmillAmount >= windmillTarget) {
-            WindmillTargetReached?.Invoke();
-            if(IsChecking) {
-                ToggleSelection();
-            }
+        else {
+            selectedType = TileType.WindmillTile;
+            windmillTargetText.gameObject.SetActive(true);
+            tilesMaterial.mainTexture = grayscaleTexture;
+            Tile.TogglePowerApprovalVisibility?.Invoke(true);
         }
-
     }
 
     private void PlaceTile() {
@@ -133,6 +142,20 @@ public class PlacementManager : MonoBehaviour {
 
     }
 
+    private void UpdateWindmillTarget(int _amount) {
+        
+        currentWindmillAmount = _amount;
+        windmillTargetText.text = currentWindmillAmount + "/" + windmillTarget;
+
+        if(currentWindmillAmount >= windmillTarget) {
+            WindmillTargetReached?.Invoke();
+            if(IsChecking) {
+                ToggleSelection();
+            }
+        }
+
+    }
+
     private void CheckForTile() {
 
         RaycastHit hit;
@@ -162,58 +185,16 @@ public class PlacementManager : MonoBehaviour {
 
     }
 
-    // private bool CheckPossiblePlacement() {
+    private bool CheckPossiblePlacement() {
 
-    //     if(hoveredTile.tileType == TileType.EmptyTile) {
+        if(hoveredTile.dialogueIndex != 0) {
+            tileSelector.GetComponent<MeshRenderer>().material.color = unSelectableColor;
+            return false;
+        }
 
-    //         Tile checkTile;
+        tileSelector.GetComponent<MeshRenderer>().material.color = selectableColor;
+        return true;
 
-    //         if(GameManager.Instance.tiles.ContainsKey(new Vector3Int(hoveredTile.hexPosition.x + 1, hoveredTile.hexPosition.y - 1, hoveredTile.hexPosition.z))) {
-    //             checkTile = GameManager.Instance.tiles[new Vector3Int(hoveredTile.hexPosition.x + 1, hoveredTile.hexPosition.y - 1, hoveredTile.hexPosition.z)];
-    //             if(checkTile.tileType == TileType.FarmTile || checkTile.tileType == TileType.HouseTile) {
-    //                 return true;
-    //             }
-    //         }
-
-    //         if(GameManager.Instance.tiles.ContainsKey(new Vector3Int(hoveredTile.hexPosition.x + 1, hoveredTile.hexPosition.y, hoveredTile.hexPosition.z - 1))) {
-    //             checkTile = GameManager.Instance.tiles[new Vector3Int(hoveredTile.hexPosition.x + 1, hoveredTile.hexPosition.y, hoveredTile.hexPosition.z - 1)];
-    //             if(checkTile.tileType == TileType.FarmTile || checkTile.tileType == TileType.HouseTile) {
-    //                 return true;
-    //             }
-    //         }
-
-    //         if(GameManager.Instance.tiles.ContainsKey(new Vector3Int(hoveredTile.hexPosition.x, hoveredTile.hexPosition.y + 1, hoveredTile.hexPosition.z - 1))) {
-    //             checkTile = GameManager.Instance.tiles[new Vector3Int(hoveredTile.hexPosition.x, hoveredTile.hexPosition.y + 1, hoveredTile.hexPosition.z - 1)];
-    //             if(checkTile.tileType == TileType.FarmTile || checkTile.tileType == TileType.HouseTile) {
-    //                 return true;
-    //             }
-    //         }
-
-    //         if(GameManager.Instance.tiles.ContainsKey(new Vector3Int(hoveredTile.hexPosition.x - 1, hoveredTile.hexPosition.y + 1, hoveredTile.hexPosition.z))) {
-    //             checkTile = GameManager.Instance.tiles[new Vector3Int(hoveredTile.hexPosition.x - 1, hoveredTile.hexPosition.y + 1, hoveredTile.hexPosition.z)];
-    //             if(checkTile.tileType == TileType.FarmTile || checkTile.tileType == TileType.HouseTile) {
-    //                 return true;
-    //             }
-    //         }
-
-    //         if(GameManager.Instance.tiles.ContainsKey(new Vector3Int(hoveredTile.hexPosition.x - 1, hoveredTile.hexPosition.y, hoveredTile.hexPosition.z + 1))) {
-    //             checkTile = GameManager.Instance.tiles[new Vector3Int(hoveredTile.hexPosition.x - 1, hoveredTile.hexPosition.y, hoveredTile.hexPosition.z + 1)];
-    //             if(checkTile.tileType == TileType.FarmTile || checkTile.tileType == TileType.HouseTile) {
-    //                 return true;
-    //             }
-    //         }
-
-    //         if(GameManager.Instance.tiles.ContainsKey(new Vector3Int(hoveredTile.hexPosition.x, hoveredTile.hexPosition.y - 1, hoveredTile.hexPosition.z + 1))) {
-    //             checkTile = GameManager.Instance.tiles[new Vector3Int(hoveredTile.hexPosition.x, hoveredTile.hexPosition.y - 1, hoveredTile.hexPosition.z + 1)];
-    //             if(checkTile.tileType == TileType.FarmTile || checkTile.tileType == TileType.HouseTile) {
-    //                 return true;
-    //             }
-    //         }
-
-    //     }
-
-    //     return false;
-
-    // }
+    }
 
 }

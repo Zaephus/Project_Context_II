@@ -9,6 +9,7 @@
     <tileRotation>TwoSixth</tileRotation>
     <tileHeight>Zero</tileHeight>
     <tileType>PlainsTile</tileType>
+    <dialogueIndex>0</dialogueIndex>
     <powerApproval>8</powerApproval>
     <citizenApproval>5</citizenApproval>
   </TileData>
@@ -21,6 +22,7 @@
     <tileRotation>FourSixth</tileRotation>
     <tileHeight>Zero</tileHeight>
     <tileType>PlainsTile</tileType>
+    <dialogueIndex>0</dialogueIndex>
     <powerApproval>8</powerApproval>
     <citizenApproval>5</citizenApproval>
   </TileData>
@@ -33,6 +35,7 @@
     <tileRotation>Zero</tileRotation>
     <tileHeight>Zero</tileHeight>
     <tileType>ForestTile</tileType>
+    <dialogueIndex>0</dialogueIndex>
     <powerApproval>5</powerApproval>
     <citizenApproval>9</citizenApproval>
   </TileData>
@@ -45,6 +48,7 @@
     <tileRotation>FourSixth</tileRotation>
     <tileHeight>ThreeQuarter</tileHeight>
     <tileType>ForestTile</tileType>
+    <dialogueIndex>0</dialogueIndex>
     <powerApproval>5</powerApproval>
     <citizenApproval>9</citizenApproval>
   </TileData>
@@ -57,6 +61,7 @@
     <tileRotation>FourSixth</tileRotation>
     <tileHeight>One_OneQuarter</tileHeight>
     <tileType>ForestTile</tileType>
+    <dialogueIndex>0</dialogueIndex>
     <powerApproval>5</powerApproval>
     <citizenApproval>9</citizenApproval>
   </TileData>
@@ -69,6 +74,7 @@
     <tileRotation>ThreeSixth</tileRotation>
     <tileHeight>One_Half</tileHeight>
     <tileType>ForestTile</tileType>
+    <dialogueIndex>0</dialogueIndex>
     <powerApproval>0</powerApproval>
     <citizenApproval>0</citizenApproval>
   </TileData>
@@ -81,6 +87,7 @@
     <tileRotation>ThreeSixth</tileRotation>
     <tileHeight>Zero</tileHeight>
     <tileType>ForestTile</tileType>
+    <dialogueIndex>0</dialogueIndex>
     <powerApproval>5</powerApproval>
     <citizenApproval>10</citizenApproval>
   </TileData>
@@ -93,6 +100,7 @@
     <tileRotation>Zero</tileRotation>
     <tileHeight>Zero</tileHeight>
     <tileType>PlainsTile</tileType>
+    <dialogueIndex>0</dialogueIndex>
     <powerApproval>8</powerApproval>
     <citizenApproval>5</citizenApproval>
   </TileData>
@@ -105,6 +113,7 @@
     <tileRotation>Zero</tileRotation>
     <tileHeight>Zero</tileHeight>
     <tileType>CityTile</tileType>
+    <dialogueIndex>0</dialogueIndex>
     <powerApproval>0</powerApproval>
     <citizenApproval>0</citizenApproval>
   </TileData>
@@ -117,6 +126,7 @@
     <tileRotation>Zero</tileRotation>
     <tileHeight>Zero</tileHeight>
     <tileType>CityTile</tileType>
+    <dialogueIndex>0</dialogueIndex>
     <powerApproval>2</powerApproval>
     <citizenApproval>0</citizenApproval>
   </TileData>
@@ -129,6 +139,7 @@
     <tileRotation>TwoSixth</tileRotation>
     <tileHeight>Zero</tileHeight>
     <tileType>CityTile</tileType>
+    <dialogueIndex>0</dialogueIndex>
     <powerApproval>2</powerApproval>
     <citizenApproval>0</citizenApproval>
   </TileData>
@@ -141,6 +152,7 @@
     <tileRotation>FourSixth</tileRotation>
     <tileHeight>Half</tileHeight>
     <tileType>CityTile</tileType>
+    <dialogueIndex>0</dialogueIndex>
     <powerApproval>2</powerApproval>
     <citizenApproval>0</citizenApproval>
   </TileData>
@@ -153,6 +165,7 @@
     <tileRotation>Zero</tileRotation>
     <tileHeight>One_OneQuarter</tileHeight>
     <tileType>ForestTile</tileType>
+    <dialogueIndex>0</dialogueIndex>
     <powerApproval>5</powerApproval>
     <citizenApproval>9</citizenApproval>
   </TileData>
@@ -165,6 +178,7 @@
     <tileRotation>ThreeSixth</tileRotation>
     <tileHeight>OneQuarter</tileHeight>
     <tileType>ForestTile</tileType>
+    <dialogueIndex>0</dialogueIndex>
     <powerApproval>0</powerApproval>
     <citizenApproval>0</citizenApproval>
   </TileData>
@@ -177,6 +191,7 @@
     <tileRotation>OneSixth</tileRotation>
     <tileHeight>OneQuarter</tileHeight>
     <tileType>PlainsTile</tileType>
+    <dialogueIndex>0</dialogueIndex>
     <powerApproval>8</powerApproval>
     <citizenApproval>8</citizenApproval>
   </TileData>
@@ -189,6 +204,7 @@
     <tileRotation>Zero</tileRotation>
     <tileHeight>Zero</tileHeight>
     <tileType>CityTile</tileType>
+    <dialogueIndex>0</dialogueIndex>
     <powerApproval>2</powerApproval>
     <citizenApproval>0</citizenApproval>
   </TileData>
@@ -201,6 +217,7 @@
     <tileRotation>Zero</tileRotation>
     <tileHeight>Zero</tileHeight>
     <tileType>OfficeTile</tileType>
+    <dialogueIndex>0</dialogueIndex>
     <powerApproval>0</powerApproval>
     <citizenApproval>0</citizenApproval>
   </TileData>
@@ -213,6 +230,7 @@
     <tileRotation>FiveSixth</tileRotation>
     <tileHeight>OneQuarter</tileHeight>
     <tileType>OfficeTile</tileType>
+    <dialogueIndex>0</dialogueIndex>
     <powerApproval>5</powerApproval>
     <citizenApproval>0</citizenApproval>
   </TileData>
@@ -225,6 +243,7 @@
     <tileRotation>Zero</tileRotation>
     <tileHeight>Zero</tileHeight>
     <tileType>CityTile</tileType>
+    <dialogueIndex>0</dialogueIndex>
     <powerApproval>2</powerApproval>
     <citizenApproval>0</citizenApproval>
   </TileData>
@@ -237,6 +256,7 @@
     <tileRotation>ThreeSixth</tileRotation>
     <tileHeight>One</tileHeight>
     <tileType>PlainsTile</tileType>
+    <dialogueIndex>0</dialogueIndex>
     <powerApproval>8</powerApproval>
     <citizenApproval>8</citizenApproval>
   </TileData>
@@ -249,6 +269,7 @@
     <tileRotation>Zero</tileRotation>
     <tileHeight>One</tileHeight>
     <tileType>ForestTile</tileType>
+    <dialogueIndex>0</dialogueIndex>
     <powerApproval>5</powerApproval>
     <citizenApproval>10</citizenApproval>
   </TileData>
@@ -261,6 +282,7 @@
     <tileRotation>ThreeSixth</tileRotation>
     <tileHeight>Half</tileHeight>
     <tileType>ForestTile</tileType>
+    <dialogueIndex>0</dialogueIndex>
     <powerApproval>0</powerApproval>
     <citizenApproval>0</citizenApproval>
   </TileData>
@@ -273,6 +295,7 @@
     <tileRotation>ThreeSixth</tileRotation>
     <tileHeight>Half</tileHeight>
     <tileType>PlainsTile</tileType>
+    <dialogueIndex>0</dialogueIndex>
     <powerApproval>0</powerApproval>
     <citizenApproval>0</citizenApproval>
   </TileData>
@@ -285,6 +308,7 @@
     <tileRotation>Zero</tileRotation>
     <tileHeight>Zero</tileHeight>
     <tileType>CityTile</tileType>
+    <dialogueIndex>0</dialogueIndex>
     <powerApproval>2</powerApproval>
     <citizenApproval>0</citizenApproval>
   </TileData>
@@ -297,6 +321,7 @@
     <tileRotation>Zero</tileRotation>
     <tileHeight>Zero</tileHeight>
     <tileType>CityTile</tileType>
+    <dialogueIndex>0</dialogueIndex>
     <powerApproval>0</powerApproval>
     <citizenApproval>0</citizenApproval>
   </TileData>
@@ -309,6 +334,7 @@
     <tileRotation>FourSixth</tileRotation>
     <tileHeight>Zero</tileHeight>
     <tileType>OfficeTile</tileType>
+    <dialogueIndex>0</dialogueIndex>
     <powerApproval>0</powerApproval>
     <citizenApproval>0</citizenApproval>
   </TileData>
@@ -321,6 +347,7 @@
     <tileRotation>OneSixth</tileRotation>
     <tileHeight>OneQuarter</tileHeight>
     <tileType>OfficeTile</tileType>
+    <dialogueIndex>0</dialogueIndex>
     <powerApproval>5</powerApproval>
     <citizenApproval>0</citizenApproval>
   </TileData>
@@ -333,6 +360,7 @@
     <tileRotation>Zero</tileRotation>
     <tileHeight>Zero</tileHeight>
     <tileType>CityTile</tileType>
+    <dialogueIndex>0</dialogueIndex>
     <powerApproval>0</powerApproval>
     <citizenApproval>0</citizenApproval>
   </TileData>
@@ -345,6 +373,7 @@
     <tileRotation>TwoSixth</tileRotation>
     <tileHeight>Half</tileHeight>
     <tileType>PlainsTile</tileType>
+    <dialogueIndex>0</dialogueIndex>
     <powerApproval>8</powerApproval>
     <citizenApproval>8</citizenApproval>
   </TileData>
@@ -357,6 +386,7 @@
     <tileRotation>FourSixth</tileRotation>
     <tileHeight>OneQuarter</tileHeight>
     <tileType>PlainsTile</tileType>
+    <dialogueIndex>0</dialogueIndex>
     <powerApproval>8</powerApproval>
     <citizenApproval>8</citizenApproval>
   </TileData>
@@ -369,6 +399,7 @@
     <tileRotation>ThreeSixth</tileRotation>
     <tileHeight>Half</tileHeight>
     <tileType>ForestTile</tileType>
+    <dialogueIndex>0</dialogueIndex>
     <powerApproval>0</powerApproval>
     <citizenApproval>0</citizenApproval>
   </TileData>
@@ -381,6 +412,7 @@
     <tileRotation>ThreeSixth</tileRotation>
     <tileHeight>ThreeQuarter</tileHeight>
     <tileType>PlainsTile</tileType>
+    <dialogueIndex>0</dialogueIndex>
     <powerApproval>0</powerApproval>
     <citizenApproval>0</citizenApproval>
   </TileData>
@@ -393,6 +425,7 @@
     <tileRotation>Zero</tileRotation>
     <tileHeight>OneQuarter</tileHeight>
     <tileType>PlainsTile</tileType>
+    <dialogueIndex>0</dialogueIndex>
     <powerApproval>8</powerApproval>
     <citizenApproval>8</citizenApproval>
   </TileData>
@@ -405,6 +438,7 @@
     <tileRotation>Zero</tileRotation>
     <tileHeight>Zero</tileHeight>
     <tileType>CityTile</tileType>
+    <dialogueIndex>0</dialogueIndex>
     <powerApproval>2</powerApproval>
     <citizenApproval>0</citizenApproval>
   </TileData>
@@ -417,6 +451,7 @@
     <tileRotation>FourSixth</tileRotation>
     <tileHeight>OneQuarter</tileHeight>
     <tileType>OfficeTile</tileType>
+    <dialogueIndex>0</dialogueIndex>
     <powerApproval>0</powerApproval>
     <citizenApproval>5</citizenApproval>
   </TileData>
@@ -429,6 +464,7 @@
     <tileRotation>FourSixth</tileRotation>
     <tileHeight>OneQuarter</tileHeight>
     <tileType>OfficeTile</tileType>
+    <dialogueIndex>0</dialogueIndex>
     <powerApproval>0</powerApproval>
     <citizenApproval>5</citizenApproval>
   </TileData>
@@ -441,6 +477,7 @@
     <tileRotation>Zero</tileRotation>
     <tileHeight>Zero</tileHeight>
     <tileType>OfficeTile</tileType>
+    <dialogueIndex>0</dialogueIndex>
     <powerApproval>5</powerApproval>
     <citizenApproval>5</citizenApproval>
   </TileData>
@@ -453,6 +490,7 @@
     <tileRotation>FourSixth</tileRotation>
     <tileHeight>Zero</tileHeight>
     <tileType>OfficeTile</tileType>
+    <dialogueIndex>0</dialogueIndex>
     <powerApproval>5</powerApproval>
     <citizenApproval>0</citizenApproval>
   </TileData>
@@ -465,6 +503,7 @@
     <tileRotation>OneSixth</tileRotation>
     <tileHeight>Zero</tileHeight>
     <tileType>PlainsTile</tileType>
+    <dialogueIndex>0</dialogueIndex>
     <powerApproval>8</powerApproval>
     <citizenApproval>8</citizenApproval>
   </TileData>
@@ -477,6 +516,7 @@
     <tileRotation>FourSixth</tileRotation>
     <tileHeight>Half</tileHeight>
     <tileType>PlainsTile</tileType>
+    <dialogueIndex>0</dialogueIndex>
     <powerApproval>8</powerApproval>
     <citizenApproval>8</citizenApproval>
   </TileData>
@@ -489,6 +529,7 @@
     <tileRotation>Zero</tileRotation>
     <tileHeight>OneQuarter</tileHeight>
     <tileType>ForestTile</tileType>
+    <dialogueIndex>0</dialogueIndex>
     <powerApproval>0</powerApproval>
     <citizenApproval>0</citizenApproval>
   </TileData>
@@ -501,6 +542,7 @@
     <tileRotation>ThreeSixth</tileRotation>
     <tileHeight>Half</tileHeight>
     <tileType>ForestTile</tileType>
+    <dialogueIndex>0</dialogueIndex>
     <powerApproval>0</powerApproval>
     <citizenApproval>0</citizenApproval>
   </TileData>
@@ -513,6 +555,7 @@
     <tileRotation>ThreeSixth</tileRotation>
     <tileHeight>Half</tileHeight>
     <tileType>PlainsTile</tileType>
+    <dialogueIndex>0</dialogueIndex>
     <powerApproval>0</powerApproval>
     <citizenApproval>0</citizenApproval>
   </TileData>
@@ -525,6 +568,7 @@
     <tileRotation>Zero</tileRotation>
     <tileHeight>Half</tileHeight>
     <tileType>PastureTile</tileType>
+    <dialogueIndex>0</dialogueIndex>
     <powerApproval>8</powerApproval>
     <citizenApproval>10</citizenApproval>
   </TileData>
@@ -537,6 +581,7 @@
     <tileRotation>Zero</tileRotation>
     <tileHeight>Zero</tileHeight>
     <tileType>CityTile</tileType>
+    <dialogueIndex>0</dialogueIndex>
     <powerApproval>2</powerApproval>
     <citizenApproval>0</citizenApproval>
   </TileData>
@@ -549,6 +594,7 @@
     <tileRotation>Zero</tileRotation>
     <tileHeight>Zero</tileHeight>
     <tileType>OfficeTile</tileType>
+    <dialogueIndex>0</dialogueIndex>
     <powerApproval>0</powerApproval>
     <citizenApproval>0</citizenApproval>
   </TileData>
@@ -561,6 +607,7 @@
     <tileRotation>Zero</tileRotation>
     <tileHeight>Zero</tileHeight>
     <tileType>OfficeTile</tileType>
+    <dialogueIndex>0</dialogueIndex>
     <powerApproval>0</powerApproval>
     <citizenApproval>0</citizenApproval>
   </TileData>
@@ -573,6 +620,7 @@
     <tileRotation>Zero</tileRotation>
     <tileHeight>Zero</tileHeight>
     <tileType>OfficeTile</tileType>
+    <dialogueIndex>0</dialogueIndex>
     <powerApproval>5</powerApproval>
     <citizenApproval>5</citizenApproval>
   </TileData>
@@ -585,6 +633,7 @@
     <tileRotation>Zero</tileRotation>
     <tileHeight>Zero</tileHeight>
     <tileType>CityTile</tileType>
+    <dialogueIndex>0</dialogueIndex>
     <powerApproval>2</powerApproval>
     <citizenApproval>0</citizenApproval>
   </TileData>
@@ -597,6 +646,7 @@
     <tileRotation>FourSixth</tileRotation>
     <tileHeight>OneQuarter</tileHeight>
     <tileType>PlainsTile</tileType>
+    <dialogueIndex>0</dialogueIndex>
     <powerApproval>8</powerApproval>
     <citizenApproval>8</citizenApproval>
   </TileData>
@@ -609,6 +659,7 @@
     <tileRotation>FourSixth</tileRotation>
     <tileHeight>OneQuarter</tileHeight>
     <tileType>ForestTile</tileType>
+    <dialogueIndex>0</dialogueIndex>
     <powerApproval>5</powerApproval>
     <citizenApproval>10</citizenApproval>
   </TileData>
@@ -621,6 +672,7 @@
     <tileRotation>ThreeSixth</tileRotation>
     <tileHeight>Half</tileHeight>
     <tileType>ForestTile</tileType>
+    <dialogueIndex>0</dialogueIndex>
     <powerApproval>0</powerApproval>
     <citizenApproval>0</citizenApproval>
   </TileData>
@@ -633,6 +685,7 @@
     <tileRotation>ThreeSixth</tileRotation>
     <tileHeight>ThreeQuarter</tileHeight>
     <tileType>SiltTile</tileType>
+    <dialogueIndex>0</dialogueIndex>
     <powerApproval>0</powerApproval>
     <citizenApproval>0</citizenApproval>
   </TileData>
@@ -645,6 +698,7 @@
     <tileRotation>FourSixth</tileRotation>
     <tileHeight>OneQuarter</tileHeight>
     <tileType>FarmTile</tileType>
+    <dialogueIndex>0</dialogueIndex>
     <powerApproval>0</powerApproval>
     <citizenApproval>0</citizenApproval>
   </TileData>
@@ -657,6 +711,7 @@
     <tileRotation>Zero</tileRotation>
     <tileHeight>OneQuarter</tileHeight>
     <tileType>FarmHouseTile</tileType>
+    <dialogueIndex>0</dialogueIndex>
     <powerApproval>0</powerApproval>
     <citizenApproval>0</citizenApproval>
   </TileData>
@@ -669,6 +724,7 @@
     <tileRotation>OneSixth</tileRotation>
     <tileHeight>Zero</tileHeight>
     <tileType>CityTile</tileType>
+    <dialogueIndex>0</dialogueIndex>
     <powerApproval>0</powerApproval>
     <citizenApproval>0</citizenApproval>
   </TileData>
@@ -681,6 +737,7 @@
     <tileRotation>ThreeSixth</tileRotation>
     <tileHeight>Zero</tileHeight>
     <tileType>ClubTile</tileType>
+    <dialogueIndex>0</dialogueIndex>
     <powerApproval>0</powerApproval>
     <citizenApproval>0</citizenApproval>
   </TileData>
@@ -693,6 +750,7 @@
     <tileRotation>Zero</tileRotation>
     <tileHeight>Zero</tileHeight>
     <tileType>CityTile</tileType>
+    <dialogueIndex>0</dialogueIndex>
     <powerApproval>0</powerApproval>
     <citizenApproval>0</citizenApproval>
   </TileData>
@@ -705,6 +763,7 @@
     <tileRotation>Zero</tileRotation>
     <tileHeight>Zero</tileHeight>
     <tileType>CityTile</tileType>
+    <dialogueIndex>0</dialogueIndex>
     <powerApproval>0</powerApproval>
     <citizenApproval>0</citizenApproval>
   </TileData>
@@ -717,6 +776,7 @@
     <tileRotation>ThreeSixth</tileRotation>
     <tileHeight>OneQuarter</tileHeight>
     <tileType>CityTile</tileType>
+    <dialogueIndex>0</dialogueIndex>
     <powerApproval>2</powerApproval>
     <citizenApproval>0</citizenApproval>
   </TileData>
@@ -729,6 +789,7 @@
     <tileRotation>FourSixth</tileRotation>
     <tileHeight>Half</tileHeight>
     <tileType>ForestTile</tileType>
+    <dialogueIndex>0</dialogueIndex>
     <powerApproval>5</powerApproval>
     <citizenApproval>9</citizenApproval>
   </TileData>
@@ -741,6 +802,7 @@
     <tileRotation>FiveSixth</tileRotation>
     <tileHeight>ThreeQuarter</tileHeight>
     <tileType>SiltTile</tileType>
+    <dialogueIndex>0</dialogueIndex>
     <powerApproval>10</powerApproval>
     <citizenApproval>0</citizenApproval>
   </TileData>
@@ -753,6 +815,7 @@
     <tileRotation>ThreeSixth</tileRotation>
     <tileHeight>OneQuarter</tileHeight>
     <tileType>SiltTile</tileType>
+    <dialogueIndex>0</dialogueIndex>
     <powerApproval>0</powerApproval>
     <citizenApproval>0</citizenApproval>
   </TileData>
@@ -765,6 +828,7 @@
     <tileRotation>ThreeSixth</tileRotation>
     <tileHeight>OneQuarter</tileHeight>
     <tileType>FarmTile</tileType>
+    <dialogueIndex>0</dialogueIndex>
     <powerApproval>0</powerApproval>
     <citizenApproval>0</citizenApproval>
   </TileData>
@@ -777,6 +841,7 @@
     <tileRotation>Zero</tileRotation>
     <tileHeight>Zero</tileHeight>
     <tileType>FarmTile</tileType>
+    <dialogueIndex>0</dialogueIndex>
     <powerApproval>2</powerApproval>
     <citizenApproval>0</citizenApproval>
   </TileData>
@@ -789,6 +854,7 @@
     <tileRotation>Zero</tileRotation>
     <tileHeight>Zero</tileHeight>
     <tileType>CityTile</tileType>
+    <dialogueIndex>0</dialogueIndex>
     <powerApproval>2</powerApproval>
     <citizenApproval>0</citizenApproval>
   </TileData>
@@ -801,6 +867,7 @@
     <tileRotation>Zero</tileRotation>
     <tileHeight>Zero</tileHeight>
     <tileType>CityTile</tileType>
+    <dialogueIndex>0</dialogueIndex>
     <powerApproval>2</powerApproval>
     <citizenApproval>0</citizenApproval>
   </TileData>
@@ -813,6 +880,7 @@
     <tileRotation>OneSixth</tileRotation>
     <tileHeight>Zero</tileHeight>
     <tileType>CityTile</tileType>
+    <dialogueIndex>0</dialogueIndex>
     <powerApproval>2</powerApproval>
     <citizenApproval>0</citizenApproval>
   </TileData>
@@ -825,6 +893,7 @@
     <tileRotation>FourSixth</tileRotation>
     <tileHeight>Half</tileHeight>
     <tileType>CityTile</tileType>
+    <dialogueIndex>0</dialogueIndex>
     <powerApproval>2</powerApproval>
     <citizenApproval>0</citizenApproval>
   </TileData>
@@ -837,6 +906,7 @@
     <tileRotation>FourSixth</tileRotation>
     <tileHeight>One_OneQuarter</tileHeight>
     <tileType>ForestTile</tileType>
+    <dialogueIndex>0</dialogueIndex>
     <powerApproval>5</powerApproval>
     <citizenApproval>9</citizenApproval>
   </TileData>
@@ -849,6 +919,7 @@
     <tileRotation>ThreeSixth</tileRotation>
     <tileHeight>OneQuarter</tileHeight>
     <tileType>WaterTile</tileType>
+    <dialogueIndex>0</dialogueIndex>
     <powerApproval>0</powerApproval>
     <citizenApproval>0</citizenApproval>
   </TileData>
@@ -861,6 +932,7 @@
     <tileRotation>ThreeSixth</tileRotation>
     <tileHeight>Half</tileHeight>
     <tileType>SiltTile</tileType>
+    <dialogueIndex>0</dialogueIndex>
     <powerApproval>0</powerApproval>
     <citizenApproval>0</citizenApproval>
   </TileData>
@@ -873,6 +945,7 @@
     <tileRotation>FiveSixth</tileRotation>
     <tileHeight>OneQuarter</tileHeight>
     <tileType>SandTile</tileType>
+    <dialogueIndex>0</dialogueIndex>
     <powerApproval>8</powerApproval>
     <citizenApproval>0</citizenApproval>
   </TileData>
@@ -885,6 +958,7 @@
     <tileRotation>TwoSixth</tileRotation>
     <tileHeight>Zero</tileHeight>
     <tileType>BeachHutTile</tileType>
+    <dialogueIndex>0</dialogueIndex>
     <powerApproval>8</powerApproval>
     <citizenApproval>2</citizenApproval>
   </TileData>
@@ -897,6 +971,7 @@
     <tileRotation>Zero</tileRotation>
     <tileHeight>Zero</tileHeight>
     <tileType>SandTile</tileType>
+    <dialogueIndex>0</dialogueIndex>
     <powerApproval>8</powerApproval>
     <citizenApproval>2</citizenApproval>
   </TileData>
@@ -909,6 +984,7 @@
     <tileRotation>Zero</tileRotation>
     <tileHeight>Zero</tileHeight>
     <tileType>ForestTile</tileType>
+    <dialogueIndex>0</dialogueIndex>
     <powerApproval>8</powerApproval>
     <citizenApproval>9</citizenApproval>
   </TileData>
@@ -921,6 +997,7 @@
     <tileRotation>FourSixth</tileRotation>
     <tileHeight>OneQuarter</tileHeight>
     <tileType>ForestTile</tileType>
+    <dialogueIndex>0</dialogueIndex>
     <powerApproval>8</powerApproval>
     <citizenApproval>9</citizenApproval>
   </TileData>
@@ -933,6 +1010,7 @@
     <tileRotation>FourSixth</tileRotation>
     <tileHeight>Half</tileHeight>
     <tileType>ForestTile</tileType>
+    <dialogueIndex>0</dialogueIndex>
     <powerApproval>5</powerApproval>
     <citizenApproval>9</citizenApproval>
   </TileData>
@@ -945,6 +1023,7 @@
     <tileRotation>ThreeSixth</tileRotation>
     <tileHeight>Zero</tileHeight>
     <tileType>WaterTile</tileType>
+    <dialogueIndex>0</dialogueIndex>
     <powerApproval>0</powerApproval>
     <citizenApproval>0</citizenApproval>
   </TileData>
@@ -957,6 +1036,7 @@
     <tileRotation>ThreeSixth</tileRotation>
     <tileHeight>OneQuarter</tileHeight>
     <tileType>SiltTile</tileType>
+    <dialogueIndex>0</dialogueIndex>
     <powerApproval>0</powerApproval>
     <citizenApproval>0</citizenApproval>
   </TileData>
@@ -969,6 +1049,7 @@
     <tileRotation>FiveSixth</tileRotation>
     <tileHeight>OneQuarter</tileHeight>
     <tileType>SiltTile</tileType>
+    <dialogueIndex>0</dialogueIndex>
     <powerApproval>10</powerApproval>
     <citizenApproval>0</citizenApproval>
   </TileData>
@@ -981,6 +1062,7 @@
     <tileRotation>ThreeSixth</tileRotation>
     <tileHeight>OneQuarter</tileHeight>
     <tileType>SandTile</tileType>
+    <dialogueIndex>0</dialogueIndex>
     <powerApproval>0</powerApproval>
     <citizenApproval>0</citizenApproval>
   </TileData>
@@ -993,6 +1075,7 @@
     <tileRotation>FiveSixth</tileRotation>
     <tileHeight>OneQuarter</tileHeight>
     <tileType>SandTile</tileType>
+    <dialogueIndex>0</dialogueIndex>
     <powerApproval>10</powerApproval>
     <citizenApproval>2</citizenApproval>
   </TileData>
@@ -1005,6 +1088,7 @@
     <tileRotation>FiveSixth</tileRotation>
     <tileHeight>Half</tileHeight>
     <tileType>SandTile</tileType>
+    <dialogueIndex>0</dialogueIndex>
     <powerApproval>10</powerApproval>
     <citizenApproval>2</citizenApproval>
   </TileData>
@@ -1017,6 +1101,7 @@
     <tileRotation>FiveSixth</tileRotation>
     <tileHeight>ThreeQuarter</tileHeight>
     <tileType>SandTile</tileType>
+    <dialogueIndex>0</dialogueIndex>
     <powerApproval>8</powerApproval>
     <citizenApproval>5</citizenApproval>
   </TileData>
@@ -1029,6 +1114,7 @@
     <tileRotation>ThreeSixth</tileRotation>
     <tileHeight>Zero</tileHeight>
     <tileType>WaterTile</tileType>
+    <dialogueIndex>0</dialogueIndex>
     <powerApproval>0</powerApproval>
     <citizenApproval>0</citizenApproval>
   </TileData>
@@ -1041,6 +1127,7 @@
     <tileRotation>ThreeSixth</tileRotation>
     <tileHeight>OneQuarter</tileHeight>
     <tileType>WaterTile</tileType>
+    <dialogueIndex>0</dialogueIndex>
     <powerApproval>0</powerApproval>
     <citizenApproval>0</citizenApproval>
   </TileData>
@@ -1053,6 +1140,7 @@
     <tileRotation>ThreeSixth</tileRotation>
     <tileHeight>Zero</tileHeight>
     <tileType>WaterTile</tileType>
+    <dialogueIndex>0</dialogueIndex>
     <powerApproval>0</powerApproval>
     <citizenApproval>0</citizenApproval>
   </TileData>
@@ -1065,6 +1153,7 @@
     <tileRotation>ThreeSixth</tileRotation>
     <tileHeight>Zero</tileHeight>
     <tileType>WaterTile</tileType>
+    <dialogueIndex>0</dialogueIndex>
     <powerApproval>0</powerApproval>
     <citizenApproval>0</citizenApproval>
   </TileData>
@@ -1077,6 +1166,7 @@
     <tileRotation>ThreeSixth</tileRotation>
     <tileHeight>OneQuarter</tileHeight>
     <tileType>WaterTile</tileType>
+    <dialogueIndex>0</dialogueIndex>
     <powerApproval>0</powerApproval>
     <citizenApproval>0</citizenApproval>
   </TileData>
@@ -1089,6 +1179,7 @@
     <tileRotation>ThreeSixth</tileRotation>
     <tileHeight>Half</tileHeight>
     <tileType>SandTile</tileType>
+    <dialogueIndex>0</dialogueIndex>
     <powerApproval>0</powerApproval>
     <citizenApproval>0</citizenApproval>
   </TileData>

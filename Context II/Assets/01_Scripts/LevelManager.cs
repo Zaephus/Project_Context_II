@@ -20,6 +20,11 @@ public class LevelManager : MonoBehaviour {
     private GameObject placingToggle;
 
     [SerializeField]
+    private GameObject dialogueBubblePrefab;
+    [SerializeField]
+    private GameObject dialogueBubbleContainer;
+
+    [SerializeField]
     private TextAsset level;
 
     private float score;
@@ -50,7 +55,13 @@ public class LevelManager : MonoBehaviour {
             GameManager.Instance.tiles = levelLoader.Generate(level, levelGenerator);
 
             for(int i = 0; i < GameManager.Instance.tiles.Count; i++) {
-
+                if(GameManager.Instance.tiles[i].dialogueIndex == 0) {
+                    continue;
+                }
+                else {
+                    Vector3 indicatorPos = GameManager.Instance.tiles[i].transform.position + new Vector3(0, 0.2f, 0);
+                    GameObject indicator = Instantiate(dialogueBubblePrefab, indicatorPos, dialogueBubblePrefab.transform.rotation, dialogueBubbleContainer.transform);
+                }
             }
 
         }        

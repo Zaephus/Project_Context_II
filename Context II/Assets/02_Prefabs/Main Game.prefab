@@ -32,7 +32,7 @@ RectTransform:
   m_Children:
   - {fileID: 1053248212}
   m_Father: {fileID: 6443363123255487009}
-  m_RootOrder: 5
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
@@ -382,7 +382,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &783260333
 RectTransform:
   m_ObjectHideFlags: 0
@@ -399,7 +399,7 @@ RectTransform:
   - {fileID: 823198938}
   - {fileID: 1448785464}
   m_Father: {fileID: 6443363123255487009}
-  m_RootOrder: 6
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 45}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
@@ -511,17 +511,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: 'The board at bigEnergyco has decided, that it wants to build a small windmill
-
-    farm
-    in the rural village of Windswept. They have tasked you to decide where
-
-    these
-    windmills are to be placed.
+    farm in the rural village of Windswept. They have tasked you to decide where
+    these windmills are to be placed.
 
 
-    Our engineers have provided you with data of
-    where the optimal location for these windmills are. The most optimal tiles will
-    show up with a blue hue.'
+    Our engineers have provided you with
+    data of where the optimal location for these windmills are. The most optimal
+    tiles will show up with a blue hue.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6786f5866fa1cef4f87b0171d62e19de, type: 2}
   m_sharedMaterial: {fileID: 972645370202801390, guid: 6786f5866fa1cef4f87b0171d62e19de,
@@ -762,7 +758,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.0001449585, y: -0.000061035156}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1448785466
@@ -1017,6 +1013,37 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!1 &2065443846
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2065443847}
+  m_Layer: 0
+  m_Name: Container
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2065443847
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2065443846}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6443363122109550867}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2100221922287356679
 GameObject:
   m_ObjectHideFlags: 0
@@ -1087,6 +1114,7 @@ Transform:
   - {fileID: 1514568145470702750}
   - {fileID: 6443363123255487009}
   - {fileID: 6443363123337128842}
+  - {fileID: 2065443847}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1102,7 +1130,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96643bececea0234c9695367ccc6e310, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  state: 0
+  state: 2
   tiles: []
   goodEnding: {fileID: 8042224260217954282}
   badEnding: {fileID: 8042224260078048887}
@@ -1253,7 +1281,7 @@ GameObject:
   - component: {fileID: 6443363122664322062}
   - component: {fileID: 6443363122664322049}
   - component: {fileID: 6443363122664322060}
-  - component: {fileID: 757084874}
+  - component: {fileID: 982209308519878581}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1360,7 +1388,7 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
---- !u!114 &757084874
+--- !u!114 &982209308519878581
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1369,10 +1397,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 6443363122664322048}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc3ec437204326545bc2892f5c525d93, type: 3}
+  m_Script: {fileID: 11500000, guid: 16cabeef94436e840b786c93e3aefccf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Camera: {fileID: 6443363122664322062}
   moveSpeed: 5
 --- !u!1 &6443363123255487013
 GameObject:
@@ -1408,10 +1435,10 @@ RectTransform:
   - {fileID: 6443363122181883329}
   - {fileID: 2408776696872831151}
   - {fileID: 8042224259766120636}
-  - {fileID: 8042224260217954277}
-  - {fileID: 8042224260078048886}
   - {fileID: 48836502}
   - {fileID: 783260333}
+  - {fileID: 8042224260217954277}
+  - {fileID: 8042224260078048886}
   m_Father: {fileID: 6443363122109550867}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1797,6 +1824,9 @@ MonoBehaviour:
   approvalThreshold: 5
   endTurnButton: {fileID: 6443363122181883328}
   placingToggle: {fileID: 2408776696872831150}
+  dialogueBubblePrefab: {fileID: 7603137838163217677, guid: 1a8d8e894ec4e3b4ca27dbe7d2891ce5,
+    type: 3}
+  dialogueBubbleContainer: {fileID: 2065443846}
   level: {fileID: 4900000, guid: 9b8c64c406ead664e82941655d4e9e75, type: 3}
 --- !u!114 &8042224258581782188
 MonoBehaviour:
@@ -1814,6 +1844,10 @@ MonoBehaviour:
   selectorOffset: 0.1
   selectableColor: {r: 0, g: 1, b: 0, a: 0.64705884}
   unSelectableColor: {r: 1, g: 0, b: 0, a: 0.64705884}
+  tilesMaterial: {fileID: 2100000, guid: c7a70f9a82bc24d4c9358a4a96681a51, type: 2}
+  coloredTexture: {fileID: 2800000, guid: 6595f604f4104ad459e8a1a9b7d5e60d, type: 3}
+  grayscaleTexture: {fileID: 2800000, guid: be2b27cb58a6f5c47bb382fb10904adc, type: 3}
+  dialogueBubbleContainer: {fileID: 2065443846}
   windmillTargetText: {fileID: 8042224259766120639}
   windmillTarget: 5
 --- !u!114 &8042224258581782189
@@ -2007,7 +2041,7 @@ RectTransform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 6443363123255487009}
-  m_RootOrder: 4
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2083,7 +2117,7 @@ RectTransform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 6443363123255487009}
-  m_RootOrder: 3
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}

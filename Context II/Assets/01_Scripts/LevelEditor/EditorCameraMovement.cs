@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraMovement : MonoBehaviour {
+public class EditorCameraMovement : MonoBehaviour {
 
     [SerializeField]
     private float moveSpeed;

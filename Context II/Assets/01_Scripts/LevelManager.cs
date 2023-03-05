@@ -32,7 +32,7 @@ public class LevelManager : MonoBehaviour {
     public void OnStart(GameState _state) {
 
         placementManager = GetComponent<PlacementManager>();
-        placementManager.OnStart();
+        placementManager.OnStart(_state);
         placementManager.WindmillTargetReached += WindmillTargetReached;
         placementManager.WindmillPlaced += SetScore;
 

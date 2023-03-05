@@ -42,8 +42,15 @@ public class PlacementManager : MonoBehaviour {
 
     [SerializeField]
     private GameObject dialogueBubbleContainer;
+    [SerializeField]
+    private DialogueSystem dialogueSystem;
     
-    private bool isShowingDialogueOptions = true;
+    private bool isPlacing = false;
+
+    [SerializeField]
+    private GameObject levelCanvas;
+    [SerializeField]
+    private GameObject dialogueCanvas;
 
     private GameObject objectToInstantiate;
     private TileType selectedType;
@@ -57,8 +64,12 @@ public class PlacementManager : MonoBehaviour {
     private int windmillTarget;
     private int currentWindmillAmount = 0;
 
-    public void OnStart() {
+    private GameState gameState;
+
+    public void OnStart(GameState _state) {
+        gameState = _state;
         windmillTargetText.text = currentWindmillAmount + "/" + windmillTarget;
+        tilesMaterial.mainTexture = coloredTexture;
     }
 
     public void OnUpdate() {
@@ -67,48 +78,45 @@ public class PlacementManager : MonoBehaviour {
             CheckForTile();
         }
 
-        // if(hoveredTile != null && selectedType != TileType.None) {
-        //     if(Input.GetMouseButtonDown(0)) {
-        //         PlaceTile();
-        //         UpdateWindmillTarget(currentWindmillAmount + 1);
-        //     }
-        // }
-
         if(hoveredTile != null) {
-            if(Input.GetMouseButtonDown(0)) {
-                if(isShowingDialogueOptions) {
-
+            if(!isPlacing && hoveredTile.dialogueIndex != 0 && gameState == GameState.StageTwo) {
+                if(Input.GetMouseButtonDown(0)) {
+                    ShowDialogue();
                 }
-                else {
-                    if(CheckPossiblePlacement()) {
-                        PlaceTile();
-                        UpdateWindmillTarget(currentWindmillAmount + 1);
-                    }
+            }
+            else if(CheckPossiblePlacement() && selectedType != TileType.None) {
+                if(Input.GetMouseButtonDown(0)) {
+                    PlaceTile();
+                    UpdateWindmillTarget(currentWindmillAmount + 1);
                 }
             }
         }
 
     }
 
-    private void OnDisable() {
-        tilesMaterial.mainTexture = coloredTexture;
-    }
-
     public void ToggleSelection() {
-        isShowingDialogueOptions = !isShowingDialogueOptions;
 
-        if(isShowingDialogueOptions) {
-            selectedType = TileType.None;
-            windmillTargetText.gameObject.SetActive(false);
-            tilesMaterial.mainTexture = coloredTexture;
-            Tile.TogglePowerApprovalVisibility?.Invoke(false);
-        }
-        else {
+        isPlacing = !isPlacing;
+
+        if(isPlacing) {
+            tileSelector.SetActive(true);
+            dialogueBubbleContainer.SetActive(false);
+
             selectedType = TileType.WindmillTile;
             windmillTargetText.gameObject.SetActive(true);
             tilesMaterial.mainTexture = grayscaleTexture;
             Tile.TogglePowerApprovalVisibility?.Invoke(true);
         }
+        else {
+            tileSelector.SetActive(false);
+            dialogueBubbleContainer.SetActive(true);
+
+            selectedType = TileType.None;
+            windmillTargetText.gameObject.SetActive(false);
+            tilesMaterial.mainTexture = coloredTexture;
+            Tile.TogglePowerApprovalVisibility?.Invoke(false);
+        }
+
     }
 
     private void PlaceTile() {
@@ -142,6 +150,33 @@ public class PlacementManager : MonoBehaviour {
 
     }
 
+    private void ShowDialogue() {
+
+        levelCanvas.SetActive(false);
+        dialogueCanvas.SetActive(true);
+
+        dialogueSystem.StartDialogue(hoveredTile.dialogueIndex);
+
+        dialogueSystem.DialogueEnded += DialogueEnded;
+
+        IsChecking = false;
+        hoveredTile = null;
+
+    }
+
+    private void DialogueEnded() {
+
+        Debug.Log("Dialogue ended");
+
+        levelCanvas.SetActive(true);
+        dialogueCanvas.SetActive(false);
+
+        dialogueSystem.DialogueEnded -= DialogueEnded;
+
+        IsChecking = true;
+
+    }
+
     private void UpdateWindmillTarget(int _amount) {
         
         currentWindmillAmount = _amount;
@@ -169,13 +204,15 @@ public class PlacementManager : MonoBehaviour {
                 return;
             }
             
-            tileSelector.SetActive(true);
+            if(isPlacing) {
+                tileSelector.SetActive(true);
 
-            tileSelector.transform.position = new Vector3(
-                hoveredTile.transform.position.x,
-                hoveredTile.transform.position.y + selectorOffset,
-                hoveredTile.transform.position.z
-            );
+                tileSelector.transform.position = new Vector3(
+                    hoveredTile.transform.position.x,
+                    hoveredTile.transform.position.y + selectorOffset,
+                    hoveredTile.transform.position.z
+                );
+            }
 
         }
         else {
@@ -195,6 +232,10 @@ public class PlacementManager : MonoBehaviour {
         tileSelector.GetComponent<MeshRenderer>().material.color = selectableColor;
         return true;
 
+    }
+
+    private void OnDisable() {
+        tilesMaterial.mainTexture = coloredTexture;
     }
 
 }

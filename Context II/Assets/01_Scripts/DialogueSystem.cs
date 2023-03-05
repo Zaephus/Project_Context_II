@@ -26,8 +26,6 @@ public class DialogueSystem : MonoBehaviour {
 
     public void StartDialogue(int _index) {
 
-        Debug.Log("Starting Dialogue of index: " + _index);
-
         dialogueOption = DialogueDatabase.Instance.dialogueOptions[_index-1];
         
         titleText.text = dialogueOption.characterName;

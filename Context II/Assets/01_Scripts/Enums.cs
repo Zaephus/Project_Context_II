@@ -47,3 +47,11 @@ public enum ApprovalType {
     Power = 1,
     Citizen = 2
 }
+
+[System.Serializable]
+public enum GameState {
+    MainMenu = 0,
+    StageOne = 1,
+    StageTwo = 2,
+    Ending = 3
+}

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
 public class GameManager : MonoBehaviour {
 
     #region Singleton
@@ -16,12 +17,7 @@ public class GameManager : MonoBehaviour {
     }
     #endregion
     
-    private enum GameState {
-        MainMenu = 0,
-        StageOne = 1,
-        StageTwo = 2,
-        Ending = 3
-    }
+    
 
     private GameState State {
         get {
@@ -46,7 +42,7 @@ public class GameManager : MonoBehaviour {
     private LevelManager levelManager;
 
     private void Start() {
-        levelManager.OnStart();
+        levelManager.OnStart(state);
         levelManager.LevelFinished += EndLevel;
     }
 

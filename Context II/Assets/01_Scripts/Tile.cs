@@ -12,10 +12,13 @@ public class Tile : MonoBehaviour {
     public TileHeight tileHeight;
     public TileType tileType;
 
+    public int dialogueIndex;
+
     [SerializeField]
     private MeshRenderer powerApprovalRenderer;
     [SerializeField]
-    private MeshRenderer citizenApprovalRenderer; 
+    private MeshRenderer citizenApprovalRenderer;
+
 
     public float PowerApproval {
         get {

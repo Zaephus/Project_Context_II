@@ -22,9 +22,13 @@ public class EditorPlacementManager : MonoBehaviour {
     private bool isOnUI;
 
     [SerializeField]
-    private Slider approvalSlider;
+    private Slider slider;
     [SerializeField]
-    private TMP_Text approvalValueText;
+    private TMP_Text sliderTitleText;
+    [SerializeField]
+    private TMP_Text sliderValueText;
+
+    private int sliderValue = 5;
 
     [SerializeField]
     private TMP_Dropdown tileDropdown;
@@ -34,7 +38,10 @@ public class EditorPlacementManager : MonoBehaviour {
     [SerializeField]
     private Toggle citizenApprovalToggle;
 
-    private int approvalValue = 5;
+    public GameObject dialogueIndicatorPrefab;
+    public Dictionary<Vector3, GameObject> dialogueIndicators = new Dictionary<Vector3, GameObject>();
+
+    private bool isEditingDialogue = false;
 
     [SerializeField]
     private GameObject tileSelector;
@@ -74,13 +81,16 @@ public class EditorPlacementManager : MonoBehaviour {
             CheckForTile();
         }
 
-        if(hoveredTile != null && (selectedTileType != TileType.None || selectedApprovalType != ApprovalType.None)) {
+        if(hoveredTile != null && (selectedTileType != TileType.None || selectedApprovalType != ApprovalType.None || isEditingDialogue)) {
             if(Input.GetMouseButtonDown(0)) {
                 if(selectedTileType != TileType.None) {
                     PlaceTile();
                 }
                 else if(selectedApprovalType != ApprovalType.None) {
                     SetTileApproval();
+                }
+                else if(isEditingDialogue) {
+                    SetTileDialogue();
                 }
             }
         }
@@ -100,7 +110,6 @@ public class EditorPlacementManager : MonoBehaviour {
             IsChecking = false;
         }
         else {
-            //ChangeApprovalSelection(0);
             powerApprovalToggle.isOn = false;
             citizenApprovalToggle.isOn = false;
             IsChecking = true;
@@ -138,15 +147,33 @@ public class EditorPlacementManager : MonoBehaviour {
             IsChecking = false;
         }
         else {
+            sliderTitleText.text = "Approval:";
             IsChecking = true;
             tileDropdown.value = 0;
         }
         
     }
 
-    public void ApprovalValueChanged() {
-        approvalValue = (int)approvalSlider.value;
-        approvalValueText.text = approvalValue.ToString();
+    public void ChangeDialogueSelection() {
+
+        isEditingDialogue = !isEditingDialogue;
+
+        if(isEditingDialogue) {
+            sliderTitleText.text = "Dialogue Option:";
+            tileDropdown.value = 0;
+            powerApprovalToggle.isOn = false;
+            citizenApprovalToggle.isOn = false;
+            IsChecking = true;
+        }
+        else {
+            isChecking = false;
+        }
+
+    }
+
+    public void SliderValueChanged() {
+        sliderValue = (int)slider.value;
+        sliderValueText.text = sliderValue.ToString();
     }
 
     private void PlaceTile() {
@@ -178,13 +205,37 @@ public class EditorPlacementManager : MonoBehaviour {
     private void SetTileApproval() {
         switch(selectedApprovalType) {
             case ApprovalType.Power:
-                hoveredTile.PowerApproval = approvalValue;
+                hoveredTile.PowerApproval = sliderValue;
                 break;
             
             case ApprovalType.Citizen:
-                hoveredTile.CitizenApproval = approvalValue;
+                hoveredTile.CitizenApproval = sliderValue;
                 break;
         }
+    }
+
+    private void SetTileDialogue() {
+
+        hoveredTile.dialogueIndex = sliderValue;
+
+        if(dialogueIndicators.ContainsKey(hoveredTile.hexPosition)) {
+            if(sliderValue == 0) {
+                Destroy(dialogueIndicators[hoveredTile.hexPosition]);
+                dialogueIndicators.Remove(hoveredTile.hexPosition);
+            }
+            dialogueIndicators[hoveredTile.hexPosition].GetComponent<TMP_Text>().text = sliderValue.ToString();
+        }
+        else if(sliderValue > 0) {
+
+            Vector3 indicatorPos = hoveredTile.transform.position + new Vector3(0, 0.2f, 0);
+            GameObject indicator = Instantiate(dialogueIndicatorPrefab, indicatorPos, dialogueIndicatorPrefab.transform.rotation);
+
+            indicator.GetComponent<TMP_Text>().text = sliderValue.ToString();
+
+            dialogueIndicators.Add(hoveredTile.hexPosition, indicator);
+
+        }
+
     }
 
     private void SetTileRotation() {
@@ -200,7 +251,7 @@ public class EditorPlacementManager : MonoBehaviour {
     }
 
     private void SetTileHeight() {
-        if(Input.mouseScrollDelta.y > 0) {
+        if(!Input.GetKey(KeyCode.LeftControl) && Input.mouseScrollDelta.y > 0) {
             if((int)tileHeight >= System.Enum.GetValues(typeof(TileHeight)).Length - 1) {
                 tileHeight = (TileHeight)0;
             }
@@ -215,7 +266,7 @@ public class EditorPlacementManager : MonoBehaviour {
             );
 
         }
-        else if(Input.mouseScrollDelta.y < 0) {
+        else if(!Input.GetKey(KeyCode.LeftControl) && Input.mouseScrollDelta.y < 0) {
             if((int)tileHeight <= 0) {
                 tileHeight = (TileHeight)System.Enum.GetValues(typeof(TileHeight)).Length - 1;
             }

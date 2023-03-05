@@ -55,7 +55,7 @@ public class LevelEditor : MonoBehaviour {
 
         tileDatas.Clear();
         foreach(Tile t in tiles) {
-            tileDatas.Add(new TileData(t.transform.position, t.hexPosition, t.tileRotation, t.tileHeight, t.tileType, t.PowerApproval, t.CitizenApproval));
+            tileDatas.Add(new TileData(t.transform.position, t.hexPosition, t.tileRotation, t.tileHeight, t.tileType, t.dialogueIndex, t.PowerApproval, t.CitizenApproval));
         }
 
         EditorDataManager.SaveLevel(tileDatas.ToArray());
@@ -78,6 +78,24 @@ public class LevelEditor : MonoBehaviour {
         tiles.Clear();
 
         tiles = levelGenerator.Generate(tileDatas.ToArray());
+
+        Dictionary<Vector3, GameObject> dialogueIndicators = new Dictionary<Vector3, GameObject>();
+
+        for(int i = 0; i < tiles.Count; i++) {
+            if(tiles[i].dialogueIndex == 0) {
+                continue;
+            }
+            else {
+                Vector3 indicatorPos = tiles[i].transform.position + new Vector3(0, 0.2f, 0);
+                GameObject indicator = Instantiate(editorPlacementManager.dialogueIndicatorPrefab, indicatorPos, editorPlacementManager.dialogueIndicatorPrefab.transform.rotation);
+
+                indicator.GetComponent<TMP_Text>().text = tiles[i].dialogueIndex.ToString();
+
+                dialogueIndicators.Add(tiles[i].hexPosition, indicator);
+            }
+        }
+
+        editorPlacementManager.dialogueIndicators = dialogueIndicators;
 
         size = Hex.GetHexDistanceInt(Vector3.zero, tiles[0].hexPosition) * 2 + 1;
         sizeValueText.text = size.ToString();

@@ -24,7 +24,8 @@ public class LevelManager : MonoBehaviour {
 
     private float score;
 
-    public void OnStart() {
+    public void OnStart(GameState _state) {
+
         placementManager = GetComponent<PlacementManager>();
         placementManager.OnStart();
         placementManager.WindmillTargetReached += WindmillTargetReached;
@@ -38,7 +39,22 @@ public class LevelManager : MonoBehaviour {
         levelLoader = GetComponent<LevelLoader>();
         levelGenerator = GetComponent<LevelGenerator>();
 
-        GameManager.Instance.tiles = levelLoader.Generate(level, levelGenerator);
+        if(_state == GameState.StageOne) {
+            GameManager.Instance.tiles = levelLoader.Generate(level, levelGenerator);
+        }
+        else if(_state == GameState.StageTwo) {
+
+            for(int i = GameManager.Instance.tiles.Count-1; i >= 0; i--) {
+                Destroy(GameManager.Instance.tiles[i].gameObject);
+            }
+            GameManager.Instance.tiles = levelLoader.Generate(level, levelGenerator);
+
+            for(int i = 0; i < GameManager.Instance.tiles.Count; i++) {
+
+            }
+
+        }        
+
     }
 
     public void OnUpdate() {

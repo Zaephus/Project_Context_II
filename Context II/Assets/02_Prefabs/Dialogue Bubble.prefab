@@ -51,6 +51,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6542827819160866819, guid: 98739500f4a129441a0dd530e5173d6d,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6542827819160866819, guid: 98739500f4a129441a0dd530e5173d6d,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6542827819160866819, guid: 98739500f4a129441a0dd530e5173d6d,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6542827819160866819, guid: 98739500f4a129441a0dd530e5173d6d,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.8
       objectReference: {fileID: 0}
@@ -99,8 +114,39 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7388486590774829328, guid: 98739500f4a129441a0dd530e5173d6d,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: bd498d02a317b3c48bc92903834a0113, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 98739500f4a129441a0dd530e5173d6d, type: 3}
+--- !u!1 &991715777789265260 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3592055577713447869, guid: 98739500f4a129441a0dd530e5173d6d,
+    type: 3}
+  m_PrefabInstance: {fileID: 4330989199300073169}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &4677940741716306677
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 991715777789265260}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 407a7269dc219b1449263bd6d3c9c5c1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!4 &7410119611153450706 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6542827819160866819, guid: 98739500f4a129441a0dd530e5173d6d,

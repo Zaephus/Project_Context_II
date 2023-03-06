@@ -45,7 +45,11 @@ public class LevelManager : MonoBehaviour {
         levelGenerator = GetComponent<LevelGenerator>();
 
         if(_state == GameState.StageOne) {
+            for(int i = GameManager.Instance.tiles.Count-1; i >= 0; i--) {
+                Destroy(GameManager.Instance.tiles[i].gameObject);
+            }
             GameManager.Instance.tiles = levelLoader.Generate(level, levelGenerator);
+            dialogueBubbleContainer.SetActive(false);
         }
         else if(_state == GameState.StageTwo) {
 
@@ -63,6 +67,8 @@ public class LevelManager : MonoBehaviour {
                     GameObject indicator = Instantiate(dialogueBubblePrefab, indicatorPos, dialogueBubblePrefab.transform.rotation, dialogueBubbleContainer.transform);
                 }
             }
+
+            dialogueBubbleContainer.SetActive(true);
 
         }        
 

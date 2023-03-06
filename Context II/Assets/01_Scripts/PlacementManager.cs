@@ -62,12 +62,13 @@ public class PlacementManager : MonoBehaviour {
 
     [SerializeField]
     private int windmillTarget;
-    private int currentWindmillAmount = 0;
+    private int currentWindmillAmount;
 
     private GameState gameState;
 
     public void OnStart(GameState _state) {
         gameState = _state;
+        currentWindmillAmount = 0;
         windmillTargetText.text = currentWindmillAmount + "/" + windmillTarget;
         tilesMaterial.mainTexture = coloredTexture;
     }
@@ -166,8 +167,6 @@ public class PlacementManager : MonoBehaviour {
 
     private void DialogueEnded() {
 
-        Debug.Log("Dialogue ended");
-
         levelCanvas.SetActive(true);
         dialogueCanvas.SetActive(false);
 
@@ -224,7 +223,7 @@ public class PlacementManager : MonoBehaviour {
 
     private bool CheckPossiblePlacement() {
 
-        if(hoveredTile.dialogueIndex != 0) {
+        if(hoveredTile.dialogueIndex != 0 || hoveredTile.tileType == TileType.WindmillTile) {
             tileSelector.GetComponent<MeshRenderer>().material.color = unSelectableColor;
             return false;
         }

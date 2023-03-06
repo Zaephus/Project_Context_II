@@ -15,7 +15,7 @@ MonoBehaviour:
   characterName: DJ
   characterSprite: {fileID: 21300000, guid: 55c730c7b58549e468d3537cc024c993, type: 3}
   dialogue: 'Yo, I host raves in the club every week, but these annoying windmills
-    make a huge noise.
+    make a ton of noise.
 
-    I don''t want them next to my club, they''ll drown out
-    my sick remixes.'
+    I don''t want them next to my club, they''ll drown
+    out my sick remixes.'

@@ -53,6 +53,10 @@ public class GameManager : MonoBehaviour {
         if(State == GameState.StageOne || State == GameState.StageTwo) {
             levelManager.OnUpdate();
         }
+
+        if(Input.GetKeyDown(KeyCode.Escape)) {
+            Application.Quit();
+        }
     }
 
     public void StartGame() {
@@ -70,19 +74,20 @@ public class GameManager : MonoBehaviour {
 
     private void EndLevel(bool _goodEnding) {
 
-        if(_goodEnding) {
-            goodEnding.SetActive(true);
-            badEnding.SetActive(false);
-        }
-        else {
+        if(State == GameState.StageOne) {
             goodEnding.SetActive(false);
             badEnding.SetActive(true);
-        }
-
-        if(State == GameState.StageOne) {
             State = GameState.IntermediateEnding;
         }
         else if(State == GameState.StageTwo) {
+            if(_goodEnding) {
+                goodEnding.SetActive(true);
+                badEnding.SetActive(false);
+            }
+            else {
+                goodEnding.SetActive(false);
+                badEnding.SetActive(true);
+            }
             State = GameState.FinalEnding;
         }
         

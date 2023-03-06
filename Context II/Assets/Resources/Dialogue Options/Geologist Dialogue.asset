@@ -14,14 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Geologist
   characterSprite: {fileID: 21300000, guid: cfe4498c5f0847248bc3c0f8a8cf2401, type: 3}
-  dialogue: 'The ground in the southeastern area of the city contains a high amount
-    of silt, which over time can shift under heavy loads.
-
-    I would advise against
-    building a large structure in that area. Silt looks similar to sand, but it is
-    distinguished by its slightly darker color.
-
-    Keep that in mind while planning.
-
-    Thank
-    you for preserving our beautiful planet!'
+  dialogue: The ground in the southeastern part of the city has a high silt content,
+    which can shift under heavy loads. I would advise against building a large structure
+    in that area. Silt looks similar to sand, but slightly darker.

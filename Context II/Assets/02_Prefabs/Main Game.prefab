@@ -246,8 +246,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30
-  m_fontSizeBase: 30
+  m_fontSize: 36
+  m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -282,7 +282,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 93.74, y: 0, z: -363.15048, w: 0}
+  m_margin: {x: 93.74, y: 0, z: -377.95895, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -402,7 +402,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -45}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 12.6, y: -51.4}
+  m_AnchoredPosition: {x: -7, y: -77}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &823198940
@@ -440,7 +440,7 @@ MonoBehaviour:
 
     Our engineers have provided you with
     data of where the optimal location for these windmills are. The most optimal
-    tiles will show up with a blue hue.'
+    tiles will show up with a red hue.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6786f5866fa1cef4f87b0171d62e19de, type: 2}
   m_sharedMaterial: {fileID: 972645370202801390, guid: 6786f5866fa1cef4f87b0171d62e19de,
@@ -468,8 +468,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 16
-  m_fontSizeBase: 16
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2575,6 +2575,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Main Menu
+      objectReference: {fileID: 0}
+    - target: {fileID: 3004359265723583074, guid: 480d51be27f24d04e8bea8ce0e64d8cf,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5999081612364875691, guid: 480d51be27f24d04e8bea8ce0e64d8cf,
         type: 3}

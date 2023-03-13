@@ -101,6 +101,8 @@ public class LevelEditor : MonoBehaviour {
         sizeValueText.text = size.ToString();
         slider.SetValueWithoutNotify(size);
 
+        EditorCameraMovement.CameraReset.Invoke();
+
     }
 
 }

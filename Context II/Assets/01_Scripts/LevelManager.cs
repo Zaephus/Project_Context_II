@@ -44,6 +44,8 @@ public class LevelManager : MonoBehaviour {
         levelLoader = GetComponent<LevelLoader>();
         levelGenerator = GetComponent<LevelGenerator>();
 
+        CameraMovement.CameraReset?.Invoke();
+
         if(_state == GameState.StageOne) {
             for(int i = GameManager.Instance.tiles.Count-1; i >= 0; i--) {
                 Destroy(GameManager.Instance.tiles[i].gameObject);

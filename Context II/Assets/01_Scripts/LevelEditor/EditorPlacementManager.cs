@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 using TMPro;
 
 public class EditorPlacementManager : MonoBehaviour {
@@ -18,8 +19,6 @@ public class EditorPlacementManager : MonoBehaviour {
         }
     }
     private bool isChecking;
-
-    private bool isOnUI;
 
     [SerializeField]
     private Slider slider;
@@ -70,6 +69,8 @@ public class EditorPlacementManager : MonoBehaviour {
         }
 
         tileDropdown.AddOptions(dropdownOptions);
+
+        EditorCameraMovement.CursorLocked += ToggleSelection;
     }
 
     public void OnUpdate() {
@@ -77,7 +78,7 @@ public class EditorPlacementManager : MonoBehaviour {
         SetTileRotation();
         SetTileHeight();
 
-        if(IsChecking && !isOnUI) {
+        if(IsChecking && !EventSystem.current.IsPointerOverGameObject()) {
             CheckForTile();
         }
 
@@ -97,8 +98,8 @@ public class EditorPlacementManager : MonoBehaviour {
 
     }
 
-    public void ToggleSelection() {
-        isOnUI = !isOnUI;
+    public void ToggleSelection(bool _value) {
+        IsChecking = !_value;
         hoveredTile = null;
     }
 

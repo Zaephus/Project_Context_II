@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using TMPro;
 
 public class PlacementManager : MonoBehaviour {
@@ -71,11 +72,13 @@ public class PlacementManager : MonoBehaviour {
         currentWindmillAmount = 0;
         windmillTargetText.text = currentWindmillAmount + "/" + windmillTarget;
         tilesMaterial.mainTexture = coloredTexture;
+
+        CameraMovement.CursorLocked += ToggleChecking;
     }
 
     public void OnUpdate() {
 
-        if(IsChecking) {
+        if(IsChecking && !EventSystem.current.IsPointerOverGameObject()) {
             CheckForTile();
         }
 
@@ -118,6 +121,11 @@ public class PlacementManager : MonoBehaviour {
             Tile.TogglePowerApprovalVisibility?.Invoke(false);
         }
 
+    }
+
+    private void ToggleChecking(bool _value) {
+        IsChecking = !_value;
+        hoveredTile = null;
     }
 
     private void PlaceTile() {

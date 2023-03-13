@@ -42,8 +42,6 @@ public class PlacementManager : MonoBehaviour {
     private Texture2D grayscaleTexture;
 
     [SerializeField]
-    private GameObject dialogueBubbleContainer;
-    [SerializeField]
     private DialogueSystem dialogueSystem;
     
     private bool isPlacing = false;
@@ -104,7 +102,6 @@ public class PlacementManager : MonoBehaviour {
 
         if(isPlacing) {
             tileSelector.SetActive(true);
-            dialogueBubbleContainer.SetActive(false);
 
             selectedType = TileType.WindmillTile;
             windmillTargetText.gameObject.SetActive(true);
@@ -113,7 +110,6 @@ public class PlacementManager : MonoBehaviour {
         }
         else {
             tileSelector.SetActive(false);
-            dialogueBubbleContainer.SetActive(true);
 
             selectedType = TileType.None;
             windmillTargetText.gameObject.SetActive(false);

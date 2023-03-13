@@ -227,14 +227,12 @@ public class EditorPlacementManager : MonoBehaviour {
             dialogueIndicators[hoveredTile.hexPosition].GetComponent<TMP_Text>().text = sliderValue.ToString();
         }
         else if(sliderValue > 0) {
-
-            Vector3 indicatorPos = hoveredTile.transform.position + new Vector3(0, 0.2f, 0);
-            GameObject indicator = Instantiate(dialogueIndicatorPrefab, indicatorPos, dialogueIndicatorPrefab.transform.rotation);
+            Vector3 indicatorPos = hoveredTile.transform.position + new Vector3(0, 1.5f, 0);
+            GameObject indicator = Instantiate(dialogueIndicatorPrefab, indicatorPos, dialogueIndicatorPrefab.transform.rotation, hoveredTile.transform);
 
             indicator.GetComponent<TMP_Text>().text = sliderValue.ToString();
 
             dialogueIndicators.Add(hoveredTile.hexPosition, indicator);
-
         }
 
     }

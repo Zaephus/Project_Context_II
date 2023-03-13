@@ -86,8 +86,8 @@ public class LevelEditor : MonoBehaviour {
                 continue;
             }
             else {
-                Vector3 indicatorPos = tiles[i].transform.position + new Vector3(0, 0.2f, 0);
-                GameObject indicator = Instantiate(editorPlacementManager.dialogueIndicatorPrefab, indicatorPos, editorPlacementManager.dialogueIndicatorPrefab.transform.rotation);
+                Vector3 indicatorPos = tiles[i].transform.position + new Vector3(0, 1.5f, 0);
+                GameObject indicator = Instantiate(editorPlacementManager.dialogueIndicatorPrefab, indicatorPos, editorPlacementManager.dialogueIndicatorPrefab.transform.rotation, tiles[i].transform);
 
                 indicator.GetComponent<TMP_Text>().text = tiles[i].dialogueIndex.ToString();
 

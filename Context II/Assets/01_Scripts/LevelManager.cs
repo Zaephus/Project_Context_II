@@ -21,8 +21,6 @@ public class LevelManager : MonoBehaviour {
 
     [SerializeField]
     private GameObject dialogueBubblePrefab;
-    [SerializeField]
-    private GameObject dialogueBubbleContainer;
 
     [SerializeField]
     private TextAsset level;
@@ -51,7 +49,6 @@ public class LevelManager : MonoBehaviour {
                 Destroy(GameManager.Instance.tiles[i].gameObject);
             }
             GameManager.Instance.tiles = levelLoader.Generate(level, levelGenerator);
-            dialogueBubbleContainer.SetActive(false);
         }
         else if(_state == GameState.StageTwo) {
 
@@ -66,11 +63,9 @@ public class LevelManager : MonoBehaviour {
                 }
                 else {
                     Vector3 indicatorPos = GameManager.Instance.tiles[i].transform.position + new Vector3(0, 0.2f, 0);
-                    GameObject indicator = Instantiate(dialogueBubblePrefab, indicatorPos, dialogueBubblePrefab.transform.rotation, dialogueBubbleContainer.transform);
+                    GameObject indicator = Instantiate(dialogueBubblePrefab, indicatorPos, dialogueBubblePrefab.transform.rotation, GameManager.Instance.tiles[i].transform);
                 }
             }
-
-            dialogueBubbleContainer.SetActive(true);
 
         }        
 
@@ -78,6 +73,10 @@ public class LevelManager : MonoBehaviour {
 
     public void OnUpdate() {
         placementManager.OnUpdate();
+    }
+
+    public void ClearLevel() {
+        OnStart(GameManager.Instance.State);
     }
 
     public void EndLevel() {

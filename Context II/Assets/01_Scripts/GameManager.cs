@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour {
     }
     #endregion
     
-    private GameState State {
+    public GameState State {
         get {
             return state;
         }

@@ -60,7 +60,7 @@ public class GameManager : MonoBehaviour {
     }
 
     public void StartGame() {
-        State = GameState.StageOne;
+        State = GameState.StageTwo;
     }
 
     public void ContinueGame() {

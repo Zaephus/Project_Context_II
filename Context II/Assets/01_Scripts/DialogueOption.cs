@@ -10,5 +10,7 @@ public class DialogueOption : ScriptableObject {
 
     [TextArea(15,20)]
     public string dialogue;
+
+    public DialogueOption nextDialogue;
     
 }

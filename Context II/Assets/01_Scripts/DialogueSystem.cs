@@ -35,11 +35,23 @@ public class DialogueSystem : MonoBehaviour {
 
     }
 
+    public void StartDialogue(DialogueOption _option) {
+        dialogueOption = _option;
+
+        titleText.text = dialogueOption.characterName;
+        image.sprite = dialogueOption.characterSprite;
+
+        StartCoroutine(TypeWriter(dialogueOption.dialogue));
+    }
+
     public void DialogueClicked() {
         if(!dialogueCompleted) {
             //StopAllCoroutines();
             dialogueText.text = dialogueOption.dialogue;
             dialogueCompleted = true;
+        }
+        else if(dialogueOption.nextDialogue != null) {
+            StartDialogue(dialogueOption.nextDialogue);
         }
         else {
             DialogueEnded?.Invoke();

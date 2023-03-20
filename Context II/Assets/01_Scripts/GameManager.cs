@@ -50,7 +50,7 @@ public class GameManager : MonoBehaviour {
     }
 
     private void Update() {
-        if(State == GameState.StageOne || State == GameState.StageTwo) {
+        if(State == GameState.PlayMode) {
             levelManager.OnUpdate();
         }
 
@@ -60,12 +60,12 @@ public class GameManager : MonoBehaviour {
     }
 
     public void StartGame() {
-        State = GameState.StageTwo;
+        State = GameState.PlayMode;
     }
 
     public void ContinueGame() {
         if(State == GameState.IntermediateEnding) {
-            State = GameState.StageTwo;
+            State = GameState.PlayMode;
         }
         else if(State == GameState.FinalEnding) {
             State = GameState.MainMenu;
@@ -74,12 +74,7 @@ public class GameManager : MonoBehaviour {
 
     private void EndLevel(bool _goodEnding) {
 
-        if(State == GameState.StageOne) {
-            goodEnding.SetActive(false);
-            badEnding.SetActive(true);
-            State = GameState.IntermediateEnding;
-        }
-        else if(State == GameState.StageTwo) {
+        if(State == GameState.PlayMode) {
             if(_goodEnding) {
                 goodEnding.SetActive(true);
                 badEnding.SetActive(false);
@@ -104,20 +99,9 @@ public class GameManager : MonoBehaviour {
 
                 break;
 
-            case GameState.StageOne:
+            case GameState.PlayMode:
 
-                levelManager.OnStart(GameState.StageOne);
-                levelManager.LevelFinished += EndLevel;
-
-                levelManager.gameObject.SetActive(true);
-                mainMenu.SetActive(false);
-                endingsContainer.SetActive(false);
-
-                break;
-
-            case GameState.StageTwo:
-
-                levelManager.OnStart(GameState.StageTwo);
+                levelManager.OnStart();
                 levelManager.LevelFinished += EndLevel;
 
                 levelManager.gameObject.SetActive(true);

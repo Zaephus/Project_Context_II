@@ -76,6 +76,10 @@ public class DialogueSystem : MonoBehaviour {
         yield return new WaitForSeconds(0.35f);
         dialogueCompleted = true;
 
+        if(dialogueOption.invokeOnEnd) {
+            DialogueOption.OnDialogueEnded?.Invoke();
+        }
+
     }
 
 }

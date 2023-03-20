@@ -6,6 +6,7 @@ public class CameraMovement : MonoBehaviour {
 
     public static System.Action<bool> CursorLocked;
     public static System.Action CameraReset;
+    public static System.Action FinishedStartTransition;
 
     [SerializeField]
     private float moveSpeed;
@@ -99,7 +100,6 @@ public class CameraMovement : MonoBehaviour {
             speed = Mathf.Lerp(startSpeed, endSpeed, completion);
 
             completion += (speed * Time.deltaTime) / (maxTransitionValue - minTransitionValue);
-            Debug.Log(completion);
             yield return new WaitForEndOfFrame();
 
         }
@@ -109,6 +109,7 @@ public class CameraMovement : MonoBehaviour {
         startZoom = mainCamera.orthographicSize;
 
         isInStartTransition = false;
+        FinishedStartTransition?.Invoke();
 
     }
 

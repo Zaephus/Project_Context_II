@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 6542827819160866819}
   - component: {fileID: 4714664221886780890}
   - component: {fileID: 7388486590774829328}
+  - component: {fileID: -6667878865185210643}
   m_Layer: 0
-  m_Name: Text Bubble
+  m_Name: Text Bubble Middle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -40,7 +41,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3592055577713447869}
-  m_Mesh: {fileID: 4893891142637710245, guid: 60528d969f93e5b43b150be9371fd3e0, type: 3}
+  m_Mesh: {fileID: 4893891142637710245, guid: 7905a2393cb2f404f9cfc9d4d2249d93, type: 3}
 --- !u!23 &7388486590774829328
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -61,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c7a70f9a82bc24d4c9358a4a96681a51, type: 2}
+  - {fileID: 2100000, guid: bd498d02a317b3c48bc92903834a0113, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -83,3 +84,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &-6667878865185210643
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3592055577713447869}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4893891142637710245, guid: 7905a2393cb2f404f9cfc9d4d2249d93, type: 3}

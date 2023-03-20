@@ -24,6 +24,9 @@ public class LevelManager : MonoBehaviour {
     [SerializeField]
     private TextAsset level;
 
+    [SerializeField]
+    private CameraMovement cameraMovement;
+
     private float score;
 
     public void OnStart() {
@@ -53,11 +56,16 @@ public class LevelManager : MonoBehaviour {
                 continue;
             }
             else {
-                Vector3 indicatorPos = GameManager.Instance.tiles[i].transform.position + new Vector3(0, 0.2f, 0);
+                Vector3 indicatorPos = GameManager.Instance.tiles[i].transform.position;
                 GameObject indicator = Instantiate(dialogueBubblePrefab, indicatorPos, dialogueBubblePrefab.transform.rotation, GameManager.Instance.tiles[i].transform);
             }
-        }    
+        }
 
+    }
+
+    public void OnEnable() {
+        cameraMovement.mainCamera.orthographicSize = cameraMovement.minTransitionValue;
+        cameraMovement.OnStart();
     }
 
     public void OnUpdate() {

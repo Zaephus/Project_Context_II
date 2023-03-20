@@ -40,7 +40,8 @@ public class EditorCameraMovement : MonoBehaviour {
 
         if(Input.GetMouseButton(2)) {
             HideAndLockCursor();
-            transform.position += mouseDelta * moveSpeed * Time.deltaTime;
+            Vector3 moveDir = mouseDelta.x * transform.right + mouseDelta.z * transform.forward;
+            transform.position += moveDir * moveSpeed * Time.deltaTime;
         }
         if(Input.GetMouseButtonUp(2)) {
             ShowAndUnlockCursor();

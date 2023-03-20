@@ -17,6 +17,13 @@ public class CameraMovement : MonoBehaviour {
     [SerializeField]
     private Camera mainCamera;
 
+    [SerializeField]
+    private float minTransitionValue;
+    [SerializeField]
+    private float maxTransitionValue;
+    [SerializeField]
+    private float transitionSpeed;
+
     private Vector3 mouseDelta;
     private float scrollDelta;
 
@@ -24,14 +31,20 @@ public class CameraMovement : MonoBehaviour {
     private Quaternion startRotation;
     private float startZoom;
 
-    private void Start() {
-        startPosition = transform.position;
-        startRotation = transform.rotation;
-        startZoom = mainCamera.orthographicSize;
+    private bool isInStartTransition = false;
+
+    public void Start() {
+        StartCoroutine(StartTransition());
         CameraReset += ResetCamera;
     }
 
     private void Update() {
+        if(!isInStartTransition) {
+            OnUpdate();
+        }
+    }
+
+    public void OnUpdate() {
 
         mouseDelta = new Vector3(Input.GetAxis("Mouse X"), 0, Input.GetAxis("Mouse Y"));
         mouseDelta.Normalize();
@@ -40,7 +53,8 @@ public class CameraMovement : MonoBehaviour {
 
         if(Input.GetMouseButton(2)) {
             HideAndLockCursor();
-            transform.position += mouseDelta * moveSpeed * Time.deltaTime;
+            Vector3 moveDir = mouseDelta.x * transform.right + mouseDelta.z * transform.forward;
+            transform.position += moveDir * moveSpeed * Time.deltaTime;
         }
         if(Input.GetMouseButtonUp(2)) {
             ShowAndUnlockCursor();
@@ -62,6 +76,39 @@ public class CameraMovement : MonoBehaviour {
         if(scrollDelta > 0.0f && mainCamera.orthographicSize >= 2) {
             mainCamera.orthographicSize -= zoomSpeed * Time.deltaTime;
         }
+
+    }
+
+    private IEnumerator StartTransition() {
+
+        isInStartTransition = true;
+
+        mainCamera.orthographicSize = minTransitionValue;
+
+        float startSpeed = transitionSpeed;
+        float endSpeed = transitionSpeed * 0.4f;
+
+        float speed = 0;
+
+        float completion = 0.0f;
+
+        while(mainCamera.orthographicSize < maxTransitionValue) {
+
+            mainCamera.orthographicSize += speed * Time.deltaTime;
+
+            speed = Mathf.Lerp(startSpeed, endSpeed, completion);
+
+            completion += (speed * Time.deltaTime) / (maxTransitionValue - minTransitionValue);
+            Debug.Log(completion);
+            yield return new WaitForEndOfFrame();
+
+        }
+        
+        startPosition = transform.position;
+        startRotation = transform.rotation;
+        startZoom = mainCamera.orthographicSize;
+
+        isInStartTransition = false;
 
     }
 

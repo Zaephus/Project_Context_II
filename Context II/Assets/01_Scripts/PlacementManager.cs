@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using TMPro;
 
@@ -20,7 +21,7 @@ public class PlacementManager : MonoBehaviour {
             }
         }
     }
-    private bool isChecking = true;
+    private bool isChecking = false;
 
     [SerializeField]
     private GameObject tileSelector;
@@ -44,12 +45,14 @@ public class PlacementManager : MonoBehaviour {
     [SerializeField]
     private DialogueSystem dialogueSystem;
     
-    private bool isPlacing = false;
+    [HideInInspector]
+    public bool isPlacing = false;
 
     [SerializeField]
     private GameObject levelCanvas;
     [SerializeField]
     private GameObject dialogueCanvas;
+    public Toggle placingToggle;
 
     private GameObject objectToInstantiate;
     private TileType selectedType;
@@ -63,15 +66,13 @@ public class PlacementManager : MonoBehaviour {
     private int windmillTarget;
     private int currentWindmillAmount;
 
-    private GameState gameState;
-
-    public void OnStart(GameState _state) {
-        gameState = _state;
+    public void OnStart() {
         currentWindmillAmount = 0;
         windmillTargetText.text = currentWindmillAmount + "/" + windmillTarget;
         tilesMaterial.mainTexture = coloredTexture;
 
         CameraMovement.CursorLocked += ToggleChecking;
+        CameraMovement.FinishedStartTransition += ShowUI;
     }
 
     public void OnUpdate() {
@@ -81,7 +82,7 @@ public class PlacementManager : MonoBehaviour {
         }
 
         if(hoveredTile != null) {
-            if(!isPlacing && hoveredTile.dialogueIndex != 0 && gameState == GameState.StageTwo) {
+            if(!isPlacing && hoveredTile.dialogueIndex != 0) {
                 if(Input.GetMouseButtonDown(0)) {
                     ShowDialogue();
                 }
@@ -106,7 +107,6 @@ public class PlacementManager : MonoBehaviour {
             selectedType = TileType.WindmillTile;
             windmillTargetText.gameObject.SetActive(true);
             tilesMaterial.mainTexture = grayscaleTexture;
-            Tile.TogglePowerApprovalVisibility?.Invoke(true);
         }
         else {
             tileSelector.SetActive(false);
@@ -114,9 +114,13 @@ public class PlacementManager : MonoBehaviour {
             selectedType = TileType.None;
             windmillTargetText.gameObject.SetActive(false);
             tilesMaterial.mainTexture = coloredTexture;
-            Tile.TogglePowerApprovalVisibility?.Invoke(false);
         }
 
+    }
+
+    private void ShowUI() {
+        levelCanvas.gameObject.SetActive(true);
+        IsChecking = true;
     }
 
     private void ToggleChecking(bool _value) {
@@ -143,8 +147,6 @@ public class PlacementManager : MonoBehaviour {
         tile.tileHeight = tileHeight;
         tile.PowerApproval = hoveredTile.PowerApproval;
         tile.CitizenApproval = hoveredTile.CitizenApproval;
-
-        tile.ChangePowerApprovalVisibility(true);
 
         WindmillPlaced?.Invoke((float)(tile.CitizenApproval / windmillTarget));
 
@@ -188,7 +190,7 @@ public class PlacementManager : MonoBehaviour {
         if(currentWindmillAmount >= windmillTarget) {
             WindmillTargetReached?.Invoke();
             if(IsChecking) {
-                ToggleSelection();
+                placingToggle.isOn = !placingToggle.isOn;
             }
         }
 

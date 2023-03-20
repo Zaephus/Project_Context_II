@@ -17,3 +17,4 @@ MonoBehaviour:
   dialogue: I know the people who go there regularly. I'm sure they won't get mad
     if I tell them about the plans next time I see 'em.
   nextDialogue: {fileID: 0}
+  invokeOnEnd: 0

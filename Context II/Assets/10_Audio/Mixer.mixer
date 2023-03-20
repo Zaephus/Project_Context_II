@@ -1,5 +1,19 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!244 &-7430438233620124198
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: ea8925b90746a1749866af01f8f81203
+  m_EffectName: Attenuation
+  m_MixLevel: a11e6a8c251ac1c4d8e77d67b5f606ee
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
 --- !u!244 &-2476843388327877000
 AudioMixerEffectController:
   m_ObjectHideFlags: 3
@@ -14,6 +28,25 @@ AudioMixerEffectController:
   m_SendTarget: {fileID: 0}
   m_EnableWetMix: 0
   m_Bypass: 0
+--- !u!243 &-2223094924705591834
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: UI
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: 2bb998e9a01cc934dbd1cb108075c23c
+  m_Children: []
+  m_Volume: 96650be8d2e370b49bae174fd89b00c5
+  m_Pitch: f22f08505b151cb4c957eada10d5dc7b
+  m_Send: 00000000000000000000000000000000
+  m_Effects:
+  - {fileID: -7430438233620124198}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
 --- !u!244 &-353018151724292687
 AudioMixerEffectController:
   m_ObjectHideFlags: 3
@@ -50,6 +83,7 @@ AudioMixerController:
     - 60f7deef467e9a947a7e0c3dbaee7549
     - b429a6aef2e88fa4884dd0bc5b869249
     - 802355febf7a00042bcdf3960b315906
+    - 2bb998e9a01cc934dbd1cb108075c23c
     name: View
   m_CurrentViewIndex: 0
   m_TargetSnapshot: {fileID: 24500006}
@@ -66,6 +100,7 @@ AudioMixerGroupController:
   - {fileID: 2823753955369453210}
   - {fileID: 8212966171006921926}
   - {fileID: 6645660826491028013}
+  - {fileID: -2223094924705591834}
   m_Volume: 0c29f5b536fa74244a52ab9f252d6056
   m_Pitch: ba1152a6af39c354fae6e7faac54b1ee
   m_Send: 00000000000000000000000000000000
@@ -142,7 +177,7 @@ AudioMixerGroupController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: UI
+  m_Name: SFX
   m_AudioMixer: {fileID: 24100000}
   m_GroupID: 802355febf7a00042bcdf3960b315906
   m_Children: []

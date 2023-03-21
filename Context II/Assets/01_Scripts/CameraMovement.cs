@@ -6,6 +6,7 @@ public class CameraMovement : MonoBehaviour {
 
     public static System.Action<bool> CursorLocked;
     public static System.Action CameraReset;
+    public static System.Action FinishedStartTransition;
 
     [SerializeField]
     private float moveSpeed;
@@ -14,11 +15,11 @@ public class CameraMovement : MonoBehaviour {
     [SerializeField]
     private float zoomSpeed;
 
-    [SerializeField]
-    private Camera mainCamera;
+    public Camera mainCamera;
 
     [SerializeField]
-    private float minTransitionValue;
+    private float waitTimeBeforeTransition;
+    public float minTransitionValue;
     [SerializeField]
     private float maxTransitionValue;
     [SerializeField]
@@ -34,8 +35,11 @@ public class CameraMovement : MonoBehaviour {
     private bool isInStartTransition = false;
 
     public void Start() {
-        StartCoroutine(StartTransition());
         CameraReset += ResetCamera;
+    }
+
+    public void OnStart() {
+        StartCoroutine(StartTransition());
     }
 
     private void Update() {
@@ -54,7 +58,8 @@ public class CameraMovement : MonoBehaviour {
         if(Input.GetMouseButton(2)) {
             HideAndLockCursor();
             Vector3 moveDir = mouseDelta.x * transform.right + mouseDelta.z * transform.forward;
-            transform.position += moveDir * moveSpeed * Time.deltaTime;
+            float moveModifier = mainCamera.orthographicSize * (0.6f + 0.4f * (1/(mainCamera.orthographicSize/2)));
+            transform.position += moveDir * moveSpeed * moveModifier * Time.deltaTime;
         }
         if(Input.GetMouseButtonUp(2)) {
             ShowAndUnlockCursor();
@@ -77,16 +82,25 @@ public class CameraMovement : MonoBehaviour {
             mainCamera.orthographicSize -= zoomSpeed * Time.deltaTime;
         }
 
+        if(mainCamera.orthographicSize > 20) {
+            mainCamera.orthographicSize = 20;
+        }
+        if(mainCamera.orthographicSize < 2) {
+            mainCamera.orthographicSize = 2;
+        }
+
     }
 
     private IEnumerator StartTransition() {
+
+        yield return new WaitForSeconds(waitTimeBeforeTransition);
 
         isInStartTransition = true;
 
         mainCamera.orthographicSize = minTransitionValue;
 
         float startSpeed = transitionSpeed;
-        float endSpeed = transitionSpeed * 0.4f;
+        float endSpeed = transitionSpeed * 0.2f;
 
         float speed = 0;
 
@@ -99,7 +113,6 @@ public class CameraMovement : MonoBehaviour {
             speed = Mathf.Lerp(startSpeed, endSpeed, completion);
 
             completion += (speed * Time.deltaTime) / (maxTransitionValue - minTransitionValue);
-            Debug.Log(completion);
             yield return new WaitForEndOfFrame();
 
         }
@@ -109,6 +122,7 @@ public class CameraMovement : MonoBehaviour {
         startZoom = mainCamera.orthographicSize;
 
         isInStartTransition = false;
+        FinishedStartTransition?.Invoke();
 
     }
 

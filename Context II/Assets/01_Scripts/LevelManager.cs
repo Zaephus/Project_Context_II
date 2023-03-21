@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LevelManager : MonoBehaviour {
 
@@ -16,8 +17,6 @@ public class LevelManager : MonoBehaviour {
 
     [SerializeField]
     private GameObject endTurnButton;
-    [SerializeField]
-    private GameObject placingToggle;
 
     [SerializeField]
     private GameObject dialogueBubblePrefab;
@@ -25,17 +24,20 @@ public class LevelManager : MonoBehaviour {
     [SerializeField]
     private TextAsset level;
 
+    [SerializeField]
+    private CameraMovement cameraMovement;
+
     private float score;
 
-    public void OnStart(GameState _state) {
+    public void OnStart() {
 
         placementManager = GetComponent<PlacementManager>();
-        placementManager.OnStart(_state);
+        placementManager.OnStart();
         placementManager.WindmillTargetReached += WindmillTargetReached;
         placementManager.WindmillPlaced += SetScore;
 
         endTurnButton.SetActive(false);
-        placingToggle.SetActive(true);
+        placementManager.placingToggle.transform.parent.gameObject.SetActive(true);
 
         score = 0;
 
@@ -44,31 +46,26 @@ public class LevelManager : MonoBehaviour {
 
         CameraMovement.CameraReset?.Invoke();
 
-        if(_state == GameState.StageOne) {
-            for(int i = GameManager.Instance.tiles.Count-1; i >= 0; i--) {
-                Destroy(GameManager.Instance.tiles[i].gameObject);
-            }
-            GameManager.Instance.tiles = levelLoader.Generate(level, levelGenerator);
+        for(int i = GameManager.Instance.tiles.Count-1; i >= 0; i--) {
+            Destroy(GameManager.Instance.tiles[i].gameObject);
         }
-        else if(_state == GameState.StageTwo) {
+        GameManager.Instance.tiles = levelLoader.Generate(level, levelGenerator);
 
-            for(int i = GameManager.Instance.tiles.Count-1; i >= 0; i--) {
-                Destroy(GameManager.Instance.tiles[i].gameObject);
+        for(int i = 0; i < GameManager.Instance.tiles.Count; i++) {
+            if(GameManager.Instance.tiles[i].dialogueIndex == 0) {
+                continue;
             }
-            GameManager.Instance.tiles = levelLoader.Generate(level, levelGenerator);
-
-            for(int i = 0; i < GameManager.Instance.tiles.Count; i++) {
-                if(GameManager.Instance.tiles[i].dialogueIndex == 0) {
-                    continue;
-                }
-                else {
-                    Vector3 indicatorPos = GameManager.Instance.tiles[i].transform.position + new Vector3(0, 0.2f, 0);
-                    GameObject indicator = Instantiate(dialogueBubblePrefab, indicatorPos, dialogueBubblePrefab.transform.rotation, GameManager.Instance.tiles[i].transform);
-                }
+            else {
+                Vector3 indicatorPos = GameManager.Instance.tiles[i].transform.position;
+                GameObject indicator = Instantiate(dialogueBubblePrefab, indicatorPos, dialogueBubblePrefab.transform.rotation, GameManager.Instance.tiles[i].transform);
             }
+        }
 
-        }        
+    }
 
+    public void OnEnable() {
+        cameraMovement.mainCamera.orthographicSize = cameraMovement.minTransitionValue;
+        cameraMovement.OnStart();
     }
 
     public void OnUpdate() {
@@ -76,7 +73,10 @@ public class LevelManager : MonoBehaviour {
     }
 
     public void ClearLevel() {
-        OnStart(GameManager.Instance.State);
+        OnStart();
+        if(placementManager.isPlacing) {
+            placementManager.placingToggle.isOn = !placementManager.placingToggle.isOn;
+        }
     }
 
     public void EndLevel() {
@@ -90,7 +90,8 @@ public class LevelManager : MonoBehaviour {
 
     private void WindmillTargetReached() {
         endTurnButton.SetActive(true);
-        placingToggle.SetActive(false);
+        placementManager.placingToggle.transform.parent.gameObject.SetActive(false);
+
         placementManager.WindmillTargetReached -= WindmillTargetReached;
         placementManager.WindmillPlaced -= SetScore;
     }

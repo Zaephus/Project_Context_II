@@ -2,11 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TextBubble : MonoBehaviour {
+public class DialogueBubble : MonoBehaviour {
 
     public static System.Action<bool> ToggledVisibility;
 
+    [HideInInspector]
+    public Sprite sprite;
+
+    [SerializeField]
+    private SpriteRenderer spriteRenderer;
+
     private void Start() {
+        spriteRenderer.sprite = sprite;
         ToggledVisibility += ToggleVisibility;
     }
 

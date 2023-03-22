@@ -58,6 +58,7 @@ public class LevelManager : MonoBehaviour {
             else {
                 Vector3 indicatorPos = GameManager.Instance.tiles[i].transform.position;
                 GameObject indicator = Instantiate(dialogueBubblePrefab, indicatorPos, dialogueBubblePrefab.transform.rotation, GameManager.Instance.tiles[i].transform);
+                indicator.GetComponentInChildren<DialogueBubble>().sprite = DialogueDatabase.Instance.dialogueOptions[GameManager.Instance.tiles[i].dialogueIndex-1].characterSprite;
             }
         }
 

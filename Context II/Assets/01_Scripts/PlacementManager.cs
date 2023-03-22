@@ -104,7 +104,7 @@ public class PlacementManager : MonoBehaviour {
         if(isPlacing) {
             tileSelector.SetActive(true);
 
-            TextBubble.ToggledVisibility?.Invoke(false);
+            DialogueBubble.ToggledVisibility?.Invoke(false);
 
             selectedType = TileType.WindmillTile;
             windmillTargetText.gameObject.SetActive(true);
@@ -113,7 +113,7 @@ public class PlacementManager : MonoBehaviour {
         else {
             tileSelector.SetActive(false);
 
-            TextBubble.ToggledVisibility?.Invoke(true);
+            DialogueBubble.ToggledVisibility?.Invoke(true);
 
             selectedType = TileType.None;
             windmillTargetText.gameObject.SetActive(false);

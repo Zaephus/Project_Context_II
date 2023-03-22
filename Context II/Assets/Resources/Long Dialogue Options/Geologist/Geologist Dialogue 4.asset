@@ -10,11 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2702d8b8152487f408472b648aa60950, type: 3}
-  m_Name: Geologist Dialogue
+  m_Name: Geologist Dialogue 4
   m_EditorClassIdentifier: 
-  characterName: Geologist
+  characterName: Gertrude
+  characterJob: Geologist
   characterSprite: {fileID: 21300000, guid: cfe4498c5f0847248bc3c0f8a8cf2401, type: 3}
-  dialogue: The ground in the southeastern part of the city has a high silt content,
-    which can shift under heavy loads. I would advise against building a large structure
-    in that area. Silt looks similar to sand, but slightly darker.
-  nextDialogue: {fileID: 0}
+  dialogue: People on the island across the sea tried building windmills on there.
+    But those people forgot that this type of ground shifts very easily under heavy
+    loads.
+  nextDialogue: {fileID: 11400000, guid: c90263ca95d242c43bc335bde013b746, type: 2}
+  invokeOnEnd: 0

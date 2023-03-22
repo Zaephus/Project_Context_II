@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2702d8b8152487f408472b648aa60950, type: 3}
-  m_Name: DJ Dialogue
+  m_Name: Geologist Dialogue 5
   m_EditorClassIdentifier: 
-  characterName: DJ
-  characterSprite: {fileID: 21300000, guid: 55c730c7b58549e468d3537cc024c993, type: 3}
-  dialogue: 'Yo, I host raves in the club every week, but these annoying windmills
-    make a ton of noise.
-
-    I don''t want them next to my club, they''ll drown
-    out my sick remixes.'
+  characterName: Gertrude
+  characterJob: Geologist
+  characterSprite: {fileID: 21300000, guid: cfe4498c5f0847248bc3c0f8a8cf2401, type: 3}
+  dialogue: After a year, the windmill looked like the tower of Pisa and they had
+    to strip it apart.
+  nextDialogue: {fileID: 11400000, guid: 38fcef4b249bd7e47bc88746ad66a92d, type: 2}
+  invokeOnEnd: 0

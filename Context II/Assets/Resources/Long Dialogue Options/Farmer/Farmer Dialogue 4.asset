@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2702d8b8152487f408472b648aa60950, type: 3}
   m_Name: Farmer Dialogue 4
   m_EditorClassIdentifier: 
-  characterName: Farmer
+  characterName: Franklin
+  characterJob: Farmer
   characterSprite: {fileID: 21300000, guid: f48b1f5f5d3001b458e05d70378c3d97, type: 3}
-  dialogue: The very least you could keep in mind is to build those damn mills west
-    of my farm, so they can still get sunlight.
-  nextDialogue: {fileID: 0}
+  dialogue: Look at these here meadows. D'you think that any of these villagers are
+    gon' like it if they have to look at a darn windmill ev'ry single day?!
+  nextDialogue: {fileID: 11400000, guid: ef2f6d967bdb3db4887ad62622863457, type: 2}
+  invokeOnEnd: 0

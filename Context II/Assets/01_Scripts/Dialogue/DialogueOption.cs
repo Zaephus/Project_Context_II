@@ -9,6 +9,7 @@ public class DialogueOption : ScriptableObject {
     public static System.Action OnDialogueEnded;
 
     public string characterName;
+    public string characterJob;
     public Sprite characterSprite;
 
     [TextArea(15,20)]

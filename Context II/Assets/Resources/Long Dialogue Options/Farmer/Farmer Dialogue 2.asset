@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2702d8b8152487f408472b648aa60950, type: 3}
   m_Name: Farmer Dialogue 2
   m_EditorClassIdentifier: 
-  characterName: Farmer
+  characterName: Franklin
+  characterJob: Farmer
   characterSprite: {fileID: 21300000, guid: f48b1f5f5d3001b458e05d70378c3d97, type: 3}
-  dialogue: I knew it was bad news when those damn suits started building houses
-    next to my farm. Next thing I know those damn millennials like that loud annoying
-    DJ are out here throwing rubbish on my land!
+  dialogue: Oh, it's you. I'm cleaning up my land, those DAMN millennials keep throwing
+    their trash on it. Those damn youngsters have no respect anymore...
   nextDialogue: {fileID: 11400000, guid: f273289d1cabf23449ca63c84307adbc, type: 2}
+  invokeOnEnd: 0

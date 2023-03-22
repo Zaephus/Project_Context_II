@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2702d8b8152487f408472b648aa60950, type: 3}
   m_Name: DJ Dialogue 2
   m_EditorClassIdentifier: 
-  characterName: DJ
+  characterName: Davey
+  characterJob: DJ
   characterSprite: {fileID: 21300000, guid: 55c730c7b58549e468d3537cc024c993, type: 3}
-  dialogue: The constant turnin' and buzzin' of those 'mills, the flickering lights
+  dialogue: The constant turnin' and buzzin' of those mills, the flickering lights
     on top of those things... I'm losin' my focus from that, man!
   nextDialogue: {fileID: 11400000, guid: 0f96b9a2a35a8c040a334738bbdc41be, type: 2}
+  invokeOnEnd: 0

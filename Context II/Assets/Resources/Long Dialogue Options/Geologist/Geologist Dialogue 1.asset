@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2702d8b8152487f408472b648aa60950, type: 3}
   m_Name: Geologist Dialogue 1
   m_EditorClassIdentifier: 
-  characterName: Geologist
+  characterName: Gertrude
+  characterJob: Geologist
   characterSprite: {fileID: 21300000, guid: cfe4498c5f0847248bc3c0f8a8cf2401, type: 3}
-  dialogue: The ground in the southeastern area of the city contains a high amount
-    of silt, which over time can shift under heavy loads. I would advise against
-    building a large structure in that area.
+  dialogue: Have you ever wondered how much is hidden in the ground under our very
+    feet? For instance, look at this beautiful sample!
   nextDialogue: {fileID: 11400000, guid: bc2155f3cc4795d46a448355ec52775f, type: 2}
+  invokeOnEnd: 0

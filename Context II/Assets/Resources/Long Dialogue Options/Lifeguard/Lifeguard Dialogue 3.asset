@@ -12,9 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2702d8b8152487f408472b648aa60950, type: 3}
   m_Name: Lifeguard Dialogue 3
   m_EditorClassIdentifier: 
-  characterName: Lifeguard
+  characterName: Luke
+  characterJob: Lifeguard
   characterSprite: {fileID: 21300000, guid: 17f33551d89d06a499c26171e649d48d, type: 3}
-  dialogue: I know the people who go there regularly. I'm sure they won't get mad
-    if I tell them about the plans next time I see 'em.
+  dialogue: 'I know the people who go there regularly. They''re totally chill dudes.
+
+    I''m
+    sure they won''t get mad if I tell them about the plans next time I see ''em.'
   nextDialogue: {fileID: 0}
-  invokeOnEnd: 0
+  invokeOnEnd: 1

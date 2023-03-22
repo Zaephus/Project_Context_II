@@ -9,7 +9,8 @@ public class DialogueSystem : MonoBehaviour {
     public System.Action DialogueEnded;
 
     private DialogueOption dialogueOption;
-
+    [SerializeField]
+    private TMP_Text jobText;
     [SerializeField]
     private TMP_Text titleText;
     [SerializeField]
@@ -27,7 +28,8 @@ public class DialogueSystem : MonoBehaviour {
     public void StartDialogue(int _index) {
 
         dialogueOption = DialogueDatabase.Instance.dialogueOptions[_index-1];
-        
+
+        jobText.text = dialogueOption.characterJob;
         titleText.text = dialogueOption.characterName;
         image.sprite = dialogueOption.characterSprite;
 
@@ -38,6 +40,7 @@ public class DialogueSystem : MonoBehaviour {
     public void StartDialogue(DialogueOption _option) {
         dialogueOption = _option;
 
+        jobText.text = dialogueOption.characterJob;
         titleText.text = dialogueOption.characterName;
         image.sprite = dialogueOption.characterSprite;
 

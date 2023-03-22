@@ -10,10 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2702d8b8152487f408472b648aa60950, type: 3}
-  m_Name: Farmer Dialogue
+  m_Name: Farmer Dialogue 5
   m_EditorClassIdentifier: 
-  characterName: Farmer
+  characterName: Franklin
+  characterJob: Farmer
   characterSprite: {fileID: 21300000, guid: f48b1f5f5d3001b458e05d70378c3d97, type: 3}
-  dialogue: My biggest problem with the windmills is the shadow they cast. They block
-    the light to my crops when built east of them, however I wouldn't mind them being
-    close to my crops.
+  dialogue: 'WELL I...
+
+    WON''T...
+
+    HAVE IT!'
+  nextDialogue: {fileID: 0}
+  invokeOnEnd: 1

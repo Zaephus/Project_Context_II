@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2702d8b8152487f408472b648aa60950, type: 3}
   m_Name: Geologist Dialogue 2
   m_EditorClassIdentifier: 
-  characterName: Geologist
+  characterName: Gertrude
+  characterJob: Geologist
   characterSprite: {fileID: 21300000, guid: cfe4498c5f0847248bc3c0f8a8cf2401, type: 3}
-  dialogue: Silt has an appearance similar to that of sand, but it is distinguished
-    by its slightly darker color. Please keep that in mind while planning.
+  dialogue: This piece of ground came all the way from across the sea, but is very
+    similar to the ground here.
   nextDialogue: {fileID: 11400000, guid: a93c8385dca8d84429330aba3d5cd665, type: 2}
+  invokeOnEnd: 0

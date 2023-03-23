@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2703563914615786334}
   - component: {fileID: 171148088250859412}
   - component: {fileID: -3138978562378275657}
+  - component: {fileID: 7566127951092637007}
   m_Layer: 0
   m_Name: Animal Tile 1.1
   m_TagString: Untagged
@@ -32,6 +33,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1594668306684314109}
+  - {fileID: 4988843645143543894}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -42,7 +44,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1828732167925161537}
-  m_Mesh: {fileID: 6077415827019052505, guid: 21b42e3bff5fffc4ca332ee01e59c459, type: 3}
+  m_Mesh: {fileID: 4192862124740287070, guid: 9b1a23a365010e046beb87519308bb0e, type: 3}
 --- !u!23 &171148088250859412
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -101,8 +103,104 @@ MonoBehaviour:
   tileRotation: 0
   tileHeight: 0
   tileType: 0
+  dialogueIndex: 0
   powerApprovalRenderer: {fileID: 545492791592298767}
   citizenApprovalRenderer: {fileID: 4080394959522714878}
+--- !u!95 &7566127951092637007
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1828732167925161537}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b965a59a1f332b94f8a8f170336eba8d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+--- !u!1001 &4805718628563654589
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1309182564383196411}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 9b1a23a365010e046beb87519308bb0e,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9b1a23a365010e046beb87519308bb0e,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9b1a23a365010e046beb87519308bb0e,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9b1a23a365010e046beb87519308bb0e,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9b1a23a365010e046beb87519308bb0e,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9b1a23a365010e046beb87519308bb0e,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9b1a23a365010e046beb87519308bb0e,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9b1a23a365010e046beb87519308bb0e,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9b1a23a365010e046beb87519308bb0e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9b1a23a365010e046beb87519308bb0e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 9b1a23a365010e046beb87519308bb0e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9b1a23a365010e046beb87519308bb0e,
+        type: 3}
+      propertyPath: m_Name
+      value: Sheep_Tile_Animation
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9b1a23a365010e046beb87519308bb0e, type: 3}
+--- !u!4 &4988843645143543894 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 9b1a23a365010e046beb87519308bb0e,
+    type: 3}
+  m_PrefabInstance: {fileID: 4805718628563654589}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &9019871854114133765
 PrefabInstance:
   m_ObjectHideFlags: 0

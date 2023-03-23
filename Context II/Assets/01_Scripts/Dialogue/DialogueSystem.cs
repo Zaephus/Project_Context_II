@@ -6,7 +6,7 @@ using TMPro;
 
 public class DialogueSystem : MonoBehaviour {
 
-    public System.Action DialogueEnded;
+    public static System.Action DialogueEnded;
 
     private DialogueOption dialogueOption;
     [SerializeField]
@@ -27,7 +27,7 @@ public class DialogueSystem : MonoBehaviour {
 
     public void StartDialogue(int _index) {
 
-        dialogueOption = DialogueDatabase.Instance.dialogueOptions[_index-1];
+        dialogueOption = DialogueDatabase.Instance.beforeMeetingOptions[_index-1];
 
         jobText.text = dialogueOption.characterJob;
         titleText.text = dialogueOption.characterName;

@@ -29,6 +29,20 @@ public class LevelManager : MonoBehaviour {
 
     private float score;
 
+    private float dialogueAmountFinished;
+
+    #region CEO Dialogue
+    [Header("CEO Dialogue")]
+    private DialogueOption currentDialogueCEO;
+
+    [SerializeField, Range(0, 5), Tooltip("How many people need to be talked to, to trigger the \"Before Meeting CEO\" Dialogue")]
+    private int beforeMeetingDialogueThreshold;
+
+    [SerializeField]
+    private GameObject phoneIcon;
+
+    #endregion
+
     public void OnStart() {
 
         placementManager = GetComponent<PlacementManager>();
@@ -38,6 +52,10 @@ public class LevelManager : MonoBehaviour {
 
         endTurnButton.SetActive(false);
         placementManager.placingToggle.transform.parent.gameObject.SetActive(true);
+
+        DialogueSystem.DialogueEnded += IncrementDialogueFinishedAmount;
+
+        dialogueAmountFinished = 0;
 
         score = 0;
 
@@ -58,9 +76,11 @@ public class LevelManager : MonoBehaviour {
             else {
                 Vector3 indicatorPos = GameManager.Instance.tiles[i].transform.position;
                 GameObject indicator = Instantiate(dialogueBubblePrefab, indicatorPos, dialogueBubblePrefab.transform.rotation, GameManager.Instance.tiles[i].transform);
-                indicator.GetComponentInChildren<DialogueBubble>().sprite = DialogueDatabase.Instance.dialogueOptions[GameManager.Instance.tiles[i].dialogueIndex-1].characterSprite;
+                indicator.GetComponentInChildren<DialogueBubble>().sprite = DialogueDatabase.Instance.beforeMeetingOptions[GameManager.Instance.tiles[i].dialogueIndex-1].characterSprite;
             }
         }
+
+        phoneIcon.SetActive(false);
 
     }
 
@@ -86,6 +106,20 @@ public class LevelManager : MonoBehaviour {
         }
         else {
             LevelFinished?.Invoke(false);
+        }
+    }
+
+    public void StartCEODialogue() {
+        placementManager.ShowDialogue(currentDialogueCEO);
+        phoneIcon.gameObject.SetActive(false);
+    }
+
+    private void IncrementDialogueFinishedAmount() {
+        dialogueAmountFinished++;
+        if(dialogueAmountFinished == beforeMeetingDialogueThreshold) {
+            currentDialogueCEO = DialogueDatabase.Instance.beforeMeetingCEO;
+            phoneIcon.gameObject.SetActive(true);
+            DialogueSystem.DialogueEnded -= IncrementDialogueFinishedAmount;
         }
     }
 

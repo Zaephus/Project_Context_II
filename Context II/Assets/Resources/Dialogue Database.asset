@@ -12,7 +12,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aaf501e8214ac564dbc5140070ffcc3a, type: 3}
   m_Name: Dialogue Database
   m_EditorClassIdentifier: 
-  dialogueOptions:
+  introCEO: {fileID: 0}
+  startCEO: {fileID: 0}
+  beforeMeetingCEO: {fileID: 11400000, guid: 48db822a4b7d9cb46806a37d6c0482ea, type: 2}
+  afterMeetingCEO: {fileID: 0}
+  goodEndingCEO: {fileID: 0}
+  badEndingCEO: {fileID: 0}
+  beforeMeetingOptions:
+  - {fileID: 11400000, guid: 0dd16565e2f467440ad317bcfe3d8e96, type: 2}
+  - {fileID: 11400000, guid: e8dc0c78fb91dcc4a8615e3905cc3e45, type: 2}
+  - {fileID: 11400000, guid: 48db822a4b7d9cb46806a37d6c0482ea, type: 2}
+  - {fileID: 11400000, guid: f94a3e472ade55940a6c2749d24bbc5a, type: 2}
+  - {fileID: 11400000, guid: fabdab90d52bbab4eab24289891525b3, type: 2}
+  meetingOptions: []
+  afterMeetingOptions: []
+  currentDialogueOptions:
   - {fileID: 11400000, guid: 0dd16565e2f467440ad317bcfe3d8e96, type: 2}
   - {fileID: 11400000, guid: e8dc0c78fb91dcc4a8615e3905cc3e45, type: 2}
   - {fileID: 11400000, guid: 48db822a4b7d9cb46806a37d6c0482ea, type: 2}

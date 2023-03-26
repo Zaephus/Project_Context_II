@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 6588103000884452570}
   - component: {fileID: 8973795609605040144}
   - component: {fileID: -7493534522584190831}
-  - component: {fileID: -6229865904306396382}
   m_Layer: 0
   m_Name: Animal Tile 1.2
   m_TagString: Untagged
@@ -44,7 +43,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7460687771692714437}
-  m_Mesh: {fileID: -6624290273818030158, guid: 9e5f4b7b70a1fb14cbbe8dbc51496896, type: 3}
+  m_Mesh: {fileID: 4192862124740287070, guid: 9b1a23a365010e046beb87519308bb0e, type: 3}
 --- !u!23 &8973795609605040144
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -106,26 +105,6 @@ MonoBehaviour:
   dialogueIndex: 0
   powerApprovalRenderer: {fileID: 8732007071477121324}
   citizenApprovalRenderer: {fileID: 5052987653953666269}
---- !u!95 &-6229865904306396382
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7460687771692714437}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: b965a59a1f332b94f8a8f170336eba8d, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
 --- !u!1001 &257458681010372390
 PrefabInstance:
   m_ObjectHideFlags: 0

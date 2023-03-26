@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2702d8b8152487f408472b648aa60950, type: 3}
+  m_Name: Civilian Dialogue 3.2
+  m_EditorClassIdentifier: 
+  characterName: Caesar
+  characterJob: Civilian
+  characterSprite: {fileID: 21300000, guid: bfc4b534e7944ec44823d64b13339f04, type: 3}
+  dialogue: Alright, how about this. You can build those windmills in the grass and
+    flower fields, but not right next to trees or sand. That way, we can both get
+    what we want.
+  nextDialogue: {fileID: 11400000, guid: 96f65001645e4a844aee428a52a4dac7, type: 2}
+  invokeOnEnd: 0

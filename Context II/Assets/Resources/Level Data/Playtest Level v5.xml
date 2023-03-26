@@ -1710,7 +1710,7 @@
     <r>3</r>
     <s>-7</s>
     <tileRotation>Zero</tileRotation>
-    <tileHeight>Half</tileHeight>
+    <tileHeight>OneQuarter</tileHeight>
     <tileType>WaterTile</tileType>
     <dialogueIndex>0</dialogueIndex>
     <powerApproval>0</powerApproval>
@@ -1852,8 +1852,8 @@
     <q>5</q>
     <r>2</r>
     <s>-7</s>
-    <tileRotation>FourSixth</tileRotation>
-    <tileHeight>ThreeQuarter</tileHeight>
+    <tileRotation>Zero</tileRotation>
+    <tileHeight>OneQuarter</tileHeight>
     <tileType>WaterTile</tileType>
     <dialogueIndex>0</dialogueIndex>
     <powerApproval>0</powerApproval>
@@ -2035,7 +2035,7 @@
     <r>-3</r>
     <s>-3</s>
     <tileRotation>Zero</tileRotation>
-    <tileHeight>Half</tileHeight>
+    <tileHeight>OneQuarter</tileHeight>
     <tileType>WaterTile</tileType>
     <dialogueIndex>0</dialogueIndex>
     <powerApproval>0</powerApproval>
@@ -2048,7 +2048,7 @@
     <r>-4</r>
     <s>-2</s>
     <tileRotation>Zero</tileRotation>
-    <tileHeight>Half</tileHeight>
+    <tileHeight>OneQuarter</tileHeight>
     <tileType>WaterTile</tileType>
     <dialogueIndex>0</dialogueIndex>
     <powerApproval>0</powerApproval>
@@ -2152,7 +2152,7 @@
     <r>-4</r>
     <s>-3</s>
     <tileRotation>Zero</tileRotation>
-    <tileHeight>Half</tileHeight>
+    <tileHeight>OneQuarter</tileHeight>
     <tileType>WaterTile</tileType>
     <dialogueIndex>0</dialogueIndex>
     <powerApproval>0</powerApproval>
@@ -2197,4 +2197,4 @@
     <powerApproval>0</powerApproval>
     <citizenApproval>0</citizenApproval>
   </TileData>
-</ArrayOfTileData>ta>
+</ArrayOfTileData>

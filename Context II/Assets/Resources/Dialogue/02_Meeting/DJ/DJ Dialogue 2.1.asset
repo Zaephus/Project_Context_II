@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2702d8b8152487f408472b648aa60950, type: 3}
+  m_Name: DJ Dialogue 2.1
+  m_EditorClassIdentifier: 
+  characterName: Davey
+  characterJob: DJ
+  characterSprite: {fileID: 21300000, guid: 55c730c7b58549e468d3537cc024c993, type: 3}
+  dialogue: Ayo millman, were you even listening to me? Everyone in the city is getting
+    pissed off right now cuz of these mills,
+  nextDialogue: {fileID: 11400000, guid: faabbbda7a12a8e489f72cfe9552c67b, type: 2}
+  invokeOnEnd: 0

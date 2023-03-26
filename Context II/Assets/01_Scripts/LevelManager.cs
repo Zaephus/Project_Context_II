@@ -43,7 +43,7 @@ public class LevelManager : MonoBehaviour {
 
     #endregion
 
-    public void OnStart() {
+    public void OnStart(GameState _state) {
 
         placementManager = GetComponent<PlacementManager>();
         placementManager.OnStart();
@@ -53,40 +53,26 @@ public class LevelManager : MonoBehaviour {
         endTurnButton.SetActive(false);
         placementManager.placingToggle.transform.parent.gameObject.SetActive(true);
 
-        DialogueSystem.DialogueEnded += IncrementDialogueFinishedAmount;
+        DialogueOption.OnDialogueEnded += IncrementDialogueFinishedAmount;
 
         dialogueAmountFinished = 0;
 
-        score = 0;
-
-        levelLoader = GetComponent<LevelLoader>();
-        levelGenerator = GetComponent<LevelGenerator>();
-
         CameraMovement.CameraReset?.Invoke();
 
-        for(int i = GameManager.Instance.tiles.Count-1; i >= 0; i--) {
-            Destroy(GameManager.Instance.tiles[i].gameObject);
-        }
-        GameManager.Instance.tiles = levelLoader.Generate(level, levelGenerator);
+        if(_state == GameState.PreMeeting) {
+            ResetLevel();
 
-        for(int i = 0; i < GameManager.Instance.tiles.Count; i++) {
-            if(GameManager.Instance.tiles[i].dialogueIndex == 0) {
-                continue;
-            }
-            else {
-                Vector3 indicatorPos = GameManager.Instance.tiles[i].transform.position;
-                GameObject indicator = Instantiate(dialogueBubblePrefab, indicatorPos, dialogueBubblePrefab.transform.rotation, GameManager.Instance.tiles[i].transform);
-                indicator.GetComponentInChildren<DialogueBubble>().sprite = DialogueDatabase.Instance.beforeMeetingOptions[GameManager.Instance.tiles[i].dialogueIndex-1].characterSprite;
-            }
+            currentDialogueCEO = DialogueDatabase.Instance.startCEO;
+            phoneIcon.SetActive(true);
+
+            cameraMovement.mainCamera.orthographicSize = cameraMovement.minTransitionValue;
+            cameraMovement.OnStart();
+        }
+        else if(_state == GameState.PostMeeting) {
+            currentDialogueCEO = DialogueDatabase.Instance.afterMeetingCEO;
+            phoneIcon.SetActive(true);
         }
 
-        phoneIcon.SetActive(false);
-
-    }
-
-    public void OnEnable() {
-        cameraMovement.mainCamera.orthographicSize = cameraMovement.minTransitionValue;
-        cameraMovement.OnStart();
     }
 
     public void OnUpdate() {
@@ -94,7 +80,7 @@ public class LevelManager : MonoBehaviour {
     }
 
     public void ClearLevel() {
-        OnStart();
+        ResetLevel();
         if(placementManager.isPlacing) {
             placementManager.placingToggle.isOn = !placementManager.placingToggle.isOn;
         }
@@ -119,7 +105,7 @@ public class LevelManager : MonoBehaviour {
         if(dialogueAmountFinished == beforeMeetingDialogueThreshold) {
             currentDialogueCEO = DialogueDatabase.Instance.beforeMeetingCEO;
             phoneIcon.gameObject.SetActive(true);
-            DialogueSystem.DialogueEnded -= IncrementDialogueFinishedAmount;
+            DialogueOption.OnDialogueEnded -= IncrementDialogueFinishedAmount;
         }
     }
 
@@ -133,6 +119,31 @@ public class LevelManager : MonoBehaviour {
 
     private void SetScore(float _add) {
         score += _add;
+    }
+
+    private void ResetLevel() {
+
+        levelLoader = GetComponent<LevelLoader>();
+        levelGenerator = GetComponent<LevelGenerator>();
+
+        score = 0;
+
+        for(int i = GameManager.Instance.tiles.Count-1; i >= 0; i--) {
+            Destroy(GameManager.Instance.tiles[i].gameObject);
+        }
+        GameManager.Instance.tiles = levelLoader.Generate(level, levelGenerator);
+
+        for(int i = 0; i < GameManager.Instance.tiles.Count; i++) {
+            if(GameManager.Instance.tiles[i].dialogueIndex == 0) {
+                continue;
+            }
+            else {
+                Vector3 indicatorPos = GameManager.Instance.tiles[i].transform.position;
+                GameObject indicator = Instantiate(dialogueBubblePrefab, indicatorPos, dialogueBubblePrefab.transform.rotation, GameManager.Instance.tiles[i].transform);
+                indicator.GetComponentInChildren<DialogueBubble>().sprite = DialogueDatabase.Instance.beforeMeetingOptions[GameManager.Instance.tiles[i].dialogueIndex-1].characterSprite;
+            }
+        }
+
     }
 
 }

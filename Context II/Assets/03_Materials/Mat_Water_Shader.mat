@@ -56,7 +56,7 @@ Material:
     - _Compare: 0
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _Water_Intensity: 0.1
+    - _Water_Intensity: 0.2
     - _Wave_Speed: 1
     - _height: 0.5
     - _noiseScale: 10

@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2702d8b8152487f408472b648aa60950, type: 3}
+  m_Name: DJ Dialogue 3
+  m_EditorClassIdentifier: 
+  characterName: Davey
+  characterJob: DJ
+  characterSprite: {fileID: 21300000, guid: 55c730c7b58549e468d3537cc024c993, type: 3}
+  dialogue: 'Keep in mind tho, you can''t just go placing those mills around all
+    willy-nilly, The peeps won''t be happy if a mill gets dropped right on top of
+    their house! '
+  nextDialogue: {fileID: 11400000, guid: 323c078bf956dd9449078da7140195b6, type: 2}
+  invokeOnEnd: 0

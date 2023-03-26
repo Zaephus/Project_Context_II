@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2702d8b8152487f408472b648aa60950, type: 3}
+  m_Name: Farmer Dialogue 1
+  m_EditorClassIdentifier: 
+  characterName: Franklin
+  characterJob: Farmer
+  characterSprite: {fileID: 21300000, guid: f48b1f5f5d3001b458e05d70378c3d97, type: 3}
+  dialogue: Ugh... those damn millenials. HEY YOU! GET OFF MY LAND!
+  nextDialogue: {fileID: 11400000, guid: 36ca163ca109320468d99d6ca3aca34a, type: 2}
+  invokeOnEnd: 0

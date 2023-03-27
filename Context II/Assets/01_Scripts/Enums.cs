@@ -55,5 +55,6 @@ public enum GameState {
     PreMeeting = 2,
     Meeting = 3,
     PostMeeting = 4,
-    Ending = 5
+    Outro = 5,
+    Ending = 6
 }

@@ -18,4 +18,4 @@ MonoBehaviour:
   dialogue: I knew it! I knew I could never trust those damn suits! If you don't
     talk with us and REALLY LISTEN next time, I'll make you regret it!
   nextDialogue: {fileID: 11400000, guid: 4cb74c7bebe8e67498d980180f4e3125, type: 2}
-  invokeOnEnd: 0
+  invokeOnEnd: 1

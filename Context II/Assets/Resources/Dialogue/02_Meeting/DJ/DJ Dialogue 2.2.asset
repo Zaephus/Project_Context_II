@@ -18,4 +18,4 @@ MonoBehaviour:
   dialogue: I'm sure we can work stuff out together, but you have to listen to us.
     Please, millman, one more try.
   nextDialogue: {fileID: 11400000, guid: 0f96b9a2a35a8c040a334738bbdc41be, type: 2}
-  invokeOnEnd: 0
+  invokeOnEnd: 1

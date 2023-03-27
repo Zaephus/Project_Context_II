@@ -53,14 +53,14 @@ public class LevelManager : MonoBehaviour {
         endTurnButton.SetActive(false);
         placementManager.placingToggle.transform.parent.gameObject.SetActive(true);
 
-        DialogueOption.OnDialogueEnded += IncrementDialogueFinishedAmount;
-
         dialogueAmountFinished = 0;
 
         CameraMovement.CameraReset?.Invoke();
 
         if(_state == GameState.PreMeeting) {
             ResetLevel();
+
+            DialogueOption.OnDialogueEnded += IncrementDialogueFinishedAmount;
 
             currentDialogueCEO = DialogueDatabase.Instance.startCEO;
             phoneIcon.SetActive(true);
@@ -71,6 +71,8 @@ public class LevelManager : MonoBehaviour {
         else if(_state == GameState.PostMeeting) {
             currentDialogueCEO = DialogueDatabase.Instance.afterMeetingCEO;
             phoneIcon.SetActive(true);
+            placementManager.UpdateWindmillTarget(placementManager.currentWindmillAmount);
+            placementManager.placingToggle.isOn = !placementManager.placingToggle.isOn;
         }
 
     }
@@ -112,9 +114,6 @@ public class LevelManager : MonoBehaviour {
     private void WindmillTargetReached() {
         endTurnButton.SetActive(true);
         placementManager.placingToggle.transform.parent.gameObject.SetActive(false);
-
-        placementManager.WindmillTargetReached -= WindmillTargetReached;
-        placementManager.WindmillPlaced -= SetScore;
     }
 
     private void SetScore(float _add) {
@@ -125,6 +124,12 @@ public class LevelManager : MonoBehaviour {
 
         levelLoader = GetComponent<LevelLoader>();
         levelGenerator = GetComponent<LevelGenerator>();
+
+        placementManager.currentWindmillAmount = 0;
+        placementManager.UpdateWindmillTarget(placementManager.currentWindmillAmount);
+        
+        endTurnButton.SetActive(false);
+        placementManager.placingToggle.transform.parent.gameObject.SetActive(true);
 
         score = 0;
 

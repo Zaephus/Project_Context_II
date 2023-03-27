@@ -25,6 +25,9 @@ public class DialogueSystem : MonoBehaviour {
 
     private bool dialogueCompleted;
 
+    [SerializeField]
+    private AudioSource audioSource;
+
     public void StartDialogue(int _index) {
 
         dialogueOption = DialogueDatabase.Instance.beforeMeetingOptions[_index-1];
@@ -48,6 +51,11 @@ public class DialogueSystem : MonoBehaviour {
     }
 
     public void DialogueClicked() {
+
+        if(dialogueCompleted && dialogueOption.invokeOnEnd) {
+            DialogueOption.OnDialogueEnded?.Invoke();
+        }
+        
         if(!dialogueCompleted) {
             //StopAllCoroutines();
             dialogueText.text = dialogueOption.dialogue;
@@ -68,6 +76,8 @@ public class DialogueSystem : MonoBehaviour {
         dialogueCompleted = false;
         yield return new WaitForSeconds(delayBeforeStart);
 
+        audioSource.Play();
+
         foreach(char c in _dialogue) {
             if(dialogueCompleted) {
                 break;
@@ -76,12 +86,10 @@ public class DialogueSystem : MonoBehaviour {
             yield return new WaitForSeconds(delayBetweenChars);
         }
 
+        audioSource.Stop();
+
         yield return new WaitForSeconds(0.35f);
         dialogueCompleted = true;
-
-        if(dialogueOption.invokeOnEnd) {
-            DialogueOption.OnDialogueEnded?.Invoke();
-        }
 
     }
 

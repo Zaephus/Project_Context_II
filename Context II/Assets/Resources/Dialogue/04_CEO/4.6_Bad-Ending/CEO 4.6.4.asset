@@ -10,13 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2702d8b8152487f408472b648aa60950, type: 3}
-  m_Name: CEO 4.6.3
+  m_Name: CEO 4.6.4
   m_EditorClassIdentifier: 
   characterName: CEO
   characterJob: CEO
   characterSprite: {fileID: 21300000, guid: 6a60535fae8452743a47c1120361ecdf, type: 3}
-  dialogue: We have carefully reviewed the situation and determined that your contributions
-    to the project did not meet the standard of excellence we require from all of
-    our employees.
-  nextDialogue: {fileID: 11400000, guid: 7851f67c1a92b5d4e82e5f936e5f8f58, type: 2}
+  dialogue: I want to thank you for your service to our company, and I sincerely
+    hope that you will learn from this experience and continue to grow and develop
+    in your future endeavors. Please let me know if you have any questions or concerns
+    regarding this decision.
+  nextDialogue: {fileID: 0}
   invokeOnEnd: 0

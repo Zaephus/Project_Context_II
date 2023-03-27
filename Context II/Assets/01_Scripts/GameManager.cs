@@ -44,6 +44,9 @@ public class GameManager : MonoBehaviour {
     private GameObject endingsContainer;
 
     [SerializeField]
+    private DialogueSystem endingDialogueSystem;
+
+    [SerializeField]
     private GameObject goodEnding;
     [SerializeField]
     private GameObject badEnding;
@@ -55,9 +58,6 @@ public class GameManager : MonoBehaviour {
     private void Update() {
         if(State == GameState.PreMeeting || State == GameState.PostMeeting) {
             levelManager.OnUpdate();
-        }
-        else if(State == GameState.Meeting) {
-            meetingManager.OnUpdate();
         }
 
         if(Input.GetKeyDown(KeyCode.Escape)) {
@@ -72,6 +72,7 @@ public class GameManager : MonoBehaviour {
     public void ContinueGame() {
         if(State == GameState.Meeting) {
             State = GameState.PostMeeting;
+            meetingManager.MeetingFinished -= ContinueGame;
         }
         else if(State == GameState.Ending) {
             State = GameState.MainMenu;
@@ -84,17 +85,32 @@ public class GameManager : MonoBehaviour {
             State = GameState.Meeting;
         }
         else if(State == GameState.PostMeeting) {
+            State = GameState.Outro;
             if(_goodEnding) {
                 goodEnding.SetActive(true);
                 badEnding.SetActive(false);
+                ShowEndDialogue(DialogueDatabase.Instance.goodEndingCEO);
             }
             else {
                 goodEnding.SetActive(false);
                 badEnding.SetActive(true);
+                ShowEndDialogue(DialogueDatabase.Instance.badEndingCEO);
             }
-            State = GameState.Ending;
         }
         
+    }
+
+    private void ShowEndDialogue(DialogueOption _option) {
+        endingDialogueSystem.gameObject.SetActive(true);
+        endingDialogueSystem.StartDialogue(_option);
+
+        DialogueSystem.DialogueEnded += OnDialogueEnded;
+    }
+
+    private void OnDialogueEnded() {
+        endingDialogueSystem.gameObject.SetActive(false);
+        DialogueSystem.DialogueEnded -= OnDialogueEnded;
+        State = GameState.Ending;
     }
 
     private void HandleGameStateChanges(GameState _state) {
@@ -139,6 +155,8 @@ public class GameManager : MonoBehaviour {
             case GameState.Meeting:
 
                 meetingManager.OnStart();
+            
+                meetingManager.MeetingFinished += ContinueGame;
 
                 levelManager.gameObject.SetActive(false);
                 meetingManager.gameObject.SetActive(true);
@@ -147,7 +165,7 @@ public class GameManager : MonoBehaviour {
 
                 break;
 
-            case GameState.Ending:
+            case GameState.Outro:
 
                 levelManager.LevelFinished -= SubmitLevel;
 

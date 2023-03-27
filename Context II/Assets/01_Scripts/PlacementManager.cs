@@ -36,14 +36,17 @@ public class PlacementManager : MonoBehaviour {
 
     [SerializeField]
     private Material tilesMaterial;
+    [SerializeField]
+    private Material grassMaterial;
+    [SerializeField]
+    private Material waterMaterial;
     
     [SerializeField]
     private Texture2D coloredTexture;
     [SerializeField]
     private Texture2D grayscaleTexture;
 
-    [SerializeField]
-    private DialogueSystem dialogueSystem;
+    public DialogueSystem dialogueSystem;
     
     [HideInInspector]
     public bool isPlacing = false;
@@ -64,15 +67,20 @@ public class PlacementManager : MonoBehaviour {
 
     [SerializeField]
     private int windmillTarget;
-    private int currentWindmillAmount;
+    [HideInInspector]
+    public int currentWindmillAmount;
+
+    [SerializeField]
+    private float approvalModifier;
 
     public void OnStart() {
-        currentWindmillAmount = 0;
+
         windmillTargetText.text = currentWindmillAmount + "/" + windmillTarget;
-        tilesMaterial.mainTexture = coloredTexture;
+        SetMaterialTextures(coloredTexture);
 
         CameraMovement.CursorLocked += ToggleChecking;
         CameraMovement.FinishedStartTransition += ShowUI;
+
     }
 
     public void OnUpdate() {
@@ -84,7 +92,7 @@ public class PlacementManager : MonoBehaviour {
         if(hoveredTile != null) {
             if(!isPlacing && hoveredTile.dialogueIndex != 0) {
                 if(Input.GetMouseButtonDown(0)) {
-                    ShowDialogue();
+                    ShowDialogue(DialogueDatabase.Instance.currentDialogueOptions[hoveredTile.dialogueIndex-1]);
                 }
             }
             else if(CheckPossiblePlacement() && selectedType != TileType.None) {
@@ -104,20 +112,20 @@ public class PlacementManager : MonoBehaviour {
         if(isPlacing) {
             tileSelector.SetActive(true);
 
-            TextBubble.ToggledVisibility?.Invoke(false);
+            DialogueBubble.ToggledVisibility?.Invoke(false);
 
             selectedType = TileType.WindmillTile;
             windmillTargetText.gameObject.SetActive(true);
-            tilesMaterial.mainTexture = grayscaleTexture;
+            SetMaterialTextures(grayscaleTexture);
         }
         else {
             tileSelector.SetActive(false);
 
-            TextBubble.ToggledVisibility?.Invoke(true);
+            DialogueBubble.ToggledVisibility?.Invoke(true);
 
             selectedType = TileType.None;
             windmillTargetText.gameObject.SetActive(false);
-            tilesMaterial.mainTexture = coloredTexture;
+            SetMaterialTextures(coloredTexture);
         }
 
     }
@@ -137,6 +145,7 @@ public class PlacementManager : MonoBehaviour {
         objectToInstantiate = TileDatabase.Instance.GetTileByType(selectedType);
 
         Vector3 tilePos = hoveredTile.transform.position;
+        Vector3 tileRot = objectToInstantiate.transform.eulerAngles + new Vector3(0, Hex.GetTileRotation(TileRotation.ThreeSixth), 0);
         Vector3Int hexPos = hoveredTile.hexPosition;
 
         TileHeight tileHeight = hoveredTile.tileHeight;
@@ -145,7 +154,7 @@ public class PlacementManager : MonoBehaviour {
 
         GameManager.Instance.tiles.Remove(hoveredTile);
 
-        Tile tile = Instantiate(objectToInstantiate, tilePos, objectToInstantiate.transform.rotation, transform).GetComponent<Tile>();
+        Tile tile = Instantiate(objectToInstantiate, tilePos, Quaternion.Euler(tileRot), transform).GetComponent<Tile>();
         tile.hexPosition = hexPos;
         tile.tileType = selectedType;
         tile.tileHeight = tileHeight;
@@ -161,14 +170,14 @@ public class PlacementManager : MonoBehaviour {
 
     }
 
-    private void ShowDialogue() {
+    public void ShowDialogue(DialogueOption _option) {
 
         levelCanvas.SetActive(false);
         dialogueCanvas.SetActive(true);
 
-        dialogueSystem.StartDialogue(hoveredTile.dialogueIndex);
+        dialogueSystem.StartDialogue(_option);
 
-        dialogueSystem.DialogueEnded += DialogueEnded;
+        DialogueSystem.DialogueEnded += DialogueEnded;
 
         IsChecking = false;
         hoveredTile = null;
@@ -180,22 +189,22 @@ public class PlacementManager : MonoBehaviour {
         levelCanvas.SetActive(true);
         dialogueCanvas.SetActive(false);
 
-        dialogueSystem.DialogueEnded -= DialogueEnded;
+        Tile.ChangedCitizenApproval?.Invoke(approvalModifier);
+
+        DialogueSystem.DialogueEnded -= DialogueEnded;
 
         IsChecking = true;
 
     }
 
-    private void UpdateWindmillTarget(int _amount) {
+    public void UpdateWindmillTarget(int _amount) {
         
         currentWindmillAmount = _amount;
         windmillTargetText.text = currentWindmillAmount + "/" + windmillTarget;
 
         if(currentWindmillAmount >= windmillTarget) {
+            placingToggle.isOn = !placingToggle.isOn;
             WindmillTargetReached?.Invoke();
-            if(IsChecking) {
-                placingToggle.isOn = !placingToggle.isOn;
-            }
         }
 
     }
@@ -244,7 +253,13 @@ public class PlacementManager : MonoBehaviour {
     }
 
     private void OnDisable() {
-        tilesMaterial.mainTexture = coloredTexture;
+        SetMaterialTextures(coloredTexture);
+    }
+
+    private void SetMaterialTextures(Texture2D _texture) {
+        tilesMaterial.mainTexture = _texture;
+        grassMaterial.mainTexture = _texture;
+        waterMaterial.SetTexture("_baseTexture", _texture);
     }
 
 }

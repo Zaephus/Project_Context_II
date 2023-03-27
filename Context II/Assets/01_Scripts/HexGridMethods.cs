@@ -6,8 +6,6 @@ public static class Hex {
 
     public static float GetTileRotation(TileRotation _tileRotation) {
         switch(_tileRotation) {
-            case TileRotation.Zero:
-                return 0.0f;
             case TileRotation.OneSixth:
                 return 60.0f;
             case TileRotation.TwoSixth:
@@ -21,6 +19,11 @@ public static class Hex {
             default:
                 return 0.0f;
         }
+    }
+
+    public static float GetRandomTileRotation() {
+        TileRotation rotation = (TileRotation)Random.Range(0, System.Enum.GetValues(typeof(TileRotation)).Length);
+        return GetTileRotation(rotation);
     }
 
     public static float GetTileHeight(TileHeight _tileHeight) {

@@ -51,7 +51,10 @@ public enum ApprovalType {
 [System.Serializable]
 public enum GameState {
     MainMenu = 0,
-    PlayMode = 1,
-    IntermediateEnding = 3,
-    FinalEnding = 4
+    Intro = 1, 
+    PreMeeting = 2,
+    Meeting = 3,
+    PostMeeting = 4,
+    Outro = 5,
+    Ending = 6
 }

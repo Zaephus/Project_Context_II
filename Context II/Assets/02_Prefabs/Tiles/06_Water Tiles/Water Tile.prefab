@@ -148,7 +148,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c7a70f9a82bc24d4c9358a4a96681a51, type: 2}
+  - {fileID: 2100000, guid: abcfe663a708619498b559f61d388928, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -186,6 +186,7 @@ MonoBehaviour:
   tileRotation: 0
   tileHeight: 0
   tileType: 0
+  dialogueIndex: 0
   powerApprovalRenderer: {fileID: 8189084107148901905}
   citizenApprovalRenderer: {fileID: 4505836497517927603}
 --- !u!64 &4940792310271415186

@@ -12,9 +12,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aaf501e8214ac564dbc5140070ffcc3a, type: 3}
   m_Name: Dialogue Database
   m_EditorClassIdentifier: 
-  dialogueOptions:
-  - {fileID: 11400000, guid: 0dd16565e2f467440ad317bcfe3d8e96, type: 2}
-  - {fileID: 11400000, guid: e8dc0c78fb91dcc4a8615e3905cc3e45, type: 2}
-  - {fileID: 11400000, guid: 48db822a4b7d9cb46806a37d6c0482ea, type: 2}
-  - {fileID: 11400000, guid: f94a3e472ade55940a6c2749d24bbc5a, type: 2}
-  - {fileID: 11400000, guid: fabdab90d52bbab4eab24289891525b3, type: 2}
+  introCEO: {fileID: 11400000, guid: 4b8d2e9d3231e3e4186465da0df27adf, type: 2}
+  startCEO: {fileID: 11400000, guid: 0fca7d6d58428a94a9e305c5a21ff286, type: 2}
+  beforeMeetingCEO: {fileID: 11400000, guid: 6789e5109c16ad049a4791b76bb26a92, type: 2}
+  afterMeetingCEO: {fileID: 11400000, guid: 8b099aea82900984ea3b66348ecb95dd, type: 2}
+  goodEndingCEO: {fileID: 11400000, guid: 8fd05449fca9a0647892dc949e047544, type: 2}
+  badEndingCEO: {fileID: 11400000, guid: c61889deda95dd44e96ce6deb4f610d5, type: 2}
+  beforeMeetingOptions:
+  - {fileID: 11400000, guid: a4e69efb3e52b334e95456c4694d8eaa, type: 2}
+  - {fileID: 11400000, guid: 4c4b1aabda69ba74ba72d1fef19ba842, type: 2}
+  - {fileID: 11400000, guid: 6e1f6a7afe9e9674dac364f00542e7aa, type: 2}
+  - {fileID: 11400000, guid: c9277b0f061c834498b4b3e7ebeef1d0, type: 2}
+  - {fileID: 11400000, guid: 9335f329c0c26824c830317434bcdbcd, type: 2}
+  meetingOptions:
+  - {fileID: 11400000, guid: 3a3bbd20a7393b045b3afdf1392fb0a9, type: 2}
+  - {fileID: 11400000, guid: c3275e53f75b6b54cbb0476c2ab57fe2, type: 2}
+  - {fileID: 11400000, guid: 13acc4009b4cb40458525c9d250f5f52, type: 2}
+  - {fileID: 11400000, guid: 98df92a8892560e4eb9763e4d2ec1ab8, type: 2}
+  - {fileID: 11400000, guid: 6d93e1aabbb2f1046a7de13aec541792, type: 2}
+  afterMeetingOptions:
+  - {fileID: 11400000, guid: df218b38c8eea4b49be63345da2fda6f, type: 2}
+  - {fileID: 11400000, guid: f2a96bfdac9b8c943a2ac84782220fca, type: 2}
+  - {fileID: 11400000, guid: f7dbff8b79a9aab45bb22e5255d7bfa6, type: 2}
+  - {fileID: 11400000, guid: dd977ffe33d824547b8b685cb946dc25, type: 2}
+  - {fileID: 11400000, guid: 6b1f1346fb309f6499b9c917eaa4ee2f, type: 2}
+  currentDialogueOptions:
+  - {fileID: 11400000, guid: a4e69efb3e52b334e95456c4694d8eaa, type: 2}
+  - {fileID: 11400000, guid: 4c4b1aabda69ba74ba72d1fef19ba842, type: 2}
+  - {fileID: 11400000, guid: 6e1f6a7afe9e9674dac364f00542e7aa, type: 2}
+  - {fileID: 11400000, guid: c9277b0f061c834498b4b3e7ebeef1d0, type: 2}
+  - {fileID: 11400000, guid: 9335f329c0c26824c830317434bcdbcd, type: 2}

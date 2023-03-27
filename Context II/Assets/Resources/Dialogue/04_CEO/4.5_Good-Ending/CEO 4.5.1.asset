@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2702d8b8152487f408472b648aa60950, type: 3}
+  m_Name: CEO 4.5.1
+  m_EditorClassIdentifier: 
+  characterName: CEO
+  characterJob: CEO
+  characterSprite: {fileID: 21300000, guid: 6a60535fae8452743a47c1120361ecdf, type: 3}
+  dialogue: I would like to express my deepest appreciation and congratulations to
+    you for successfully planning our wind-turbine project in the village of Windswept.
+    Your hard work, dedication and attention to detail have been instrumental in
+    the project's success.
+  nextDialogue: {fileID: 11400000, guid: 33f2fac6677894c4ba6e8646d7495c70, type: 2}
+  invokeOnEnd: 0

@@ -27,8 +27,6 @@ public class LevelManager : MonoBehaviour {
     [SerializeField]
     private CameraMovement cameraMovement;
 
-    private float score;
-
     private float dialogueAmountFinished;
 
     #region CEO Dialogue
@@ -43,12 +41,14 @@ public class LevelManager : MonoBehaviour {
 
     #endregion
 
+    private List<Tile> windmills = new List<Tile>();
+
     public void OnStart(GameState _state) {
 
         placementManager = GetComponent<PlacementManager>();
         placementManager.OnStart();
         placementManager.WindmillTargetReached += WindmillTargetReached;
-        placementManager.WindmillPlaced += SetScore;
+        placementManager.WindmillPlaced += PlacedWindmill;
 
         endTurnButton.SetActive(false);
         placementManager.placingToggle.transform.parent.gameObject.SetActive(true);
@@ -92,12 +92,19 @@ public class LevelManager : MonoBehaviour {
     }
 
     public void EndLevel() {
+
+        float score = 0;
+        foreach(Tile t in windmills) {
+            score += t.CitizenApproval;
+        }
+
         if(score > approvalThreshold) {
             LevelFinished?.Invoke(true);
         }
         else {
             LevelFinished?.Invoke(false);
         }
+        
     }
 
     public void StartCEODialogue() {
@@ -122,8 +129,8 @@ public class LevelManager : MonoBehaviour {
         placementManager.placingToggle.transform.parent.gameObject.SetActive(false);
     }
 
-    private void SetScore(float _add) {
-        score += _add;
+    private void PlacedWindmill(Tile _windmill) {
+        windmills.Add(_windmill);
     }
 
     private void ResetLevel() {
@@ -136,8 +143,6 @@ public class LevelManager : MonoBehaviour {
         
         endTurnButton.SetActive(false);
         placementManager.placingToggle.transform.parent.gameObject.SetActive(true);
-
-        score = 0;
 
         for(int i = GameManager.Instance.tiles.Count-1; i >= 0; i--) {
             Destroy(GameManager.Instance.tiles[i].gameObject);

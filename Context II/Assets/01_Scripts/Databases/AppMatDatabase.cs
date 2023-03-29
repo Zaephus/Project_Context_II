@@ -11,9 +11,9 @@ public class AppMatDatabase : SingletonScriptableObject<AppMatDatabase> {
     public Material GetApprovalMaterial(ApprovalType _type, float _value) {
         switch(_type) {
             case ApprovalType.Power:
-                return powerApprovalMaterials[(int)_value];
+                return powerApprovalMaterials[Mathf.Clamp((int)_value, 0, powerApprovalMaterials.Length-1)];
             case ApprovalType.Citizen:
-                return citizenApprovalMaterials[(int)_value];
+                return citizenApprovalMaterials[Mathf.Clamp((int)_value, 0, citizenApprovalMaterials.Length-1)];
             default:
                 return null;
         }

@@ -15,7 +15,7 @@ MonoBehaviour:
   characterName: Gertrude
   characterJob: Geologist
   characterSprite: {fileID: 21300000, guid: cfe4498c5f0847248bc3c0f8a8cf2401, type: 3}
-  dialogue: Have you noticed the dark-brown coloured ground over there, The ground
+  dialogue: Have you noticed the dark-brown coloured ground over there, the ground
     that's slightly darker than the sand of the beach?
   nextDialogue: {fileID: 11400000, guid: b9ec736533a97c044ac67987e9779459, type: 2}
   invokeOnEnd: 0

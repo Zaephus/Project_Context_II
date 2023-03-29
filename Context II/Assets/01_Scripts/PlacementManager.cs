@@ -8,7 +8,7 @@ using TMPro;
 public class PlacementManager : MonoBehaviour {
 
     public System.Action WindmillTargetReached;
-    public System.Action<float> WindmillPlaced;
+    public System.Action<Tile> WindmillPlaced;
 
     private bool IsChecking {
         get {
@@ -152,7 +152,7 @@ public class PlacementManager : MonoBehaviour {
         objectToInstantiate = TileDatabase.Instance.GetTileByType(selectedType);
 
         Vector3 tilePos = hoveredTile.transform.position;
-        Vector3 tileRot = objectToInstantiate.transform.eulerAngles + new Vector3(0, Hex.GetTileRotation(TileRotation.ThreeSixth), 0);
+        Vector3 tileRot = objectToInstantiate.transform.eulerAngles + new Vector3(0, Hex.GetTileRotation(TileRotation.TwoSixth), 0);
         Vector3Int hexPos = hoveredTile.hexPosition;
 
         TileHeight tileHeight = hoveredTile.tileHeight;
@@ -168,7 +168,7 @@ public class PlacementManager : MonoBehaviour {
         tile.PowerApproval = hoveredTile.PowerApproval;
         tile.CitizenApproval = hoveredTile.CitizenApproval;
 
-        WindmillPlaced?.Invoke((float)(tile.CitizenApproval / windmillTarget));
+        WindmillPlaced?.Invoke(tile);
 
         Destroy(hoveredTile.gameObject);
         hoveredTile = null;
@@ -272,7 +272,13 @@ public class PlacementManager : MonoBehaviour {
 
     private void SetMaterialTextures(Texture2D _texture) {
         tilesMaterial.mainTexture = _texture;
-        grassMaterial.mainTexture = _texture;
+        if(_texture == coloredTexture) {
+            grassMaterial.SetColor("_colour", new Color(0.7960784f, 0.9960784f, 0.5058824f));
+        }
+        else if(_texture == grayscaleTexture) {
+            grassMaterial.SetColor("_colour", new Color(1, 1, 1));
+        }
+        grassMaterial.SetTexture("_texture", _texture);
         waterMaterial.SetTexture("_baseTexture", _texture);
     }
 

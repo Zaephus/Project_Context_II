@@ -703,7 +703,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 5474932153005006710}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
@@ -733,7 +733,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: 8d59b32dc045f9241bfd189496593da6, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
-  m_Pitch: 1
+  m_Pitch: 0.4
   Loop: 1
   Mute: 0
   Spatialize: 0

@@ -15,9 +15,7 @@ MonoBehaviour:
   characterName: CEO
   characterJob: CEO
   characterSprite: {fileID: 21300000, guid: 6a60535fae8452743a47c1120361ecdf, type: 3}
-  dialogue: It is worth noting that while time is often of the essence in our projects,
-    it should not come at the cost of neglecting critical stakeholders like the local
-    community. Your approach demonstrates the kind of commitment to excellence that
-    we value highly in our employees.
-  nextDialogue: {fileID: 11400000, guid: fc4d3e75f2f3a6d4fad95cfcb02350cf, type: 2}
+  dialogue: This level of engagement is critical in ensuring that we meet the local
+    community's needs and maintain positive relationships for future projects.
+  nextDialogue: {fileID: 11400000, guid: 7a4a521bc2e14004cac02a4d7165d35b, type: 2}
   invokeOnEnd: 0

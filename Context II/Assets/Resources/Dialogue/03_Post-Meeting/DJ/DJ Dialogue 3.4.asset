@@ -15,8 +15,8 @@ MonoBehaviour:
   characterName: Davey
   characterJob: DJ
   characterSprite: {fileID: 21300000, guid: 55c730c7b58549e468d3537cc024c993, type: 3}
-  dialogue: There's always that bit one bit of forest. You know, the bit closest
-    to my club here? You should put one there, millman! Even Caesar doesn't like
-    that part, and you know he loves forests, yo.
+  dialogue: There's always that one bit of forest. You know, the bit closest to my
+    club here? You should put one there, millman! Even Caesar doesn't like that part,
+    and you know he loves forests, yo.
   nextDialogue: {fileID: 0}
   invokeOnEnd: 1

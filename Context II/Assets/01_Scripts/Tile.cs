@@ -75,8 +75,8 @@ public class Tile : MonoBehaviour {
     }
 
     private void ChangeCitizenApproval(float _amount) {
-        if(CitizenApproval != 0) {
-            CitizenApproval += _amount;
+        if(CitizenApproval != 0 && _amount != 0) {
+            CitizenApproval = _amount;
         }
     }
 

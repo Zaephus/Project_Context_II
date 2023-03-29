@@ -51,10 +51,8 @@ public class PlacementManager : MonoBehaviour {
     [HideInInspector]
     public bool isPlacing = false;
 
-    [SerializeField]
-    private GameObject levelCanvas;
-    [SerializeField]
-    private GameObject dialogueCanvas;
+    public GameObject levelCanvas;
+    public GameObject dialogueCanvas;
     public Toggle placingToggle;
 
     private GameObject objectToInstantiate;
@@ -73,6 +71,13 @@ public class PlacementManager : MonoBehaviour {
     [SerializeField]
     private float approvalModifier;
 
+    [HideInInspector]
+    public int dialogueFinished;
+
+    private void Start() {
+        DialogueOption.OnDialogueEnded += OnDialogueOptionEnded;
+    }
+
     public void OnStart() {
 
         windmillTargetText.text = currentWindmillAmount + "/" + windmillTarget;
@@ -80,6 +85,8 @@ public class PlacementManager : MonoBehaviour {
 
         CameraMovement.CursorLocked += ToggleChecking;
         CameraMovement.FinishedStartTransition += ShowUI;
+
+        SetTileApproval();
 
     }
 
@@ -189,12 +196,19 @@ public class PlacementManager : MonoBehaviour {
         levelCanvas.SetActive(true);
         dialogueCanvas.SetActive(false);
 
-        Tile.ChangedCitizenApproval?.Invoke(approvalModifier);
-
         DialogueSystem.DialogueEnded -= DialogueEnded;
 
         IsChecking = true;
 
+    }
+
+    private void OnDialogueOptionEnded() {
+        dialogueFinished++;
+        SetTileApproval();
+    }
+
+    public void SetTileApproval() {
+        Tile.ChangedCitizenApproval?.Invoke(dialogueFinished);
     }
 
     public void UpdateWindmillTarget(int _amount) {

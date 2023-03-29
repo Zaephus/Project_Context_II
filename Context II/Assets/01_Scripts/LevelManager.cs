@@ -58,6 +58,9 @@ public class LevelManager : MonoBehaviour {
         CameraMovement.CameraReset?.Invoke();
 
         if(_state == GameState.PreMeeting) {
+            placementManager.dialogueFinished = 0;
+            placementManager.levelCanvas.SetActive(false);
+            placementManager.dialogueCanvas.SetActive(false);
             ResetLevel();
 
             DialogueOption.OnDialogueEnded += IncrementDialogueFinishedAmount;
@@ -151,6 +154,8 @@ public class LevelManager : MonoBehaviour {
                 indicator.GetComponentInChildren<DialogueBubble>().sprite = DialogueDatabase.Instance.beforeMeetingOptions[GameManager.Instance.tiles[i].dialogueIndex-1].characterSprite;
             }
         }
+
+        placementManager.SetTileApproval();
 
     }
 

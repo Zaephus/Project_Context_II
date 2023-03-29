@@ -193,7 +193,7 @@ MonoBehaviour:
   windmillTargetText: {fileID: 656327266107573471}
   windmillTarget: 5
   currentWindmillAmount: 0
-  approvalModifier: 0
+  approvalModifier: 1
 --- !u!114 &656327265140239053
 MonoBehaviour:
   m_ObjectHideFlags: 0

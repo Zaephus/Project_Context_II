@@ -100,6 +100,9 @@ public class LevelManager : MonoBehaviour {
     public void StartCEODialogue() {
         placementManager.ShowDialogue(currentDialogueCEO);
         phoneIcon.gameObject.SetActive(false);
+        if(placementManager.isPlacing) {
+            placementManager.placingToggle.isOn = !placementManager.placingToggle.isOn;
+        }
     }
 
     private void IncrementDialogueFinishedAmount() {

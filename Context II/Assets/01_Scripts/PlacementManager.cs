@@ -89,7 +89,7 @@ public class PlacementManager : MonoBehaviour {
             CheckForTile();
         }
 
-        if(hoveredTile != null) {
+        if(hoveredTile != null && !EventSystem.current.IsPointerOverGameObject()) {
             if(!isPlacing && hoveredTile.dialogueIndex != 0) {
                 if(Input.GetMouseButtonDown(0)) {
                     ShowDialogue(DialogueDatabase.Instance.currentDialogueOptions[hoveredTile.dialogueIndex-1]);

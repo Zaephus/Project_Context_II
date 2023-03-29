@@ -61,7 +61,7 @@ public class GameManager : MonoBehaviour {
         }
 
         if(Input.GetKeyDown(KeyCode.Escape)) {
-            Application.Quit();
+            QuitGame();
         }
     }
 
@@ -77,6 +77,10 @@ public class GameManager : MonoBehaviour {
         else if(State == GameState.Ending) {
             State = GameState.MainMenu;
         }
+    }
+
+    public void QuitGame() {
+        Application.Quit();
     }
 
     private void SubmitLevel(bool _goodEnding) {
@@ -153,8 +157,6 @@ public class GameManager : MonoBehaviour {
                 break;
 
             case GameState.Meeting:
-
-                meetingManager.OnStart();
             
                 meetingManager.MeetingFinished += ContinueGame;
 
